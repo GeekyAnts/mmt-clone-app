@@ -827,7 +827,7 @@ function Filters(props: any) {
     </HStack>
   );
 }
-export default function Hotel(props: any) {
+export default function HotelList(props: any) {
   return (
     <ScrollView>
       <Header />
