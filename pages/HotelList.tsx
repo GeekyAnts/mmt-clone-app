@@ -382,6 +382,30 @@ function Filters(props: any) {
       place: "Varca",
     },
   ];
+
+  const hotelInfo = [
+    {
+      imageOne: "",
+      imageTwo: "",
+      imageThree: "",
+      imageFour: "",
+      hotelName: "The Lalit Golf & Spa Resort",
+      ratingNumber: "3395",
+      category: "Palolem",
+      type: "Couple Friendly",
+      food: "Breakfast Included",
+      offerText: "Great Choice! Booked 100+ times in last 15 Days",
+      offerIconName: "",
+      initailAmount: "9998",
+      finalAmount: "9399",
+      taxAmount: "2400",
+      startPrice: "3933",
+      linkText: "Login & unlock a secreat deal!",
+      exclusiveOfferIcon: "",
+      exclusiveOffer:
+        "Exclusive offer - SBI Credit Card Users. Get INR 1199 Off",
+    },
+  ];
   return (
     <HStack px={40}>
       <VStack mt={5} flex={2} bg="blue.500">
