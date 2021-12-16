@@ -1,3 +1,1 @@
-# MakeMyTrip-hotel-checkin-flow
-
-Hotel flow in MakeMyTrip using native base 
+Hotel flow in MakeMyTrip using native base
