@@ -21,20 +21,21 @@ const config = {
     "linear-gradient": require("expo-linear-gradient").LinearGradient,
   },
 };
+
 export default function HomePage() {
   const [tabName, setTabName] = React.useState("Login");
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="100%"
+        h="20%"
         shadow={4}
         flexGrow={1}
         bg={{
           linearGradient: {
-            colors: ["red.100", "red.900"],
+            colors: ["#091B30", "#FEFBF4"],
             //   colors: ["#091B30", "#FEFBF4"],
             start: [0, 0],
-            end: [1, 0],
+            end: [0, 1],
           },
         }}
       >
@@ -51,7 +52,6 @@ export default function HomePage() {
             flexWrap="wrap"
             width="100%"
           >
-            <Image />
             {/* <Logo /> */}
             <HStack
               justifyContent="space-between"
@@ -186,6 +186,9 @@ export default function HomePage() {
               </Pressable>
             </HStack>
           </HStack>
+          <Box bgColor="white" height="10%">
+            <Text>hello</Text>
+          </Box>
           {/* {tabName == "Login" ? <OrderInit /> : null}
         {tabName == "Address" ? <OrderAddress /> : null}
         {tabName == "Payment" ? <OrderPayment /> : null} */}
