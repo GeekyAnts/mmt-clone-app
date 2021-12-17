@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
   Center,
-  Checkbox,
   CheckIcon,
   Divider,
-  Heading,
   HStack,
   Icon,
-  IconButton,
-  Input,
   Link,
   NativeBaseProvider,
   Pressable,
@@ -24,7 +19,6 @@ import {
   AntDesign,
   Entypo,
   EvilIcons,
-  Fontisto,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
@@ -363,6 +357,7 @@ function HotelCard(props: any) {
             height={200}
           />
           <Pressable
+            // @ts-ignore
             onPress={() => {
               console.log("hello");
             }}
@@ -505,7 +500,7 @@ function HotelCard(props: any) {
 }
 function Rating(props: any) {
   return (
-    <HStack alignItems="center" mt={64} space={10}>
+    <HStack alignItems="center" mt={48} space={10} px={48}>
       <HStack alignItems="center" space={2}>
         <Center bg="#37D18F" p={2} rounded="md">
           <VStack alignItems="center">
@@ -562,14 +557,151 @@ function Rating(props: any) {
   );
 }
 
+function HighLight(props: any) {
+  const HighlistList = [
+    {
+      iconName: "thumbs-up",
+      supportText: "500+ guests like you rated their stay Very Good",
+      as: Entypo,
+    },
+    {
+      iconName: "calendar",
+      supportText: "Perfect for one-night stay!",
+      as: AntDesign,
+    },
+    {
+      iconName: "ios-people-outline",
+      supportText: "A couple-friendly property",
+      as: Ionicons,
+    },
+    {
+      iconName: "check",
+      supportText: "Select rooms have private pool",
+      as: EvilIcons,
+    },
+    {
+      iconName: "check",
+      supportText: "Play a round at the resort's 9-hole golf course",
+      as: EvilIcons,
+    },
+    {
+      iconName: "emoji-food-beverage",
+      supportText:
+        "Amazing breakfast! Guests like food quality, variety and service",
+      as: MaterialIcons,
+    },
+  ];
+  return (
+    <VStack px={48}>
+      <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
+        Property Highlights
+      </Text>
+      <Divider width={20} bg="#EEB971" rounded="lg" />
+      <Box
+        borderWidth={1}
+        borderColor="coolGray.800"
+        width="50%"
+        borderRadius={5}
+        mt={4}
+        pb={4}
+      >
+        <HStack
+          alignItems="center"
+          alignContent="space-evenly"
+          space={24}
+          alignSelf="center"
+        >
+          <VStack alignItems="center" space={1}>
+            <Text color="coolGray.800" fontWeight="semibold">
+              Private Beach
+            </Text>
+            <Link
+              href="https://nativebase.io"
+              _text={{
+                color: "#008CFF",
+                fontSize: "xs",
+                fontWeight: "bold",
+                textDecorationLine: "none",
+              }}
+            >
+              272 Reviews
+            </Link>
+          </VStack>
+          <Divider orientation="vertical" />
+          <VStack alignItems="center" space={1}>
+            <Text color="coolGray.800" fontWeight="semibold">
+              Nightlife
+            </Text>
+            <Link
+              href="https://nativebase.io"
+              _text={{
+                color: "#008CFF",
+                fontSize: "xs",
+                fontWeight: "bold",
+                textDecorationLine: "none",
+              }}
+            >
+              22 Reviews
+            </Link>
+          </VStack>
+          <Divider orientation="vertical" />
+          <VStack alignItems="center" space={1}>
+            <Text color="coolGray.800" fontWeight="semibold">
+              Distance from Beach
+            </Text>
+            <Link
+              href="https://nativebase.io"
+              _text={{
+                color: "#008CFF",
+                fontSize: "xs",
+                fontWeight: "bold",
+                textDecorationLine: "none",
+              }}
+            >
+              272 Reviews
+            </Link>
+          </VStack>
+        </HStack>
+        <Divider mt={2} />
+        <VStack space={3} px={4}>
+          {HighlistList.map((item, index) => {
+            return (
+              <HStack alignItems="center" key={index} space={2}>
+                <Icon size="5" as={item.as} name={item.iconName} />
+                <Text fontSize="xs" color="coolGray.500">
+                  {item.supportText}
+                </Text>
+              </HStack>
+            );
+          })}
+        </VStack>
+        <Link
+          px={4}
+          href="https://nativebase.io"
+          _text={{
+            color: "#008CFF",
+            fontSize: "xs",
+            fontWeight: "bold",
+            textDecorationLine: "none",
+          }}
+        >
+          VIEW ALL HIGHLIGHTS
+        </Link>
+      </Box>
+    </VStack>
+  );
+}
 export default function Hotel(props: any) {
   return (
     <VStack width="100%">
-      <Header />
-      <Search />
-      <MainPageBanner />
-      <HotelCard />
-      <Rating />
+      <ScrollView>
+        <Header />
+        <Search />
+        <MainPageBanner />
+        <HotelCard />
+        <Rating />
+        <HighLight />
+      </ScrollView>
     </VStack>
   );
 }
