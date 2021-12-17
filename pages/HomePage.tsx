@@ -1,5 +1,10 @@
 import React from "react";
-import { AntDesign, EvilIcons, Feather } from "@expo/vector-icons";
+import {
+  AntDesign,
+  EvilIcons,
+  Feather,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 import {
   Box,
   Button,
@@ -12,6 +17,7 @@ import {
   Pressable,
   useColorModeValue,
   NativeBaseProvider,
+  Radio,
 } from "native-base";
 import { LinearGradient } from "expo-linear-gradient";
 //   colors: ["#091B30", "#FEFBF4"],
@@ -186,8 +192,80 @@ export default function HomePage() {
               </Pressable>
             </HStack>
           </HStack>
-          <Box bgColor="white" height="10%">
-            <Text>hello</Text>
+          <Box
+            bgColor="white"
+            height="64"
+            width="80%"
+            alignSelf="center"
+            borderRadius="md"
+            zIndex="8"
+            px={8}
+          >
+            <VStack>
+              <HStack justifyContent="space-between">
+                <Radio.Group
+                  defaultValue="1"
+                  size="sm"
+                  name="exampleGroup"
+                  flexDirection="row"
+                  pt={10}
+                >
+                  <Radio
+                    _text={{
+                      mx: 2,
+                      fontWeight: "bold",
+                      fontSize: "xs",
+                    }}
+                    colorScheme="green"
+                    value="1"
+                    icon={<Icon as={<MaterialCommunityIcons name="alien" />} />}
+                    my={1}
+                  >
+                    ONEWAY
+                  </Radio>
+                  <Radio
+                    _text={{
+                      mx: 2,
+                      fontWeight: "bold",
+                      fontSize: "xs",
+                    }}
+                    colorScheme="red"
+                    value="2"
+                    icon={<Icon as={<MaterialCommunityIcons name="fire" />} />}
+                    my={1}
+                  >
+                    ROUNDTRIP
+                  </Radio>
+                  <Radio
+                    colorScheme="warning"
+                    _text={{
+                      mx: 2,
+                      fontWeight: "bold",
+                      fontSize: "xs",
+                    }}
+                    value="3"
+                    icon={
+                      <Icon
+                        as={<MaterialCommunityIcons name="exclamation" />}
+                      />
+                    }
+                    my={1}
+                  >
+                    MULTICITY
+                  </Radio>
+                </Radio.Group>
+                <HStack>
+                  <Text fontWeight="bold" fontSize="xs">
+                    International Flights
+                  </Text>
+                  <Divider orientation="vertical" width="1"></Divider>
+                  <Text fontWeight="bold" fontSize="xs">
+                    International Flights
+                  </Text>
+                  <Divider orientation="vertical" width="1"></Divider>
+                </HStack>
+              </HStack>
+            </VStack>
           </Box>
           {/* {tabName == "Login" ? <OrderInit /> : null}
         {tabName == "Address" ? <OrderAddress /> : null}
