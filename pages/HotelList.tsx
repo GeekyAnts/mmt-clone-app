@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import {
-  AspectRatio,
   Box,
-  Button,
+  Center,
   Checkbox,
   CheckIcon,
+  Divider,
   HStack,
   Icon,
-  Image,
+  IconButton,
   Input,
   Link,
+  NativeBaseProvider,
   Pressable,
   ScrollView,
   Select,
@@ -24,6 +25,12 @@ import {
   MaterialCommunityIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
+import Image from "next/image";
+const config = {
+  dependencies: {
+    "linear-gradient": require("expo-linear-gradient").LinearGradient,
+  },
+};
 
 function Header(props: any) {
   let [service, setService] = React.useState("");
@@ -59,9 +66,9 @@ function Header(props: any) {
       as: Ionicons,
     },
     {
-      iconName: "taxi",
+      iconName: "car",
       iconText: "Cabs",
-      as: Fontisto,
+      as: Ionicons,
     },
     {
       iconName: "passport",
@@ -72,24 +79,23 @@ function Header(props: any) {
   return (
     <HStack
       alignItems="center"
-      px={40}
-      py={2}
+      px={48}
+      py={4}
       bg="white"
       justifyContent="space-between"
     >
-      <HStack alignItems="center" space={4}>
-        <AspectRatio w={24} ratio={1.66}>
-          <Image
-            source={{ uri: "images/mmt.png" }}
-            alt="NextJS Logo"
-            resizeMode="contain"
-          />
-        </AspectRatio>
+      <HStack alignItems="center" space={5}>
+        <Image
+          src="/images/mmtLogo.png"
+          alt="MakeMyTrip Logo"
+          width={72}
+          height={32}
+        />
         {optionList.map((item, index) => {
           return (
             <VStack key={index} alignItems="center" justifyContent="center">
               <Icon size="5" as={item.as} name={item.iconName} />
-              <Text fontSize="sm" textAlign="center">
+              <Text fontSize="xs" color="coolGray.500" textAlign="center">
                 {item.iconText}
               </Text>
             </VStack>
@@ -98,7 +104,7 @@ function Header(props: any) {
       </HStack>
       <HStack>
         <VStack alignItems="center">
-          <Box width={40}>
+          <Box width={20}>
             <Select
               selectedValue={service}
               dropdownOpenIcon={<Icon as={Ionicons} name="home" />}
@@ -122,14 +128,13 @@ function Header(props: any) {
         </VStack>
         <Pressable>
           <HStack space={2} alignItems="center">
-            <AspectRatio w={24} ratio={1.66}>
-              <Image
-                source={{ uri: "images/loginLogo.png" }}
-                alt="NextJS Logo"
-                resizeMode="contain"
-              />
-            </AspectRatio>
-            <Text color="coolGray.800" fontSize="sm" fontWeight="medium">
+            <Image
+              src="/images/LoginLogo.png"
+              alt="Vercel Logo"
+              width={40}
+              height={40}
+            />
+            <Text color="coolGray.800" fontSize="sm" fontWeight="semibold">
               Login or Create Account
             </Text>
           </HStack>
@@ -161,12 +166,12 @@ function Search(props: any) {
   return (
     <HStack
       bg="#09223D"
-      px={40}
+      px={48}
       py={1}
       justifyContent="space-between"
       alignItems="center"
     >
-      <HStack space={4}>
+      <HStack space={4} alignItems="center">
         {information.map((item, index) => {
           return (
             <HStack key={index}>
@@ -184,33 +189,43 @@ function Search(props: any) {
           );
         })}
       </HStack>
-
-      <Button
-        variant="unstyled"
-        _text={{ color: "white", fontSize: "md", fontWeight: "bold" }}
-        bg="#008CFF"
-        // bg={{
-        //   // @ts-ignore
-        //   linearGradient: {
-        //     colors: ["lightBlue.300", "violet.800"],
-        //     start: [0, 0],
-        //     end: [1, 0],
-        //   },
-        // }}
-        borderRadius="lg"
-        onPress={() => {
-          console.log("hello");
-        }}
-      >
-        Search
-      </Button>
+      <HStack>
+        <NativeBaseProvider config={config}>
+          <Pressable
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Box
+              height={12}
+              borderRadius="full"
+              alignItems="center"
+              justifyContent="center"
+              width={32}
+              bg={{
+                // @ts-ignore
+                linearGradient: {
+                  colors: ["#008CFF", "#0a488a"],
+                  start: [0, 0],
+                  end: [0, 0],
+                },
+              }}
+            >
+              <Text color="white" fontWeight="medium" fontSize="md">
+                SEARCH
+              </Text>
+            </Box>
+          </Pressable>
+        </NativeBaseProvider>
+      </HStack>
     </HStack>
   );
 }
 function HotelInformation(props: any) {
   let [service, setService] = React.useState("");
   return (
-    <Box bg="#CFE5FA" px={40} py={5} flex={1}>
+    <Box bg="#CFE5FA" px={48} py={5} flex={1}>
       <HStack justifyContent="space-between">
         <VStack>
           <HStack alignItems="center">
@@ -267,15 +282,13 @@ function HotelInformation(props: any) {
         </VStack>
         <VStack space={10}>
           <Image
-            source={{
-              uri: "https://wallpaperaccess.com/full/317501.jpg",
-            }}
-            alt="Alternate Text"
-            height={24}
+            src="/images/hotel1.jpeg"
+            alt="Vercel Logo"
             width={80}
+            height={96}
           />
-
           <Input
+            width={80}
             InputLeftElement={
               <Icon
                 pl={1}
@@ -385,10 +398,10 @@ function Filters(props: any) {
 
   const hotelInfo = [
     {
-      imageOne: "",
-      imageTwo: "",
-      imageThree: "",
-      imageFour: "",
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      imageThree: "/images/hotel3.jpeg",
+      imageFour: "/images/hotel4.jpeg",
       hotelName: "The Lalit Golf & Spa Resort",
       ratingNumber: "3395",
       category: "Palolem",
@@ -396,19 +409,64 @@ function Filters(props: any) {
       food: "Breakfast Included",
       offerText: "Great Choice! Booked 100+ times in last 15 Days",
       offerIconName: "",
-      initailAmount: "9998",
-      finalAmount: "9399",
-      taxAmount: "2400",
-      startPrice: "3933",
+      initailAmount: "₹9998",
+      finalAmount: "₹9399",
+      taxAmount: "+₹2,400 taxes & fees",
+      startPrice: "₹3933",
       linkText: "Login & unlock a secreat deal!",
-      exclusiveOfferIcon: "",
+      exclusiveOfferIcon: "flash-circle",
       exclusiveOffer:
         "Exclusive offer - SBI Credit Card Users. Get INR 1199 Off",
+      mmt: "MMTLUXE",
+    },
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      imageThree: "/images/hotel3.jpeg",
+      imageFour: "/images/hotel4.jpeg",
+      hotelName: "The Lalit Golf & Spa Resort",
+      ratingNumber: "3395",
+      category: "Palolem",
+      type: "Couple Friendly",
+      food: "Breakfast Included",
+      offerText: "Great Choice! Booked 100+ times in last 15 Days",
+      offerIconName: "",
+      initailAmount: "₹9998",
+      finalAmount: "₹9399",
+      taxAmount: "+₹2,400 taxes & fees",
+      startPrice: "₹3933",
+      linkText: "Login & unlock a secreat deal!",
+      exclusiveOfferIcon: "flash-circle",
+      exclusiveOffer:
+        "Exclusive offer - SBI Credit Card Users. Get INR 1199 Off",
+      mmt: "sponsored",
+    },
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      imageThree: "/images/hotel3.jpeg",
+      imageFour: "/images/hotel4.jpeg",
+      hotelName: "The Lalit Golf & Spa Resort",
+      ratingNumber: "3395",
+      category: "Palolem",
+      type: "Couple Friendly",
+      food: "Breakfast Included",
+      offerText: "Great Choice! Booked 100+ times in last 15 Days",
+      offerIconName: "",
+      initailAmount: "₹9998",
+      finalAmount: "₹9399",
+      taxAmount: "+₹2,400 taxes & fees",
+      startPrice: "₹3933",
+      linkText: "Login & unlock a secreat deal!",
+      exclusiveOfferIcon: "flash-circle",
+      exclusiveOffer:
+        "Exclusive offer - SBI Credit Card Users. Get INR 1199 Off",
+      mmt: "sponsored",
     },
   ];
   return (
-    <HStack px={40}>
-      <VStack mt={5} flex={2} bg="blue.500">
+    <HStack px={48} justifyContent="space-evenly" space={2}>
+      <VStack mt={5} flex={1} flexGrow={1}>
         <Text fontSize="lg" color="coolGray.800" fontWeight="semibold">
           Select Filters
         </Text>
@@ -419,18 +477,32 @@ function Filters(props: any) {
           <VStack mt={2} space={1}>
             {filterType.map((item, index) => {
               return (
-                <HStack key={index} alignItems="center">
+                <HStack
+                  key={index}
+                  alignItems="center"
+                  justifyContent="space-between"
+                >
                   {item.numberAviable == "0" ? (
                     <>
-                      <Checkbox value="checkbox" color="#9ca3af">
+                      <Checkbox
+                        value="checkbox"
+                        color="#9ca3af"
+                        _text={{ fontSize: "xs" }}
+                      >
                         {item.filterType}
                       </Checkbox>
-                      <Text color="#9ca3af">{item.numberAviable}</Text>
+                      <Text color="#9ca3af" fontSize="xxs">
+                        {item.numberAviable}
+                      </Text>
                     </>
                   ) : (
                     <>
-                      <Checkbox value="checkbox">{item.filterType}</Checkbox>
-                      <Text>{item.numberAviable}</Text>
+                      <Checkbox value="checkbox" _text={{ fontSize: "sm" }}>
+                        {item.filterType}
+                      </Checkbox>
+                      <Text color="coolGray.800" fontSize="xxs">
+                        {item.numberAviable}
+                      </Text>
                     </>
                   )}
                 </HStack>
@@ -457,18 +529,29 @@ function Filters(props: any) {
           <VStack mt={2} space={1}>
             {filterPrice.map((item, index) => {
               return (
-                <HStack key={index} alignItems="center" space={1}>
+                <HStack
+                  key={index}
+                  alignItems="center"
+                  space={1}
+                  justifyContent="space-between"
+                >
                   {item.numberAviable == "0" ? (
                     <>
-                      <Checkbox value="checkbox" color="#9ca3af">
+                      <Checkbox
+                        value="checkbox"
+                        color="#9ca3af"
+                        _text={{ fontSize: "sm" }}
+                      >
                         {item.priceRange}
                       </Checkbox>
                       <Text color="#9ca3af">{item.numberAviable}</Text>
                     </>
                   ) : (
                     <>
-                      <Checkbox value="checkbox">{item.priceRange}</Checkbox>
-                      <Text>{item.numberAviable}</Text>
+                      <Checkbox value="checkbox" _text={{ fontSize: "sm" }}>
+                        {item.priceRange}
+                      </Checkbox>
+                      <Text color="coolGray.800">{item.numberAviable}</Text>
                     </>
                   )}
                 </HStack>
@@ -476,62 +559,281 @@ function Filters(props: any) {
             })}
           </VStack>
         </VStack>
-        <Text fontSize="md" color="coolGray.800" fontWeight="medium">
+        <Text fontSize="md" color="coolGray.800" fontWeight="medium" mt={5}>
           Your Budget
         </Text>
-        <Text fontSize="md" color="coolGray.800" fontWeight="medium">
+        <HStack alignItems="center" space={2}>
+          <Input placeholder="Min" width={20} py={2} />
+          <Text color="coolGray.800" fontWeight="semibold" fontSize="sm">
+            TO
+          </Text>
+          <Input placeholder="Max" width={20} py={2} />
+          <IconButton
+            size="sm"
+            variant="unstyled"
+            bg="#008CFF"
+            icon={
+              <Icon size="md" as={AntDesign} name="arrowright" color="white" />
+            }
+            onPress={() => {
+              console.log("hello");
+            }}
+          />
+        </HStack>
+        <Text fontSize="md" color="coolGray.800" fontWeight="medium" mt={5}>
           Locality
         </Text>
         {Locality.map((item, index) => {
           return (
-            <Checkbox value="checkbox" key={index}>
+            <Checkbox
+              value="checkbox"
+              key={index}
+              _text={{ fontSize: "sm" }}
+              mt={2}
+            >
               {item.place}
             </Checkbox>
           );
         })}
-        <Text fontSize="md" color="coolGray.800" fontWeight="medium">
+        <Text fontSize="md" color="coolGray.800" fontWeight="medium" mt={5}>
           Other Areas
         </Text>
         {otherArea.map((item, index) => {
           return (
-            <Checkbox value="checkbox" key={index}>
+            <Checkbox
+              value="checkbox"
+              key={index}
+              _text={{ fontSize: "sm" }}
+              mt={2}
+            >
               {item.place}
             </Checkbox>
           );
         })}
       </VStack>
-      <VStack flex={5} bg="red.500" mt={5}>
+      <VStack flex={4} mt={5}>
         <Text color="coolGray.800" fontSize="3xl" fontWeight="bold">
           Recommended for You
         </Text>
-        <Box
-          borderWidth={1}
-          borderColor="coolGray.400"
-          borderRadius="sm"
-          width="100%"
-          bg="yellow.500"
-        >
-          <Text>fvlkjerlg</Text>
-          <Text>fvlkjerlg</Text>
-          <Text>fvlkjerlg</Text>
-          <Text>fvlkjerlg</Text>
-          <Text>fvlkjerlg</Text>
-          <Text>fvlkjerlg</Text>
-          <Text>fvlkjerlg</Text>
-        </Box>
+
+        {hotelInfo.map((item, index) => {
+          return (
+            <Pressable
+              key={index}
+              //@ts-ignore
+              onPress={() => {
+                console.log("hello");
+              }}
+            >
+              <Box
+                borderWidth={1}
+                borderColor="coolGray.300"
+                borderRadius="sm"
+                width="100%"
+                mt={2}
+              >
+                <HStack
+                  alignItems="center"
+                  justifyContent="space-evenly"
+                  py={2}
+                >
+                  <VStack space={2}>
+                    <Image
+                      src={item.imageOne}
+                      alt="Vercel Logo"
+                      width="250"
+                      height="180"
+                    />
+                    <HStack space={3}>
+                      <Image
+                        src={item.imageTwo}
+                        alt="Vercel Logo"
+                        width={64}
+                        height={40}
+                      />
+                      <Image
+                        src={item.imageThree}
+                        alt="Vercel Logo"
+                        width={64}
+                        height={40}
+                      />
+                      <Image
+                        src={item.imageFour}
+                        alt="Vercel Logo"
+                        width={64}
+                        height={40}
+                      />
+                      <Image
+                        src={item.imageFour}
+                        alt="Vercel Logo"
+                        width={64}
+                        height={40}
+                      />
+                    </HStack>
+                  </VStack>
+                  <VStack alignItems="start" space={2}>
+                    <Pressable
+                      p="2"
+                      borderWidth="1"
+                      borderRadius="md"
+                      borderColor="#E5D1A4"
+                      // @ts-ignore
+                      onPress={() => {
+                        console.log("hello");
+                      }}
+                    >
+                      <Text color="#E5D1A4" fontSize="xs" fontWeight="medium">
+                        {item.mmt}
+                      </Text>
+                    </Pressable>
+                    <Text color="coolGray.800" fontWeight="semibold">
+                      {item.hotelName}
+                    </Text>
+                    <Text>{item.category}</Text>
+                    <Center bg="#BCC1C4" py={2} px={2} rounded="md">
+                      <Text
+                        fontSize="xs"
+                        fontWeight="semibold"
+                        color="coolGray.800"
+                      >
+                        {item.type}
+                      </Text>
+                    </Center>
+                    <HStack alignItems="center">
+                      <Icon
+                        as={AntDesign}
+                        name="check"
+                        color="green.500"
+                        size="5"
+                      />
+                      <Text color="green.500" fontSize="sm" fontWeight="normal">
+                        {item.food}
+                      </Text>
+                    </HStack>
+                    <HStack>
+                      <Icon
+                        as={MaterialCommunityIcons}
+                        name={item.exclusiveOfferIcon}
+                        color="#a8a29e"
+                        size="5"
+                      />
+                      <Text color="#a8a29e" fontSize="xs" fontWeight="normal">
+                        {item.offerText}
+                      </Text>
+                    </HStack>
+                  </VStack>
+                  <Divider orientation="vertical" />
+                  <VStack alignItems="end">
+                    <Text
+                      textDecorationLine="line-through"
+                      color="coolGray.500"
+                    >
+                      {item.initailAmount}
+                    </Text>
+                    <Text
+                      fontWeight="semibold"
+                      color="coolGray.800"
+                      fontSize="xl"
+                    >
+                      {item.finalAmount}
+                    </Text>
+                    <Text
+                      color="coolGray.500"
+                      fontSize="xs"
+                      fontWeight="medium"
+                    >
+                      {item.taxAmount}
+                    </Text>
+                    <Text
+                      fontSize={10}
+                      color="coolGray.400"
+                      fontWeight="normal"
+                    >
+                      Per Night
+                    </Text>
+                    <HStack alignItems="center" space={1}>
+                      <Text
+                        fontSize={10}
+                        color="coolGray.800"
+                        fontWeight="semibold"
+                      >
+                        No Cost
+                      </Text>
+                      <NativeBaseProvider config={config}>
+                        <Center
+                          width={10}
+                          rounded="full"
+                          borderWidth={1}
+                          bg={{
+                            // @ts-ignore
+                            linearGradient: {
+                              colors: ["#008CFF", "#0a488a"],
+                              start: [0, 0],
+                              end: [0, 0],
+                            },
+                          }}
+                        >
+                          <Text
+                            fontSize={10}
+                            color="coolGray.800"
+                            fontWeight="semibold"
+                          >
+                            EMI
+                          </Text>
+                        </Center>
+                      </NativeBaseProvider>
+                    </HStack>
+                    <HStack alignItems="center" space={1}>
+                      <Text
+                        color="coolGray.800"
+                        fontWeight="semibold"
+                        fontSize="xs"
+                      >
+                        starts at
+                      </Text>
+                      <Text
+                        fontSize="lg"
+                        color="coolGray.800"
+                        fontWeight="semibold"
+                      >
+                        {item.startPrice}
+                      </Text>
+                    </HStack>
+                    <Link
+                      href="https://nativebase.io"
+                      mt={2}
+                      _text={{
+                        color: "#008CFF",
+                        fontSize: "xs",
+                        fontWeight: "bold",
+                        textDecorationLine: "none",
+                      }}
+                    >
+                      {item.linkText}
+                    </Link>
+                  </VStack>
+                </HStack>
+              </Box>
+              <Box bg="#C3EAE2" width="100%" px={4} py={2}>
+                <HStack alignItems="center" space={3}>
+                  <Icon as={AntDesign} name="exclamationcircleo" size="5" />
+                  <Text>{item.exclusiveOffer}</Text>
+                </HStack>
+              </Box>
+            </Pressable>
+          );
+        })}
       </VStack>
     </HStack>
   );
 }
-export default function Hotel(props: any) {
+export default function HotelList(props: any) {
   return (
-    <VStack>
-      <ScrollView>
-        <Header />
-        <Search />
-        <HotelInformation />
-        <Filters />
-      </ScrollView>
-    </VStack>
+    <ScrollView>
+      <Header />
+      <Search />
+      <HotelInformation />
+      <Filters />
+    </ScrollView>
   );
 }
