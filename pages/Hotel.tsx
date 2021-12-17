@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import {
   Box,
+  Button,
   Center,
   Checkbox,
   CheckIcon,
   Divider,
+  Heading,
   HStack,
   Icon,
   IconButton,
@@ -15,14 +17,17 @@ import {
   ScrollView,
   Select,
   Text,
+  Tooltip,
   VStack,
 } from "native-base";
 import {
   AntDesign,
+  Entypo,
   EvilIcons,
   Fontisto,
   Ionicons,
   MaterialCommunityIcons,
+  MaterialIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import Image from "next/image";
@@ -220,25 +225,351 @@ function Search(props: any) {
     </HStack>
   );
 }
-function HotelBanner(props: any) {
+
+function MainPageBanner(props: any) {
   return (
-    <Image
-      position="absolute"
-      zIndex="-1"
-      src="/images/Hotel3.jpeg"
-      alt="Alternate Text"
-      size="xl"
-      width="100%"
-      height={500}
-    />
+    <VStack w="100%" h={500} position="relative">
+      <Box>
+        <Image
+          // @ts-ignore
+          position="absolute"
+          src="/images/hotel1.jpeg"
+          alt="Vercel Logo"
+          // top="0"
+          // right="0"
+          // left="0"
+          // bottom="0"
+          zIndex={-1}
+          width="100%"
+          height={500}
+        />
+        <Pressable
+          mt={2}
+          bg="#292524"
+          rounded="full"
+          px={2}
+          py={2}
+          // @ts-ignore
+          onPress={() => {
+            console.log("hello");
+          }}
+        >
+          <HStack alignItems="center" space={2}>
+            <Icon as={EvilIcons} name="camera" size="6" color="#EEB971" />
+            <Text color="white" fontWeight="bold" fontSize="sm">
+              VIEW ALL PHOTOS
+            </Text>
+          </HStack>
+        </Pressable>
+        <HStack alignItems="center" bg="coolGray.400">
+          <Pressable
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Text color="white" fontSize="xs" fontWeight="normal">
+              Home
+            </Text>
+          </Pressable>
+          <Icon as={EvilIcons} name="chevron-right" size="4" color="white" />
+          <Pressable
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Text color="white" fontSize="xs" fontWeight="normal">
+              Hotels In Goa
+            </Text>
+          </Pressable>
+          <Icon as={EvilIcons} name="chevron-right" size="4" color="white" />
+          <Pressable
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Text color="white" fontSize="xs" fontWeight="normal">
+              Resorts In Goa
+            </Text>
+          </Pressable>
+          <Icon as={EvilIcons} name="chevron-right" size="4" color="white" />
+          <Text color="white" fontSize="xs" fontWeight="semibold">
+            The Lalit Golf & Spa Resort
+          </Text>
+        </HStack>
+        <HStack
+          px={48}
+          py={2}
+          justifyContent="space-between"
+          alignItems="center"
+          bg="#292524"
+        >
+          <VStack py="2" mt={2}>
+            <HStack alignItems="center" space={2}>
+              <Text color="coolGray.50" fontWeight="bold" fontSize="3xl">
+                The Lalit Golf & Spa Resort
+              </Text>
+              <Icon as={Entypo} name="star" color="white" size="5" />
+              <Icon as={Entypo} name="star" color="white" size="5" />
+              <Icon as={Entypo} name="star" color="white" size="5" />
+              <Icon as={Entypo} name="star" color="white" size="5" />
+              <Icon as={Entypo} name="star" color="white" size="5" />
+            </HStack>
+            <Divider width={20} bg="#EEB971" rounded="lg" />
+            <HStack mt={2} alignItems="center" space={2}>
+              <Center
+                bg="coolGray.50"
+                borderColor="#EEB971"
+                borderWidth={1}
+                rounded="lg"
+                px={2}
+                _text={{
+                  color: "#EEB971",
+                  fontWeight: "medium",
+                  fontSize: "md",
+                }}
+              >
+                MMT LUXE
+              </Center>
+              <Text color="white" fontWeight="semibold" fontSize="sm">
+                Plush Goa Resort Offering Scenic Arabian Sea Views
+              </Text>
+            </HStack>
+          </VStack>
+        </HStack>
+      </Box>
+    </VStack>
   );
 }
+function HotelCard(props: any) {
+  return (
+    <VStack position="absolute" top={80} right={64}>
+      <Box
+        bg="white"
+        borderRadius="md"
+        shadow={4}
+        width={96}
+        flex={1}
+        p={4}
+        mt={2}
+      >
+        <VStack>
+          <Image
+            src="/images/hotel7.jpeg"
+            alt="MakeMyTrip Logo"
+            width={120}
+            height={200}
+          />
+          <Pressable
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Text
+              fontWeight="semibold"
+              color="coolGray.800"
+              fontSize="md"
+              mt={3}
+            >
+              Garden View Suite - Twin with Balcony...
+            </Text>
+          </Pressable>
+          <HStack alignItems="center" justifyContent="space-between" mt={3}>
+            <VStack space={1}>
+              <HStack alignItems="center" space={1}>
+                <Icon as={Ionicons} name="ios-people-sharp" size="4" />
+                <Text fontSize="xxs" fontWeight="medium" color="coolGray.500">
+                  For 2 Adults
+                </Text>
+              </HStack>
+              <Pressable>
+                <HStack alignItems="center" space={1}>
+                  <Icon as={Entypo} name="cross" size="4" color="red.500" />
+                  <Text color="red.500" fontSize="xxs" fontWeight="semibold">
+                    Non Refundable
+                  </Text>
+                </HStack>
+              </Pressable>
+              <HStack alignItems="center" space={1}>
+                <Icon as={AntDesign} name="check" size="4" />
+                <Text fontSize="xxs" fontWeight="medium" color="coolGray.500">
+                  Room with Breakfast
+                </Text>
+              </HStack>
+            </VStack>
+            <VStack alignItems="end" mt={1}>
+              <Text fontSize={10} fontWeight="normal" color="coolGray.400">
+                Per Night
+              </Text>
+              <Text
+                textDecorationLine="line-through"
+                fontSize="md"
+                color="coolGray.400"
+                fontWeight="normal"
+              >
+                ₹9998
+              </Text>
+              <Tooltip label="per night" openDelay={500}>
+                <Text fontSize="md" color="coolGray.800" fontWeight="bold">
+                  ₹10540
+                </Text>
+              </Tooltip>
+              <Text fontSize={10} fontWeight="semibold" color="coolGray.400">
+                + ₹ 2,640 taxes & fees
+              </Text>
+              <Text fontSize={10} fontWeight="semibold" color="red.500">
+                Saving ₹ 659
+              </Text>
+            </VStack>
+          </HStack>
+          <Pressable
+            mt={3}
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <HStack alignItems="center">
+              <Text color="#008CFF" fontWeight="medium" fontSize="sm">
+                VIEW OTHER ROOMS
+              </Text>
+              <Icon
+                as={Entypo}
+                name="chevron-small-down"
+                size="5"
+                color="#008CFF"
+              />
+            </HStack>
+          </Pressable>
+          <NativeBaseProvider config={config}>
+            <Pressable
+              mt={5}
+              // @ts-ignore
+              onPress={() => {
+                console.log("hello");
+              }}
+            >
+              <Box
+                height={12}
+                rounded="md"
+                alignItems="center"
+                justifyContent="center"
+                width="100%"
+                bg={{
+                  // @ts-ignore
+                  linearGradient: {
+                    colors: ["#008CFF", "#0a488a"],
+                    start: [0, 0],
+                    end: [0, 0],
+                  },
+                }}
+              >
+                <Text color="white" fontWeight="medium" fontSize="md">
+                  BOOK THIS NOW
+                </Text>
+              </Box>
+            </Pressable>
+          </NativeBaseProvider>
+        </VStack>
+      </Box>
+      <Box bg="#CDFCE8" borderRadius="md" shadow={4} width={96} p={1} mt={2}>
+        <HStack alignItems="center" space={2}>
+          <Icon as={MaterialIcons} name="local-offer" size="5" />
+          <VStack>
+            <Text fontWeight="semibold" color="coolGray.800" fontSize="sm">
+              Save INR 555 more
+            </Text>
+            <HStack alignItems="center" space={1}>
+              <Link
+                href="https://nativebase.io"
+                _text={{
+                  color: "#008CFF",
+                  fontSize: "xs",
+                  fontWeight: "bold",
+                  textDecorationLine: "none",
+                }}
+              >
+                LOGIN
+              </Link>
+              <Text color="coolGray.800" fontSize="xs">
+                & use wallet balance for booking
+              </Text>
+            </HStack>
+          </VStack>
+        </HStack>
+      </Box>
+    </VStack>
+  );
+}
+function Rating(props: any) {
+  return (
+    <HStack alignItems="center" mt={64} space={10}>
+      <HStack alignItems="center" space={2}>
+        <Center bg="#37D18F" p={2} rounded="md">
+          <VStack alignItems="center">
+            <Text fontWeight="bold" color="white" fontSize="md">
+              3.8
+            </Text>
+            <Text fontWeight="normal" color="white" fontSize="xs">
+              Out of 5
+            </Text>
+          </VStack>
+        </Center>
+        <VStack>
+          <Text color="coolGray.800" fontWeight="semibold" fontSize="md">
+            Rated Good
+          </Text>
+          <Link
+            href="https://nativebase.io"
+            _text={{
+              color: "#008CFF",
+              fontSize: "xs",
+              fontWeight: "bold",
+              textDecorationLine: "none",
+            }}
+          >
+            Based on 3393 Ratings
+          </Link>
+        </VStack>
+      </HStack>
+      <HStack alignItems="center" space={2}>
+        <Image
+          src="/images/hotel5.jpeg"
+          alt="MakeMyTrip Logo"
+          width={40}
+          height={40}
+        />
+        <VStack>
+          <Text color="coolGray.800" fontWeight="bold" fontSize="lg">
+            Palolem
+          </Text>
+          <Link
+            href="https://nativebase.io"
+            _text={{
+              color: "#008CFF",
+              fontSize: "xs",
+              fontWeight: "bold",
+              textDecorationLine: "none",
+            }}
+          >
+            View On Map
+          </Link>
+        </VStack>
+      </HStack>
+    </HStack>
+  );
+}
+
 export default function Hotel(props: any) {
   return (
-    <ScrollView>
+    <VStack width="100%">
       <Header />
       <Search />
-      <HotelBanner />
-    </ScrollView>
+      <MainPageBanner />
+      <HotelCard />
+      <Rating />
+    </VStack>
   );
 }
