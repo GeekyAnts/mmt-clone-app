@@ -26,6 +26,8 @@ import {
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import Image from "next/image";
+import DatePicker from "react-datepicker";
+
 const config = {
   dependencies: {
     "linear-gradient": require("expo-linear-gradient").LinearGradient,
@@ -143,8 +145,33 @@ function Header(props: any) {
     </HStack>
   );
 }
+// const calendarContainerView=()=>{
+//   return (
+//     <div style={{ padding: "16px", background: "#216ba5", color: "#fff" }}>
+//       <CalendarContainer className={className}>
+//         <div style={{ background: "#f0f0f0" }}>
+//           What is your favorite day?
+//         </div>
+//         <div style={{ position: "relative" }}>{children}</div>
+//       </CalendarContainer>
+//     </div>
+//   );
+// }
+const DatePopup = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  return (
+    <Box zIndex={-1}>
+      <DatePicker
+        selected={startDate}
+        onChange={(date: any) => setStartDate(date)}
+        padding={10}
+      />
+    </Box>
+  );
+};
 
 function Search(props: any) {
+  const [startDate, setStartDate] = useState(new Date());
   const information = [
     {
       mainText: "CITY, AREA OR PROPERTY",
@@ -175,11 +202,18 @@ function Search(props: any) {
         {information.map((item, index) => {
           return (
             <HStack key={index}>
-              <Pressable bg="coolGray.600" px={2} py={1} borderRadius="sm">
+              <Pressable
+                bg="coolGray.600"
+                px={2}
+                py={1}
+                borderRadius="sm"
+                zIndex={-1}
+              >
                 <VStack>
-                  <Text fontSize="xs" color="#008CFF" fontWeight="medium">
+                  <DatePopup />
+                  {/* <Text fontSize="xs" color="#008CFF" fontWeight="medium">
                     {item.mainText}
-                  </Text>
+                  </Text> */}
                   <Text fontSize="md" color="white" fontWeight="normal">
                     {item.subText}
                   </Text>
@@ -225,7 +259,7 @@ function Search(props: any) {
 function HotelInformation(props: any) {
   let [service, setService] = React.useState("");
   return (
-    <Box bg="#CFE5FA" px={48} py={5} flex={1}>
+    <Box bg="#CFE5FA" px={48} py={5} flex={1} zIndex={-1}>
       <HStack justifyContent="space-between">
         <VStack>
           <HStack alignItems="center">
