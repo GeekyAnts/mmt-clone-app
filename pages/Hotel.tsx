@@ -229,20 +229,23 @@ function MainPageBanner(props: any) {
           position="absolute"
           src="/images/hotel1.jpeg"
           alt="Vercel Logo"
-          // top="0"
-          // right="0"
-          // left="0"
-          // bottom="0"
+          top="0"
+          right="0"
+          left="0"
+          bottom="0"
           zIndex={-1}
           width="100%"
           height={500}
         />
         <Pressable
           mt={2}
-          bg="#292524"
           rounded="full"
-          px={2}
+          bg="#09223D"
+          px={4}
           py={2}
+          position="absolute"
+          top={80}
+          left={48}
           // @ts-ignore
           onPress={() => {
             console.log("hello");
@@ -255,14 +258,20 @@ function MainPageBanner(props: any) {
             </Text>
           </HStack>
         </Pressable>
-        <HStack alignItems="center" bg="coolGray.400">
+        <HStack
+          alignItems="center"
+          position="absolute"
+          top={2}
+          right={0}
+          left={48}
+        >
           <Pressable
             // @ts-ignore
             onPress={() => {
               console.log("hello");
             }}
           >
-            <Text color="white" fontSize="xs" fontWeight="normal">
+            <Text color="white" fontSize="md" fontWeight="medium">
               Home
             </Text>
           </Pressable>
@@ -273,7 +282,7 @@ function MainPageBanner(props: any) {
               console.log("hello");
             }}
           >
-            <Text color="white" fontSize="xs" fontWeight="normal">
+            <Text color="white" fontSize="md" fontWeight="medium">
               Hotels In Goa
             </Text>
           </Pressable>
@@ -284,12 +293,12 @@ function MainPageBanner(props: any) {
               console.log("hello");
             }}
           >
-            <Text color="white" fontSize="xs" fontWeight="normal">
+            <Text color="white" fontSize="md" fontWeight="medium">
               Resorts In Goa
             </Text>
           </Pressable>
           <Icon as={EvilIcons} name="chevron-right" size="4" color="white" />
-          <Text color="white" fontSize="xs" fontWeight="semibold">
+          <Text color="white" fontSize="md" fontWeight="bold">
             The Lalit Golf & Spa Resort
           </Text>
         </HStack>
@@ -299,6 +308,10 @@ function MainPageBanner(props: any) {
           justifyContent="space-between"
           alignItems="center"
           bg="#292524"
+          position="absolute"
+          bottom={0}
+          right={0}
+          left={0}
         >
           <VStack py="2" mt={2}>
             <HStack alignItems="center" space={2}>
@@ -500,7 +513,7 @@ function HotelCard(props: any) {
 }
 function Rating(props: any) {
   return (
-    <HStack alignItems="center" mt={48} space={10} px={48}>
+    <HStack alignItems="center" mt={10} space={10} px={48}>
       <HStack alignItems="center" space={2}>
         <Center bg="#37D18F" p={2} rounded="md">
           <VStack alignItems="center">
@@ -557,6 +570,74 @@ function Rating(props: any) {
   );
 }
 
+function BestOfLuxury(props: any) {
+  const Luxury = [
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      subText: "International Standard Golf Course",
+    },
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      subText: "Pool with Sunken Poolside Bar",
+    },
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      subText: "Al fresco Dining by the Sea",
+    },
+  ];
+  return (
+    <VStack px={48} mt={10}>
+      <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
+        Discover the Best of Luxury
+      </Text>
+      <Divider width={20} bg="#EEB971" rounded="lg" />
+      <HStack mt={7} space={6}>
+        {Luxury.map((item, index) => {
+          return (
+            <Box
+              borderWidth={4}
+              borderColor="red.500"
+              borderRadius="lg"
+              key={index}
+              height={270}
+              width={200}
+              bg="#26242485"
+              opacity={0.6}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Center borderWidth={2} borderColor="white" p="3" rounded="full">
+                <Image
+                  src={item.imageOne}
+                  alt="Vercel Logo"
+                  width={64}
+                  height={64}
+                  borderRadius={20}
+                  // @ts-ignore
+                />
+              </Center>
+              <Text textAlign="center" color="white" fontWeight="semibold">
+                {item.subText}
+              </Text>
+
+              {/* <Image
+                src={item.imageOne}
+                alt="Vercel Logo"
+                width={200}
+                height={270}
+                // @ts-ignore
+                borderRadius={20}
+              /> */}
+            </Box>
+          );
+        })}
+      </HStack>
+    </VStack>
+  );
+}
 function HighLight(props: any) {
   const HighlistList = [
     {
@@ -592,7 +673,7 @@ function HighLight(props: any) {
     },
   ];
   return (
-    <VStack px={48}>
+    <VStack px={48} mt={6}>
       <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
         Property Highlights
       </Text>
@@ -600,16 +681,17 @@ function HighLight(props: any) {
       <Box
         borderWidth={1}
         borderColor="coolGray.800"
-        width="50%"
+        width="62%"
         borderRadius={5}
-        mt={4}
+        mt={6}
         pb={4}
       >
         <HStack
           alignItems="center"
           alignContent="space-evenly"
-          space={12}
+          space={16}
           alignSelf="center"
+          mt={2}
         >
           <VStack alignItems="center" space={1}>
             <Text color="coolGray.800" fontWeight="semibold">
@@ -663,7 +745,7 @@ function HighLight(props: any) {
           </VStack>
         </HStack>
         <Divider mt={2} />
-        <VStack space={3} px={4}>
+        <VStack space={3} px={9} mt={3}>
           {HighlistList.map((item, index) => {
             return (
               <HStack alignItems="center" key={index} space={2}>
@@ -676,7 +758,8 @@ function HighLight(props: any) {
           })}
         </VStack>
         <Link
-          px={4}
+          px={9}
+          mt={4}
           href="https://nativebase.io"
           _text={{
             color: "#008CFF",
@@ -692,74 +775,6 @@ function HighLight(props: any) {
   );
 }
 
-function BestOfLuxury(props: any) {
-  const Luxury = [
-    {
-      imageOne: "/images/hotel1.jpeg",
-      imageTwo: "/images/hotel2.jpeg",
-      subText: "International Standard Golf Course",
-    },
-    {
-      imageOne: "/images/hotel1.jpeg",
-      imageTwo: "/images/hotel2.jpeg",
-      subText: "Pool with Sunken Poolside Bar",
-    },
-    {
-      imageOne: "/images/hotel1.jpeg",
-      imageTwo: "/images/hotel2.jpeg",
-      subText: "Al fresco Dining by the Sea",
-    },
-  ];
-  return (
-    <VStack px={48}>
-      <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
-        Discover the Best of Luxury
-      </Text>
-      <Divider width={20} bg="#EEB971" rounded="lg" />
-      <HStack mt={2} space={6}>
-        {Luxury.map((item, index) => {
-          return (
-            <Box
-              borderWidth={4}
-              borderColor="red.500"
-              borderRadius="lg"
-              key={index}
-              height={270}
-              width={200}
-              bg="#26242485"
-              opacity={0.6}
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Center borderWidth={2} borderColor="white" p="3" rounded="full">
-                <Image
-                  src={item.imageOne}
-                  alt="Vercel Logo"
-                  width={64}
-                  height={64}
-                  borderRadius={20}
-                  // @ts-ignore
-                />
-              </Center>
-              <Text textAlign="center" color="white" fontWeight="semibold">
-                {item.subText}
-              </Text>
-
-              {/* <Image
-                src={item.imageOne}
-                alt="Vercel Logo"
-                width={200}
-                height={270}
-                // @ts-ignore
-                borderRadius={20}
-              /> */}
-            </Box>
-          );
-        })}
-      </HStack>
-    </VStack>
-  );
-}
 export default function Hotel(props: any) {
   return (
     <VStack width="100%">
