@@ -339,7 +339,7 @@ function MainPageBanner(props: any) {
 }
 function HotelCard(props: any) {
   return (
-    <VStack position="absolute" top={80} right={64}>
+    <VStack position="absolute" top={80} right={40}>
       <Box
         bg="white"
         borderRadius="md"
@@ -608,7 +608,7 @@ function HighLight(props: any) {
         <HStack
           alignItems="center"
           alignContent="space-evenly"
-          space={24}
+          space={12}
           alignSelf="center"
         >
           <VStack alignItems="center" space={1}>
@@ -691,6 +691,75 @@ function HighLight(props: any) {
     </VStack>
   );
 }
+
+function BestOfLuxury(props: any) {
+  const Luxury = [
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      subText: "International Standard Golf Course",
+    },
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      subText: "Pool with Sunken Poolside Bar",
+    },
+    {
+      imageOne: "/images/hotel1.jpeg",
+      imageTwo: "/images/hotel2.jpeg",
+      subText: "Al fresco Dining by the Sea",
+    },
+  ];
+  return (
+    <VStack px={48}>
+      <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
+        Discover the Best of Luxury
+      </Text>
+      <Divider width={20} bg="#EEB971" rounded="lg" />
+      <HStack mt={2} space={6}>
+        {Luxury.map((item, index) => {
+          return (
+            <Box
+              borderWidth={4}
+              borderColor="red.500"
+              borderRadius="lg"
+              key={index}
+              height={270}
+              width={200}
+              bg="#26242485"
+              opacity={0.6}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Center borderWidth={2} borderColor="white" p="3" rounded="full">
+                <Image
+                  src={item.imageOne}
+                  alt="Vercel Logo"
+                  width={64}
+                  height={64}
+                  borderRadius={20}
+                  // @ts-ignore
+                />
+              </Center>
+              <Text textAlign="center" color="white" fontWeight="semibold">
+                {item.subText}
+              </Text>
+
+              {/* <Image
+                src={item.imageOne}
+                alt="Vercel Logo"
+                width={200}
+                height={270}
+                // @ts-ignore
+                borderRadius={20}
+              /> */}
+            </Box>
+          );
+        })}
+      </HStack>
+    </VStack>
+  );
+}
 export default function Hotel(props: any) {
   return (
     <VStack width="100%">
@@ -700,6 +769,7 @@ export default function Hotel(props: any) {
         <MainPageBanner />
         <HotelCard />
         <Rating />
+        <BestOfLuxury />
         <HighLight />
       </ScrollView>
     </VStack>
