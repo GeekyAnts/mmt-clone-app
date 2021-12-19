@@ -167,6 +167,8 @@ function Search(props: any) {
       py={1}
       justifyContent="space-between"
       alignItems="center"
+      position="sticky"
+      top={0}
     >
       <HStack space={4} alignItems="center">
         {information.map((item, index) => {
@@ -222,7 +224,7 @@ function Search(props: any) {
 
 function MainPageBanner(props: any) {
   return (
-    <VStack w="100%" h={500} position="relative">
+    <VStack w="100%" h={500} zIndex={-1}>
       <Box>
         <Image
           // @ts-ignore
@@ -352,7 +354,7 @@ function MainPageBanner(props: any) {
 }
 function HotelCard(props: any) {
   return (
-    <VStack position="absolute" top={80} right={40}>
+    <VStack alignItems="end" position="sticky" top={20} px={24}>
       <Box
         bg="white"
         borderRadius="md"
@@ -597,33 +599,38 @@ function BestOfLuxury(props: any) {
       <HStack mt={7} space={6}>
         {Luxury.map((item, index) => {
           return (
-            <Box
-              borderWidth={4}
-              borderColor="red.500"
-              borderRadius="lg"
-              key={index}
-              height={270}
-              width={200}
-              bg="#26242485"
-              opacity={0.6}
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Center borderWidth={2} borderColor="white" p="3" rounded="full">
-                <Image
-                  src={item.imageOne}
-                  alt="Vercel Logo"
-                  width={64}
-                  height={64}
-                  borderRadius={20}
-                  // @ts-ignore
-                />
-              </Center>
-              <Text textAlign="center" color="white" fontWeight="semibold">
-                {item.subText}
-              </Text>
+            <Pressable key={index}>
+              <Box
+                borderWidth={4}
+                borderColor="red.500"
+                borderRadius="lg"
+                height={210}
+                width={230}
+                bg="#26242485"
+                opacity={0.6}
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Center
+                  borderWidth={2}
+                  borderColor="white"
+                  p="3"
+                  rounded="full"
+                >
+                  <Image
+                    src={item.imageOne}
+                    alt="Vercel Logo"
+                    width={64}
+                    height={64}
+                    // @ts-ignore
+                    borderRadius={20}
+                  />
+                </Center>
+                <Text textAlign="center" color="white" fontWeight="semibold">
+                  {item.subText}
+                </Text>
 
-              {/* <Image
+                {/* <Image
                 src={item.imageOne}
                 alt="Vercel Logo"
                 width={200}
@@ -631,7 +638,8 @@ function BestOfLuxury(props: any) {
                 // @ts-ignore
                 borderRadius={20}
               /> */}
-            </Box>
+              </Box>
+            </Pressable>
           );
         })}
       </HStack>
@@ -777,16 +785,14 @@ function HighLight(props: any) {
 
 export default function Hotel(props: any) {
   return (
-    <VStack width="100%">
-      <ScrollView>
-        <Header />
-        <Search />
-        <MainPageBanner />
-        <HotelCard />
-        <Rating />
-        <BestOfLuxury />
-        <HighLight />
-      </ScrollView>
+    <VStack>
+      <Header />
+      <Search />
+      <MainPageBanner />
+      <HotelCard />
+      <Rating />
+      <BestOfLuxury />
+      <HighLight />
     </VStack>
   );
 }
