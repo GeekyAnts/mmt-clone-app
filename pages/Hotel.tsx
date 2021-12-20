@@ -9,7 +9,6 @@ import {
   Link,
   NativeBaseProvider,
   Pressable,
-  ScrollView,
   Select,
   Text,
   Tooltip,
@@ -515,7 +514,7 @@ function HotelCard(props: any) {
 }
 function Rating(props: any) {
   return (
-    <HStack alignItems="center" mt={10} space={10} px={48}>
+    <HStack alignItems="center" mt={10} space={10} px={48} zIndex={-1}>
       <HStack alignItems="center" space={2}>
         <Center bg="#37D18F" p={2} rounded="md">
           <VStack alignItems="center">
@@ -591,7 +590,7 @@ function BestOfLuxury(props: any) {
     },
   ];
   return (
-    <VStack px={48} mt={10}>
+    <VStack px={48} mt={10} zIndex={-1}>
       <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
         Discover the Best of Luxury
       </Text>
@@ -681,7 +680,7 @@ function HighLight(props: any) {
     },
   ];
   return (
-    <VStack px={48} mt={6}>
+    <VStack px={48} mt={6} zIndex={-1}>
       <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
         Property Highlights
       </Text>
