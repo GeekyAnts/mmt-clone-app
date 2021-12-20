@@ -1,82 +1,76 @@
 import React, { useState } from "react";
 import { Box, HStack, Link, Text, VStack } from "native-base";
-
 import Image from "next/image";
-const List = [
+
+const List1 = [
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Chennai Flights",
-    subText: "Mumbai,Delhi",
-    via: "via-",
+    imageOne: "/images/goa.jpeg",
+    place: "Goa",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
   },
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Goa Flights",
-    subText: "Delhi,Varanasi",
-    via: "via-",
+    imageOne: "/images/delhi.jpeg",
+    place: "Delhi",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
   },
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Mumbai Flights",
-    subText: "Bangalore",
-    via: "via-",
+    imageOne: "/images/bangalore.jpeg",
+    place: "Bangalore",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
   },
 ];
+
 const List2 = [
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Pune Flights",
-    subText: "Hyderabad, Goa",
-    via: "via-",
+    imageOne: "/images/delhi.jpeg",
+    place: "Ooty",
+    linkText: "Hotels, Resorts, Cottges, Budget Hotels, Homestay",
   },
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Delhi Flights",
-    subText: "Patna,Delhi",
-    via: "via-",
+    imageOne: "/images/mumbai.jpeg",
+    place: "Mumbai",
+    linkText: "Hotels, Budget Hotels, Resorts, Couple Hotels,Mumbai Airport",
   },
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Pune Flights",
-    subText: "Delhi",
-    via: "via-",
+    imageOne: "/images/shimla.jpeg",
+    place: "Shimla",
+    linkText: "Hotels, Budget Hotels, Best Hotels, Resorts, Near Mall Road",
   },
 ];
+
 const List3 = [
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Patna Flights",
-    subText: "Mumbai",
-    via: "via-",
+    imageOne: "/images/jaipur.jpeg",
+    place: "Jaipur",
+    linkText: "Hotels, Resorts, Cottges, Budget Hotels",
   },
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Bangalore Flights",
-    subText: "Jaunpur,Delhi",
-    via: "via-",
+    imageOne: "/images/mnali.jpeg",
+    place: "Manali",
+    linkText: "Hotels, Resorts, Budget Hotels, Best Hotels, Mall Road",
   },
   {
-    imageOne: "/images/hotel1.jpeg",
-    place: "Jaipur Flights",
-    subText: "Patna,Varanasi",
-    via: "via-",
+    imageOne: "/images/delhi.jpeg",
+    place: "Others",
+    linkText: "Puri Hotels, OYO Delhi, Alleppey Houseboat, Mahabaleshwar,",
   },
 ];
-export default function FlightList(props: any) {
+
+export default function DestinationList(props: any) {
   return (
-    <Box shadow={5} mx={40} py={5} bg="white" borderRadius={10}>
-      <HStack justifyContent="space-evenly">
-        <VStack justifyContent="space-evenly" alignItems="start">
-          {List.map((item, index) => {
+    <Box shadow={5} mx={40} px={4} py={5} bg="white" borderRadius={10}>
+      <HStack justifyContent="space-evenly" space={2}>
+        <VStack justifyContent="space-evenly" alignItems="start" space={3}>
+          {List1.map((item, index) => {
             return (
               <VStack key={index} pt="2">
-                <HStack alignItems="center" space={4}>
+                <HStack alignItems="center" space={3}>
                   <Box rounded="full" overflow="hidden">
                     <Image
                       src={item.imageOne}
                       alt="Vercel Logo"
-                      width={64}
-                      height={64}
+                      width={48}
+                      height={48}
                       // @ts-ignore
                     />
                   </Box>
@@ -92,12 +86,12 @@ export default function FlightList(props: any) {
                       href="https://nativebase.io"
                       _text={{
                         color: "coolGray.800",
-                        fontSize: "xs",
-                        fontWeight: "bold",
+                        fontSize: "10",
+                        fontWeight: "medium",
                         textDecorationLine: "none",
                       }}
                     >
-                      {item.subText}
+                      {item.linkText}
                     </Link>
                   </VStack>
                 </HStack>
@@ -105,16 +99,16 @@ export default function FlightList(props: any) {
             );
           })}
         </VStack>
-        <VStack justifyContent="space-evenly" mt={2}>
+        <VStack justifyContent="space-evenly" mt={2} space={3}>
           {List2.map((item, index) => {
             return (
-              <HStack alignItems="center" space={4} key={index}>
+              <HStack alignItems="center" space={3} key={index}>
                 <Box rounded="full" overflow="hidden">
                   <Image
                     src={item.imageOne}
                     alt="Vercel Logo"
-                    width={64}
-                    height={64}
+                    width={48}
+                    height={48}
                     // @ts-ignore
                     borderRadius={20}
                     rounded="full"
@@ -132,12 +126,12 @@ export default function FlightList(props: any) {
                     href="https://nativebase.io"
                     _text={{
                       color: "coolGray.800",
-                      fontSize: "xs",
-                      fontWeight: "bold",
+                      fontSize: "10",
+                      fontWeight: "medium",
                       textDecorationLine: "none",
                     }}
                   >
-                    {item.subText}
+                    {item.linkText}
                   </Link>
                 </VStack>
               </HStack>
@@ -148,13 +142,13 @@ export default function FlightList(props: any) {
           {List3.map((item, index) => {
             return (
               <VStack key={index}>
-                <HStack alignItems="center" space={4}>
+                <HStack alignItems="center" space={3}>
                   <Box rounded="full" overflow="hidden">
                     <Image
                       src={item.imageOne}
                       alt="Vercel Logo"
-                      width={64}
-                      height={64}
+                      width={48}
+                      height={48}
                       // @ts-ignore
                       borderRadius={20}
                       rounded="full"
@@ -172,12 +166,12 @@ export default function FlightList(props: any) {
                       href="https://nativebase.io"
                       _text={{
                         color: "coolGray.800",
-                        fontSize: "xs",
-                        fontWeight: "bold",
+                        fontSize: "10",
+                        fontWeight: "medium",
                         textDecorationLine: "none",
                       }}
                     >
-                      {item.subText}
+                      {item.linkText}
                     </Link>
                   </VStack>
                 </HStack>
