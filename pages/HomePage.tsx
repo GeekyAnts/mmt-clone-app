@@ -3,7 +3,9 @@ import {
   AntDesign,
   EvilIcons,
   Feather,
+  Ionicons,
   MaterialCommunityIcons,
+  SimpleLineIcons,
 } from "@expo/vector-icons";
 import {
   Box,
@@ -39,6 +41,49 @@ const config = {
   },
 };
 
+const optionList = [
+  {
+    iconName: "plane",
+    iconText: "Flight",
+    as: SimpleLineIcons,
+  },
+  {
+    iconName: "md-business",
+    iconText: "Hotels",
+    as: Ionicons,
+  },
+  {
+    iconName: "home-city-outline",
+    iconText: "HomeStays",
+    as: MaterialCommunityIcons,
+  },
+  {
+    iconName: "airballoon-outline",
+    iconText: "Holiday Packages",
+    as: MaterialCommunityIcons,
+  },
+  {
+    iconName: "train-outline",
+    iconText: "Trains",
+    as: Ionicons,
+  },
+  {
+    iconName: "bus-outline",
+    iconText: "Buses",
+    as: Ionicons,
+  },
+  {
+    iconName: "car",
+    iconText: "Cabs",
+    as: Ionicons,
+  },
+  {
+    iconName: "passport",
+    iconText: "Visa",
+    as: MaterialCommunityIcons,
+  },
+];
+
 export default function HomePage() {
   const [tabName, setTabName] = React.useState("Login");
   return (
@@ -59,12 +104,42 @@ export default function HomePage() {
         <VStack>
           <Header />
           <Box
+            shadow="4"
+            position="absolute"
+            top={24}
+            px={40}
+            borderRadius={10}
+            zIndex={1}
+            bg="white"
+            alignSelf="center"
+            py="4"
+          >
+            <HStack justifyContent="space-evenly" alignItems="center" space="5">
+              {optionList.map((item, index) => {
+                return (
+                  <VStack
+                    key={index}
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Icon size="5" as={item.as} name={item.iconName} />
+                    <Text fontSize="xs" color="coolGray.500" textAlign="center">
+                      {item.iconText}
+                    </Text>
+                  </VStack>
+                );
+              })}
+            </HStack>
+
+            {/* <Header /> */}
+          </Box>
+          <Box
             bgColor="white"
             height="64"
             width="80%"
             alignSelf="center"
             borderRadius="md"
-            zIndex="8"
+            zIndex="-1"
             px={8}
             mt={20}
           >
@@ -140,19 +215,23 @@ export default function HomePage() {
               >
                 <HStack width="100%">
                   <HStack width="50%">
-                    <VStack>
+                    <VStack borderRightWidth="1" borderColor="coolGray.500">
                       <Text>FROM</Text>
                       <Text>Delhi</Text>
                       <Text>DEL,Delhi Airport India</Text>
                     </VStack>
-                    <VStack>
+                    <VStack borderRightWidth="1" borderColor="coolGray.500">
                       <Text>TO</Text>
                       <Text>Banglore</Text>
                       <Text>BLR, Kempegowda International Airport India</Text>
                     </VStack>
                   </HStack>
                   <HStack width="50%">
-                    <VStack width="30%">
+                    <VStack
+                      width="30%"
+                      borderRightWidth="1"
+                      borderColor="coolGray.500"
+                    >
                       <HStack>
                         <Text>DEPARTURE</Text>
                         <Icon
@@ -168,7 +247,11 @@ export default function HomePage() {
                       </HStack>
                       <Text>Sunday</Text>
                     </VStack>
-                    <VStack width="30%">
+                    <VStack
+                      width="30%"
+                      borderRightWidth="1"
+                      borderColor="coolGray.500"
+                    >
                       <HStack>
                         <Text>DEPARTURE</Text>
                         <Icon
