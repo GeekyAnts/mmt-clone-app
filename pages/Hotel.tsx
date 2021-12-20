@@ -24,6 +24,7 @@ import {
   MaterialIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
+import Footer from "../components/Footer";
 import Image from "next/image";
 const config = {
   dependencies: {
@@ -793,6 +794,7 @@ export default function Hotel(props: any) {
       <Rating />
       <BestOfLuxury />
       <HighLight />
+      <Footer />
     </VStack>
   );
 }
