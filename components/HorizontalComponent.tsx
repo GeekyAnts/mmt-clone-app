@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, HStack, ScrollView, Text, VStack } from "native-base";
+import React from "react";
+import { Box, HStack, ScrollView, Text } from "native-base";
 import Image from "next/image";
 
 const List = [
