@@ -21,6 +21,8 @@ import {
 } from "native-base";
 import { LinearGradient } from "expo-linear-gradient";
 import Header from "../components/Header";
+import FlightList from "../components/FlightList";
+import Footer from "../components/Footer";
 
 //   colors: ["#091B30", "#FEFBF4"],
 
@@ -251,6 +253,8 @@ export default function HomePage() {
           </Box>
         </VStack>
       </Box>
+      <FlightList />
+      <Footer />
     </NativeBaseProvider>
   );
 }

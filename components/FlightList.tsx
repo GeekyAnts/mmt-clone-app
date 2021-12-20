@@ -66,19 +66,61 @@ export default function FlightList(props: any) {
   return (
     <Box shadow={5} mx={40} py={5} bg="white" borderRadius={10}>
       <HStack justifyContent="space-evenly">
-        {List.map((item, index) => {
-          return (
-            <VStack key={index}>
+        <VStack justifyContent="space-evenly" alignItems="start">
+          {List.map((item, index) => {
+            return (
+              <VStack key={index} pt="2">
+                <HStack alignItems="center" space={4}>
+                  <Box rounded="full" overflow="hidden">
+                    <Image
+                      src={item.imageOne}
+                      alt="Vercel Logo"
+                      width={64}
+                      height={64}
+                      // @ts-ignore
+                    />
+                  </Box>
+                  <VStack>
+                    <Text
+                      fontWeight="semibold"
+                      color="coolGray.800"
+                      fontSize="md"
+                    >
+                      {item.place}
+                    </Text>
+                    <Link
+                      href="https://nativebase.io"
+                      _text={{
+                        color: "coolGray.800",
+                        fontSize: "xs",
+                        fontWeight: "bold",
+                        textDecorationLine: "none",
+                      }}
+                    >
+                      {item.subText}
+                    </Link>
+                  </VStack>
+                </HStack>
+              </VStack>
+            );
+          })}
+        </VStack>
+        <VStack justifyContent="space-evenly" mt={2}>
+          {List2.map((item, index) => {
+            return (
+              // <VStack key={index}>
               <HStack alignItems="center" space={4}>
-                <Image
-                  src={item.imageOne}
-                  alt="Vercel Logo"
-                  width={64}
-                  height={64}
-                  // @ts-ignore
-                  borderRadius={20}
-                  rounded="full"
-                />
+                <Box rounded="full" overflow="hidden">
+                  <Image
+                    src={item.imageOne}
+                    alt="Vercel Logo"
+                    width={64}
+                    height={64}
+                    // @ts-ignore
+                    borderRadius={20}
+                    rounded="full"
+                  />
+                </Box>
                 <VStack>
                   <Text
                     fontWeight="semibold"
@@ -100,87 +142,51 @@ export default function FlightList(props: any) {
                   </Link>
                 </VStack>
               </HStack>
-            </VStack>
-          );
-        })}
-      </HStack>
-      <HStack justifyContent="space-evenly" mt={2}>
-        {List2.map((item, index) => {
-          return (
-            <VStack key={index}>
-              <HStack alignItems="center" space={4}>
-                <Image
-                  src={item.imageOne}
-                  alt="Vercel Logo"
-                  width={64}
-                  height={64}
-                  // @ts-ignore
-                  borderRadius={20}
-                  rounded="full"
-                />
-                <VStack>
-                  <Text
-                    fontWeight="semibold"
-                    color="coolGray.800"
-                    fontSize="md"
-                  >
-                    {item.place}
-                  </Text>
-                  <Link
-                    href="https://nativebase.io"
-                    _text={{
-                      color: "coolGray.800",
-                      fontSize: "xs",
-                      fontWeight: "bold",
-                      textDecorationLine: "none",
-                    }}
-                  >
-                    {item.subText}
-                  </Link>
-                </VStack>
-              </HStack>
-            </VStack>
-          );
-        })}
-      </HStack>
-      <HStack justifyContent="space-evenly" mt={2}>
-        {List3.map((item, index) => {
-          return (
-            <VStack key={index}>
-              <HStack alignItems="center" space={4}>
-                <Image
-                  src={item.imageOne}
-                  alt="Vercel Logo"
-                  width={64}
-                  height={64}
-                  // @ts-ignore
-                  borderRadius={20}
-                  rounded="full"
-                />
-                <VStack>
-                  <Text
-                    fontWeight="semibold"
-                    color="coolGray.800"
-                    fontSize="md"
-                  >
-                    {item.place}
-                  </Text>
-                  <Link
-                    href="https://nativebase.io"
-                    _text={{
-                      color: "coolGray.800",
-                      fontSize: "xs",
-                      fontWeight: "bold",
-                      textDecorationLine: "none",
-                    }}
-                  >
-                    {item.subText}
-                  </Link>
-                </VStack>
-              </HStack>
-            </VStack>
-          );
-        })}
+              // </VStack>
+            );
+          })}
+        </VStack>
+        <VStack justifyContent="space-evenly" mt={2}>
+          {List3.map((item, index) => {
+            return (
+              <VStack key={index}>
+                <HStack alignItems="center" space={4}>
+                  <Box rounded="full" overflow="hidden">
+                    <Image
+                      src={item.imageOne}
+                      alt="Vercel Logo"
+                      width={64}
+                      height={64}
+                      // @ts-ignore
+                      borderRadius={20}
+                      rounded="full"
+                    />
+                  </Box>
+                  <VStack>
+                    <Text
+                      fontWeight="semibold"
+                      color="coolGray.800"
+                      fontSize="md"
+                    >
+                      {item.place}
+                    </Text>
+                    <Link
+                      href="https://nativebase.io"
+                      _text={{
+                        color: "coolGray.800",
+                        fontSize: "xs",
+                        fontWeight: "bold",
+                        textDecorationLine: "none",
+                      }}
+                    >
+                      {item.subText}
+                    </Link>
+                  </VStack>
+                </HStack>
+              </VStack>
+            );
+          })}
+        </VStack>
       </HStack>
     </Box>
   );
