@@ -197,6 +197,8 @@ function Search(props: any) {
       py={1}
       justifyContent="space-between"
       alignItems="center"
+      position="sticky"
+      top={0}
     >
       <HStack space={4} alignItems="center">
         {information.map((item, index) => {
@@ -863,11 +865,11 @@ function Filters(props: any) {
 }
 export default function HotelList(props: any) {
   return (
-    <ScrollView>
+    <VStack>
       <Header />
       <Search />
       <HotelInformation />
       <Filters />
-    </ScrollView>
+    </VStack>
   );
 }
