@@ -1,15 +1,10 @@
 import React from "react";
 import {
   Box,
-  Button,
-  Divider,
   HStack,
   Icon,
   Text,
   VStack,
-  Image,
-  Pressable,
-  useColorModeValue,
   NativeBaseProvider,
   Radio,
 } from "native-base";
@@ -25,6 +20,7 @@ import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
 import DestinationList from "../components/DestinationList";
 import HorizontalComponent from "../components/HorizontalComponent";
+import MMTLuxe from "../components/MmtLuxe";
 const fareType = [
   { type: "Regular Fares" },
   { type: "Armed Forces Fares" },
@@ -327,10 +323,13 @@ export default function Flights(props: any) {
         </VStack>
       </Box>
       <Box bg="coolGray.200">
-        <Explore />
-        <HorizontalComponent />
-        <CreditCard />
-        <DestinationList />
+        <VStack space={5}>
+          <Explore />
+          <MMTLuxe />
+          <HorizontalComponent />
+          <CreditCard />
+          <DestinationList />
+        </VStack>
       </Box>
       <Footer />
     </NativeBaseProvider>

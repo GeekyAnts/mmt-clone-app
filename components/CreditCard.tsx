@@ -35,7 +35,7 @@ const List1 = [
 
 export default function CreditCard(props: any) {
   return (
-    <HStack alignItems="center" mx={40} space={4} mt={5}>
+    <HStack alignItems="center" mx={40} space={2} mt={5}>
       {List1.map((item, index) => {
         return (
           <Pressable
@@ -50,11 +50,11 @@ export default function CreditCard(props: any) {
               borderTopWidth={1}
               borderRightWidth={1}
               borderBottomWidth={1}
-              borderLeftWidth={32}
+              borderLeftWidth={20}
               bg="white"
               py={3}
             >
-              <HStack alignItems="center" space={3}>
+              <HStack alignItems="center" space={1}>
                 <Image
                   src={item.imageTwo}
                   // @ts-ignore

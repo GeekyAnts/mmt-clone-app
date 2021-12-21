@@ -19,7 +19,7 @@ const List = [
 ];
 export default function HorizontalComponent(props: any) {
   return (
-    <Box mx={48} mt={3}>
+    <Box mx={40} mt={3}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <HStack alignItems="center" space={10}>
           {List.map((item, index) => {
