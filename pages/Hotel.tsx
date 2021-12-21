@@ -355,7 +355,13 @@ function MainPageBanner(props: any) {
 }
 function HotelCard(props: any) {
   return (
-    <VStack alignItems="end" position="sticky" top={20} px={24}>
+    <VStack
+      alignItems="end"
+      position="sticky"
+      top={20}
+      px={24}
+      marginTop="-380px"
+    >
       <Box
         bg="white"
         borderRadius="md"

@@ -502,7 +502,7 @@ function Filters(props: any) {
     },
   ];
   return (
-    <HStack px={48} justifyContent="space-evenly" space={2}>
+    <HStack px={48} justifyContent="space-evenly" space={2} zIndex={-1}>
       <VStack mt={5} flex={1} flexGrow={1}>
         <Text fontSize="lg" color="coolGray.800" fontWeight="semibold">
           Select Filters
