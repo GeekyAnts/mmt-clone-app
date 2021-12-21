@@ -1,9 +1,7 @@
 import React from "react";
 import {
   AntDesign,
-  EvilIcons,
-  Feather,
-  FontAwesome5,
+  FontAwesome,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
@@ -11,31 +9,23 @@ import {
 } from "@expo/vector-icons";
 import {
   Box,
-  Button,
-  Divider,
   HStack,
   Icon,
   Text,
   VStack,
-  Image,
   Pressable,
-  useColorModeValue,
   NativeBaseProvider,
   Radio,
 } from "native-base";
-import { LinearGradient } from "expo-linear-gradient";
 import Header from "../components/Header";
 import FlightList from "../components/FlightList";
 import Footer from "../components/Footer";
-
-//   colors: ["#091B30", "#FEFBF4"],
-
 const fareType = [
-  { type: "Regular Fares" },
-  { type: "Armed Forces Fares" },
-  { type: "Student Fares" },
-  { type: "Senior Citizen Fares" },
-  { type: "Double Seat Fares" },
+  { type: "Regular Normal Fares", bgColor: "#80C6FF" },
+  { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
+  { type: "Collage Student Fares", bgColor: "#F2F2F2" },
+  { type: "Senior Citizen Fares", bgColor: "#F2F2F2" },
+  { type: "Double Seat Fares", bgColor: "#F2F2F2" },
 ];
 const config = {
   dependencies: {
@@ -86,6 +76,20 @@ const optionList = [
   },
 ];
 
+const Searches = [
+  {
+    from: "Mumbai",
+    to: "Patna",
+    iconName: "arrow-right-alt",
+    as: MaterialIcons,
+  },
+  {
+    from: "Delhi",
+    to: "Goa",
+    iconName: "arrow-right-alt",
+    as: MaterialIcons,
+  },
+];
 export default function HomePage() {
   const [tabName, setTabName] = React.useState("Login");
   return (
@@ -93,11 +97,9 @@ export default function HomePage() {
       <Box
         h="40%"
         shadow={4}
-        // flexGrow={1}
         bg={{
           linearGradient: {
             colors: ["#071323", "#144478"],
-            //   colors: ["#091B30", "#FEFBF4"],
             start: [0, 0],
             end: [0, 1],
           },
@@ -256,7 +258,40 @@ export default function HomePage() {
                       borderColor="coolGray.500"
                       pl={5}
                     >
-                      <HStack justifyContent="unset" alignItems="start">
+                      <HStack justifyContent="unset" alignItems="center">
+                        <Text
+                          color="#4A4A4A"
+                          fontSize="xs"
+                          fontWeight="bold"
+                          pb={1}
+                        >
+                          DEPERATURE
+                        </Text>
+                        <Icon
+                          size="sm"
+                          as={MaterialIcons}
+                          name="keyboard-arrow-down"
+                          color="black"
+                          mb={1}
+                        />
+                      </HStack>
+
+                      <Text
+                        lineHeight="16"
+                        color="#4A4A4A"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        Tap to add a return date for bigger discounts
+                      </Text>
+                    </VStack>
+                    <VStack
+                      width="30%"
+                      borderRightWidth="1"
+                      borderColor="coolGray.500"
+                      pl={5}
+                    >
+                      <HStack justifyContent="unset" alignItems="center">
                         <Text
                           color="#4A4A4A"
                           fontSize="xs"
@@ -284,84 +319,129 @@ export default function HomePage() {
                       </Text>
                     </VStack>
                     <VStack width="40%" pl={5}>
-                      <HStack>
+                      <HStack alignItems="center">
                         <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
                           TRAVELLERS &amp; CLASS
                         </Text>
                         <Icon
-                          size="md"
-                          as={AntDesign}
-                          name="arrowright"
-                          color="white"
+                          size="sm"
+                          as={MaterialIcons}
+                          name="keyboard-arrow-down"
+                          color="black"
+                          mb={1}
                         />
                       </HStack>
-                      <HStack>
+                      <HStack space={1} alignItems="center">
                         {" "}
-                        <Text
-                          color="black"
-                          fontSize="lg"
-                          fontWeight="bold"
-                          //   mb={4}
-                        >
-                          9{" "}
+                        <Text color="black" fontSize="lg" fontWeight="bold">
+                          2
                         </Text>{" "}
-                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                          Jan'22
+                        <Text color="#4A4A4A" fontSize="md" fontWeight="bold">
+                          Travellers
                         </Text>
                       </HStack>
-                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                        Sunday
+                      <Text color="#4A4A4A" fontSize="sm" fontWeight="medium">
+                        Economy/Premium Economy
                       </Text>
                     </VStack>
                   </HStack>
                 </HStack>
               </Box>
-              <HStack justifyContent="space-between">
-                <Radio.Group
-                  defaultValue="1"
-                  size="sm"
-                  name="exampleGroup"
-                  flexDirection="row"
-                >
-                  {fareType.map((item, index) => {
-                    return (
-                      <Box pt={10} width="16%" key={index}>
-                        <Radio
-                          _text={{
-                            mx: 2,
-                            fontWeight: "bold",
-                            fontSize: "xs",
-                          }}
-                          colorScheme="green"
-                          value="1"
-                          icon={
-                            <Icon
-                              as={<MaterialCommunityIcons name="alien" />}
-                            />
-                          }
-                          my={1}
-                        >
-                          {item.type}
-                        </Radio>
-                      </Box>
-                    );
-                  })}
-                </Radio.Group>
+              <HStack justifyContent="space-between" alignItems="center">
+                <HStack alignItems="center">
+                  <Text fontWeight="medium" color="coolGray.400" fontSize="xs">
+                    Select Fare Type:
+                  </Text>
 
-                <HStack justifyContent="center" alignItems="center" pt={10}>
+                  <Radio.Group
+                    defaultValue="1"
+                    size="sm"
+                    name="exampleGroup"
+                    flexDirection="row"
+                  >
+                    {fareType.map((item, index) => {
+                      return (
+                        <Box
+                          mt={5}
+                          width="16%"
+                          key={index}
+                          px={1}
+                          bg={item.bgColor}
+                          borderRadius={10}
+                          mx={1}
+                        >
+                          <Radio
+                            _text={{
+                              mx: 2,
+                              fontWeight: "bold",
+                              fontSize: "xs",
+                            }}
+                            value="1"
+                            icon={
+                              <Icon
+                                as={<AntDesign name="check" color="#098BFF" />}
+                              />
+                            }
+                            my={1}
+                          >
+                            {item.type}
+                          </Radio>
+                        </Box>
+                      );
+                    })}
+                  </Radio.Group>
+                </HStack>
+
+                <HStack
+                  justifyContent="center"
+                  alignItems="center"
+                  pt={10}
+                  space={2}
+                >
                   <Text fontWeight="bold" fontSize="xs" textAlign="center">
                     Trending Searches:
                   </Text>
-                  <HStack>
-                    <Text fontWeight="bold" fontSize="xs" color="#4A4A4A">
-                      {" "}
-                      Banglore
-                    </Text>
-                    <Icon as={<MaterialCommunityIcons name="alien" />} />
+                  <HStack space={3} alignItems="center">
+                    {Searches.map((item, index) => {
+                      return (
+                        <Pressable
+                          key={index}
+                          borderRadius="md"
+                          px="1"
+                          bg="#F2F2F2"
+                          // @ts-ignore
+                          onPress={() => {
+                            console.log("hello");
+                          }}
+                        >
+                          <HStack alignItems="center" space={2}>
+                            <Text
+                              fontSize={10}
+                              color="coolGray.400"
+                              fontWeight="normal"
+                            >
+                              {item.from}
+                            </Text>
+                            <Icon
+                              as={item.as}
+                              name={item.iconName}
+                              color="#098BFF"
+                              size={6}
+                            />
+                            <Text
+                              fontSize={10}
+                              color="coolGray.400"
+                              fontWeight="normal"
+                            >
+                              {item.to}
+                            </Text>
+                          </HStack>
+                        </Pressable>
+                      );
+                    })}
                   </HStack>
                 </HStack>
               </HStack>
-              {/* </Box> */}
             </VStack>
           </Box>
         </VStack>
@@ -397,6 +477,23 @@ export default function HomePage() {
             </Box>
           </Pressable>
         </NativeBaseProvider>
+        <HStack alignItems="center" space={1} justifyContent="center">
+          <Icon
+            as={FontAwesome}
+            name="angle-double-down"
+            color="coolGray.200"
+            size={7}
+          />
+          <Text color="white" fontWeight="bold" fontSize="xs">
+            Explore More
+          </Text>
+          <Icon
+            as={FontAwesome}
+            name="angle-double-down"
+            color="coolGray.200"
+            size={7}
+          />
+        </HStack>
       </Box>
       <Box my={5}>
         <FlightList />

@@ -7,7 +7,6 @@ import {
   VStack,
   NativeBaseProvider,
   Radio,
-  Button,
   Pressable,
 } from "native-base";
 import {
