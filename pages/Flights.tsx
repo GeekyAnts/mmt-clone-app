@@ -7,6 +7,8 @@ import {
   VStack,
   NativeBaseProvider,
   Radio,
+  Button,
+  Pressable,
 } from "native-base";
 import {
   AntDesign,
@@ -97,14 +99,17 @@ export default function Flights(props: any) {
             shadow="4"
             position="absolute"
             top={24}
-            px={40}
+            mx={20}
             borderRadius={10}
             zIndex={1}
             bg="white"
             alignSelf="center"
+            alignItems="center"
             py="4"
+            flexGrow={1}
+            width="40%"
           >
-            <HStack justifyContent="space-evenly" alignItems="center" space="5">
+            <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
               {optionList.map((item, index) => {
                 return (
                   <VStack
@@ -120,8 +125,6 @@ export default function Flights(props: any) {
                 );
               })}
             </HStack>
-
-            {/* <Header /> */}
           </Box>
           <Box
             bgColor="white"
@@ -197,23 +200,43 @@ export default function Flights(props: any) {
                   </Text>
                 </HStack>
               </HStack>
-              <Box
-                borderRadius="lg"
-                borderWidth="1"
-                borderColor="coolGray.500"
-                px="5"
-              >
-                <HStack width="100%">
-                  <HStack width="50%">
-                    <VStack borderRightWidth="1" borderColor="coolGray.500">
-                      <Text>FROM</Text>
-                      <Text>Delhi</Text>
-                      <Text>DEL,Delhi Airport India</Text>
+              <Box borderRadius="lg" borderWidth="1" borderColor="coolGray.500">
+                <HStack>
+                  <HStack
+                    width="50%"
+                    borderRightWidth="1"
+                    borderColor="coolGray.500"
+                  >
+                    <VStack
+                      borderRightWidth="1"
+                      borderColor="coolGray.500"
+                      px={5}
+                    >
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        FROM
+                      </Text>
+                      <Text color="black" fontSize="lg" fontWeight="bold">
+                        Delhi
+                      </Text>
+                      <Text color="black" fontSize="xs" fontWeight="bold">
+                        DEL,Delhi Airport India
+                      </Text>
                     </VStack>
                     <VStack borderRightWidth="1" borderColor="coolGray.500">
-                      <Text>TO</Text>
-                      <Text>Banglore</Text>
-                      <Text>BLR, Kempegowda International Airport India</Text>
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        TO
+                      </Text>
+                      <Text color="black" fontSize="lg" fontWeight="bold">
+                        Banglore
+                      </Text>
+                      <Text
+                        lineHeight="20px"
+                        color="black"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        BLR, Kempegowda International Airport India
+                      </Text>
                     </VStack>
                   </HStack>
                   <HStack width="50%">
@@ -222,8 +245,15 @@ export default function Flights(props: any) {
                       borderRightWidth="1"
                       borderColor="coolGray.500"
                     >
-                      <HStack>
-                        <Text>DEPARTURE</Text>
+                      <HStack justifyContent="unset" alignItems="start">
+                        <Text
+                          color="#4A4A4A"
+                          fontSize="xs"
+                          fontWeight="bold"
+                          pb={1}
+                        >
+                          DEPARTURE
+                        </Text>
                         <Icon
                           size="md"
                           as={AntDesign}
@@ -232,18 +262,32 @@ export default function Flights(props: any) {
                         />
                       </HStack>
                       <HStack>
-                        {" "}
-                        <Text>9 </Text> <Text>Jan'22</Text>
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                          9{" "}
+                        </Text>{" "}
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                          Jan'22
+                        </Text>
                       </HStack>
-                      <Text>Sunday</Text>
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        Sunday
+                      </Text>
                     </VStack>
                     <VStack
                       width="30%"
                       borderRightWidth="1"
                       borderColor="coolGray.500"
                     >
-                      <HStack>
-                        <Text>DEPARTURE</Text>
+                      <HStack justifyContent="unset" alignItems="start">
+                        <Text
+                          color="#4A4A4A"
+                          fontSize="xs"
+                          fontWeight="bold"
+                          pb={1}
+                        >
+                          {" "}
+                          RETURN
+                        </Text>
                         <Icon
                           size="md"
                           as={AntDesign}
@@ -251,13 +295,25 @@ export default function Flights(props: any) {
                           color="white"
                         />
                       </HStack>
-                      <Text lineHeight="16">
+                      <Text
+                        lineHeight="16"
+                        color="#4A4A4A"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
                         Tap to add a return date for bigger discounts
                       </Text>
                     </VStack>
                     <VStack width="40%">
-                      <HStack>
-                        <Text>TRAVELLERS &amp; CLASS</Text>
+                      <HStack justifyContent="unset" alignItems="start">
+                        <Text
+                          color="#4A4A4A"
+                          fontSize="xs"
+                          fontWeight="bold"
+                          pb={1}
+                        >
+                          TRAVELLERS &amp; CLASS
+                        </Text>
                         <Icon
                           size="md"
                           as={AntDesign}
@@ -266,10 +322,16 @@ export default function Flights(props: any) {
                         />
                       </HStack>
                       <HStack>
-                        {" "}
-                        <Text>9 </Text> <Text>Jan'22</Text>
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                          2{" "}
+                        </Text>
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                          Econonic
+                        </Text>
                       </HStack>
-                      <Text>Sunday</Text>
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        Sunday
+                      </Text>
                     </VStack>
                   </HStack>
                 </HStack>
@@ -321,6 +383,39 @@ export default function Flights(props: any) {
             </VStack>
           </Box>
         </VStack>
+
+        <NativeBaseProvider config={config}>
+          <Pressable
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Box
+              position="absolute"
+              top={-24}
+              bottom={0}
+              alignSelf="center"
+              height={12}
+              borderRadius="full"
+              alignItems="center"
+              justifyContent="center"
+              width={40}
+              bg={{
+                // @ts-ignore
+                linearGradient: {
+                  colors: ["#008CFF", "#0a488a"],
+                  start: [0, 0],
+                  end: [0, 0],
+                },
+              }}
+            >
+              <Text color="white" fontWeight="bold" fontSize="md">
+                SEARCH
+              </Text>
+            </Box>
+          </Pressable>
+        </NativeBaseProvider>
       </Box>
       <Box bg="coolGray.200">
         <VStack space={5}>

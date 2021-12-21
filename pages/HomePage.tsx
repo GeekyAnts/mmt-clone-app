@@ -119,12 +119,7 @@ export default function HomePage() {
             flexGrow={1}
             width="40%"
           >
-            <HStack
-              justifyContent="space-evenly"
-              //   bg="red.900"
-              flexGrow={1}
-              width="100%"
-            >
+            <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
               {optionList.map((item, index) => {
                 return (
                   <VStack
@@ -140,8 +135,6 @@ export default function HomePage() {
                 );
               })}
             </HStack>
-
-            {/* <Header /> */}
           </Box>
           <Box
             bgColor="white"
@@ -221,7 +214,6 @@ export default function HomePage() {
                 <HStack>
                   <HStack
                     width="50%"
-                    // bg="red.900"
                     borderRightWidth="1"
                     borderColor="coolGray.500"
                   >
