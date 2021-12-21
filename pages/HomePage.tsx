@@ -325,7 +325,7 @@ export default function HomePage() {
                 >
                   {fareType.map((item, index) => {
                     return (
-                      <Box pt={10} width="16%">
+                      <Box pt={10} width="16%" key={index}>
                         <Radio
                           _text={{
                             mx: 2,
@@ -365,6 +365,38 @@ export default function HomePage() {
             </VStack>
           </Box>
         </VStack>
+        <NativeBaseProvider config={config}>
+          <Pressable
+            // @ts-ignore
+            onPress={() => {
+              console.log("hello");
+            }}
+          >
+            <Box
+              position="absolute"
+              top={-20}
+              bottom={0}
+              alignSelf="center"
+              height={12}
+              borderRadius="full"
+              alignItems="center"
+              justifyContent="center"
+              width={40}
+              bg={{
+                // @ts-ignore
+                linearGradient: {
+                  colors: ["#008CFF", "#0a488a"],
+                  start: [0, 0],
+                  end: [0, 0],
+                },
+              }}
+            >
+              <Text color="white" fontWeight="bold" fontSize="md">
+                SEARCH
+              </Text>
+            </Box>
+          </Pressable>
+        </NativeBaseProvider>
       </Box>
       <Box my={5}>
         <FlightList />
