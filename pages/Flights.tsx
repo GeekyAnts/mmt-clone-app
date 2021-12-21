@@ -81,7 +81,7 @@ export default function Flights(props: any) {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="40%"
+        h="30%"
         shadow={4}
         bg={{
           linearGradient: {

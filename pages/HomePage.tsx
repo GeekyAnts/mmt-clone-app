@@ -3,8 +3,10 @@ import {
   AntDesign,
   EvilIcons,
   Feather,
+  FontAwesome5,
   Ionicons,
   MaterialCommunityIcons,
+  MaterialIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import {
@@ -89,7 +91,7 @@ export default function HomePage() {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="60%"
+        h="40%"
         shadow={4}
         // flexGrow={1}
         bg={{
@@ -107,14 +109,22 @@ export default function HomePage() {
             shadow="4"
             position="absolute"
             top={24}
-            px={40}
+            mx={20}
             borderRadius={10}
             zIndex={1}
             bg="white"
             alignSelf="center"
+            alignItems="center"
             py="4"
+            flexGrow={1}
+            width="40%"
           >
-            <HStack justifyContent="space-evenly" alignItems="center" space="5">
+            <HStack
+              justifyContent="space-evenly"
+              //   bg="red.900"
+              flexGrow={1}
+              width="100%"
+            >
               {optionList.map((item, index) => {
                 return (
                   <VStack
@@ -207,23 +217,44 @@ export default function HomePage() {
                   </Text>
                 </HStack>
               </HStack>
-              <Box
-                borderRadius="lg"
-                borderWidth="1"
-                borderColor="coolGray.500"
-                px="5"
-              >
-                <HStack width="100%">
-                  <HStack width="50%">
-                    <VStack borderRightWidth="1" borderColor="coolGray.500">
-                      <Text>FROM</Text>
-                      <Text>Delhi</Text>
-                      <Text>DEL,Delhi Airport India</Text>
+              <Box borderRadius="lg" borderWidth="1" borderColor="coolGray.500">
+                <HStack>
+                  <HStack
+                    width="50%"
+                    // bg="red.900"
+                    borderRightWidth="1"
+                    borderColor="coolGray.500"
+                  >
+                    <VStack
+                      borderRightWidth="1"
+                      borderColor="coolGray.500"
+                      px="5"
+                    >
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        FROM
+                      </Text>
+                      <Text color="black" fontSize="lg" fontWeight="bold">
+                        Delhi
+                      </Text>
+                      <Text color="black" fontSize="xs" fontWeight="bold">
+                        DEL,Delhi Airport India
+                      </Text>
                     </VStack>
-                    <VStack borderRightWidth="1" borderColor="coolGray.500">
-                      <Text>TO</Text>
-                      <Text>Banglore</Text>
-                      <Text>BLR, Kempegowda International Airport India</Text>
+                    <VStack px={5}>
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        TO
+                      </Text>
+                      <Text color="black" fontSize="lg" fontWeight="bold">
+                        Banglore
+                      </Text>
+                      <Text
+                        lineHeight="20px"
+                        color="black"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        BLR, Kempegowda International Airport India
+                      </Text>
                     </VStack>
                   </HStack>
                   <HStack width="50%">
@@ -231,44 +262,40 @@ export default function HomePage() {
                       width="30%"
                       borderRightWidth="1"
                       borderColor="coolGray.500"
+                      pl={5}
                     >
-                      <HStack>
-                        <Text>DEPARTURE</Text>
+                      <HStack justifyContent="unset" alignItems="start">
+                        <Text
+                          color="#4A4A4A"
+                          fontSize="xs"
+                          fontWeight="bold"
+                          pb={1}
+                        >
+                          RETURN
+                        </Text>
                         <Icon
-                          size="md"
-                          as={AntDesign}
-                          name="arrowright"
-                          color="white"
-                        />
-                      </HStack>
-                      <HStack>
-                        {" "}
-                        <Text>9 </Text> <Text>Jan'22</Text>
-                      </HStack>
-                      <Text>Sunday</Text>
-                    </VStack>
-                    <VStack
-                      width="30%"
-                      borderRightWidth="1"
-                      borderColor="coolGray.500"
-                    >
-                      <HStack>
-                        <Text>DEPARTURE</Text>
-                        <Icon
-                          size="md"
-                          as={AntDesign}
-                          name="arrowright"
-                          color="white"
+                          size="sm"
+                          as={MaterialIcons}
+                          name="keyboard-arrow-down"
+                          color="black"
+                          mb={1}
                         />
                       </HStack>
 
-                      <Text lineHeight="16">
+                      <Text
+                        lineHeight="16"
+                        color="#4A4A4A"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
                         Tap to add a return date for bigger discounts
                       </Text>
                     </VStack>
-                    <VStack width="40%">
+                    <VStack width="40%" pl={5}>
                       <HStack>
-                        <Text>TRAVELLERS &amp; CLASS</Text>
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                          TRAVELLERS &amp; CLASS
+                        </Text>
                         <Icon
                           size="md"
                           as={AntDesign}
@@ -278,9 +305,21 @@ export default function HomePage() {
                       </HStack>
                       <HStack>
                         {" "}
-                        <Text>9 </Text> <Text>Jan'22</Text>
+                        <Text
+                          color="black"
+                          fontSize="lg"
+                          fontWeight="bold"
+                          //   mb={4}
+                        >
+                          9{" "}
+                        </Text>{" "}
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                          Jan'22
+                        </Text>
                       </HStack>
-                      <Text>Sunday</Text>
+                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                        Sunday
+                      </Text>
                     </VStack>
                   </HStack>
                 </HStack>
@@ -294,7 +333,7 @@ export default function HomePage() {
                 >
                   {fareType.map((item, index) => {
                     return (
-                      <Box pt={10} width="12%">
+                      <Box pt={10} width="16%">
                         <Radio
                           _text={{
                             mx: 2,
@@ -327,7 +366,6 @@ export default function HomePage() {
                       Banglore
                     </Text>
                     <Icon as={<MaterialCommunityIcons name="alien" />} />
-                    {/* <Icon as="MaterialCommunityIcons" name="alien" /> */}
                   </HStack>
                 </HStack>
               </HStack>
@@ -336,7 +374,9 @@ export default function HomePage() {
           </Box>
         </VStack>
       </Box>
-      <FlightList />
+      <Box my={5}>
+        <FlightList />
+      </Box>
       <Footer />
     </NativeBaseProvider>
   );

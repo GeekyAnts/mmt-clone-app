@@ -50,6 +50,7 @@ export default function Explore(props: any) {
       px={5}
       py={3}
       justifyContent="center"
+      mt={5}
       mx={96}
     >
       <Pressable
