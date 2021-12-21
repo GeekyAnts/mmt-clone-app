@@ -25,6 +25,7 @@ import {
 } from "@expo/vector-icons";
 import Footer from "../components/Footer";
 import Image from "next/image";
+
 const config = {
   dependencies: {
     "linear-gradient": require("expo-linear-gradient").LinearGradient,
