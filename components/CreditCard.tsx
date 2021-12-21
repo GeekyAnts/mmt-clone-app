@@ -26,7 +26,7 @@ const List1 = [
     imageOne: "/images/trip.png",
     imageTwo: "/images/person2.png",
     imageText: "Personal Loan",
-    subtext: "Get approval for upto ₹30,00,000 at low interest rates.",
+    subtext: "Get approval for upto ₹30000 at low rates.",
     iconName: "arrow-right-alt",
     as: MaterialIcons,
     borderçolor: "#3AE5E0",
@@ -35,7 +35,7 @@ const List1 = [
 
 export default function CreditCard(props: any) {
   return (
-    <HStack alignItems="center" mx={40} space={4}>
+    <HStack alignItems="center" mx={40} space={4} mt={5}>
       {List1.map((item, index) => {
         return (
           <Pressable
@@ -51,6 +51,8 @@ export default function CreditCard(props: any) {
               borderRightWidth={1}
               borderBottomWidth={1}
               borderLeftWidth={32}
+              bg="white"
+              py={3}
             >
               <HStack alignItems="center" space={3}>
                 <Image

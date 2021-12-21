@@ -58,7 +58,7 @@ const List3 = [
 
 export default function DestinationList(props: any) {
   return (
-    <Box shadow={5} mx={40} px={4} py={5} bg="white" borderRadius={10}>
+    <Box shadow={5} mx={40} px={4} py={5} bg="white" borderRadius={10} mt={5}>
       <HStack justifyContent="space-evenly" space={2}>
         <VStack justifyContent="space-evenly" alignItems="start" space={3}>
           {List1.map((item, index) => {
