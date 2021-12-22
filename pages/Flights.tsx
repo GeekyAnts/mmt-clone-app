@@ -25,6 +25,7 @@ import DestinationList from "../components/DestinationList";
 import HorizontalComponent from "../components/HorizontalComponent";
 import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
+import Offers from "../components/Offers";
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
   { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
@@ -503,7 +504,7 @@ export default function Flights(props: any) {
       <Box bg="coolGray.200">
         <VStack space={5}>
           <Explore />
-
+          <Offers />
           <CreditCard />
           <DestinationList />
           <Hyperlink />
