@@ -11,8 +11,10 @@ import {
 } from "native-base";
 import {
   AntDesign,
+  FontAwesome,
   Ionicons,
   MaterialCommunityIcons,
+  MaterialIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import Header from "../components/Header";
@@ -24,11 +26,11 @@ import HorizontalComponent from "../components/HorizontalComponent";
 import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
 const fareType = [
-  { type: "Regular Fares" },
-  { type: "Armed Forces Fares" },
-  { type: "Student Fares" },
-  { type: "Senior Citizen Fares" },
-  { type: "Double Seat Fares" },
+  { type: "Regular Normal Fares", bgColor: "#80C6FF" },
+  { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
+  { type: "Collage Student Fares", bgColor: "#F2F2F2" },
+  { type: "Senior Citizen Fares", bgColor: "#F2F2F2" },
+  { type: "Double Seat Fares", bgColor: "#F2F2F2" },
 ];
 const config = {
   dependencies: {
@@ -78,12 +80,26 @@ const optionList = [
     as: MaterialCommunityIcons,
   },
 ];
+const Searches = [
+  {
+    from: "Mumbai",
+    to: "Patna",
+    iconName: "arrow-right-alt",
+    as: MaterialIcons,
+  },
+  {
+    from: "Delhi",
+    to: "Goa",
+    iconName: "arrow-right-alt",
+    as: MaterialIcons,
+  },
+];
 
 export default function Flights(props: any) {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="30%"
+        h="21%"
         shadow={4}
         bg={{
           linearGradient: {
@@ -210,7 +226,7 @@ export default function Flights(props: any) {
                     <VStack
                       borderRightWidth="1"
                       borderColor="coolGray.500"
-                      px={5}
+                      px="5"
                     >
                       <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
                         FROM
@@ -222,7 +238,7 @@ export default function Flights(props: any) {
                         DEL,Delhi Airport India
                       </Text>
                     </VStack>
-                    <VStack borderRightWidth="1" borderColor="coolGray.500">
+                    <VStack px={5}>
                       <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
                         TO
                       </Text>
@@ -244,57 +260,26 @@ export default function Flights(props: any) {
                       width="30%"
                       borderRightWidth="1"
                       borderColor="coolGray.500"
+                      pl={5}
                     >
-                      <HStack justifyContent="unset" alignItems="start">
+                      <HStack justifyContent="unset" alignItems="center">
                         <Text
                           color="#4A4A4A"
                           fontSize="xs"
                           fontWeight="bold"
                           pb={1}
                         >
-                          DEPARTURE
+                          DEPERATURE
                         </Text>
                         <Icon
-                          size="md"
-                          as={AntDesign}
-                          name="arrowright"
-                          color="white"
+                          size="sm"
+                          as={MaterialIcons}
+                          name="keyboard-arrow-down"
+                          color="black"
+                          mb={1}
                         />
                       </HStack>
-                      <HStack>
-                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                          9{" "}
-                        </Text>{" "}
-                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                          Jan'22
-                        </Text>
-                      </HStack>
-                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                        Sunday
-                      </Text>
-                    </VStack>
-                    <VStack
-                      width="30%"
-                      borderRightWidth="1"
-                      borderColor="coolGray.500"
-                    >
-                      <HStack justifyContent="unset" alignItems="start">
-                        <Text
-                          color="#4A4A4A"
-                          fontSize="xs"
-                          fontWeight="bold"
-                          pb={1}
-                        >
-                          {" "}
-                          RETURN
-                        </Text>
-                        <Icon
-                          size="md"
-                          as={AntDesign}
-                          name="arrowright"
-                          color="white"
-                        />
-                      </HStack>
+
                       <Text
                         lineHeight="16"
                         color="#4A4A4A"
@@ -304,86 +289,166 @@ export default function Flights(props: any) {
                         Tap to add a return date for bigger discounts
                       </Text>
                     </VStack>
-                    <VStack width="40%">
-                      <HStack justifyContent="unset" alignItems="start">
+                    <VStack
+                      width="30%"
+                      borderRightWidth="1"
+                      borderColor="coolGray.500"
+                      pl={5}
+                    >
+                      <HStack justifyContent="unset" alignItems="center">
                         <Text
                           color="#4A4A4A"
                           fontSize="xs"
                           fontWeight="bold"
                           pb={1}
                         >
+                          RETURN
+                        </Text>
+                        <Icon
+                          size="sm"
+                          as={MaterialIcons}
+                          name="keyboard-arrow-down"
+                          color="black"
+                          mb={1}
+                        />
+                      </HStack>
+
+                      <Text
+                        lineHeight="16"
+                        color="#4A4A4A"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        Tap to add a return date for bigger discounts
+                      </Text>
+                    </VStack>
+                    <VStack width="40%" pl={5}>
+                      <HStack alignItems="center">
+                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
                           TRAVELLERS &amp; CLASS
                         </Text>
                         <Icon
-                          size="md"
-                          as={AntDesign}
-                          name="arrowright"
-                          color="white"
+                          size="sm"
+                          as={MaterialIcons}
+                          name="keyboard-arrow-down"
+                          color="black"
+                          mb={1}
                         />
                       </HStack>
-                      <HStack>
-                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                          2{" "}
-                        </Text>
-                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                          Econonic
+                      <HStack space={1} alignItems="center">
+                        {" "}
+                        <Text color="black" fontSize="lg" fontWeight="bold">
+                          2
+                        </Text>{" "}
+                        <Text color="#4A4A4A" fontSize="md" fontWeight="bold">
+                          Travellers
                         </Text>
                       </HStack>
-                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                        Sunday
+                      <Text color="#4A4A4A" fontSize="sm" fontWeight="medium">
+                        Economy/Premium Economy
                       </Text>
                     </VStack>
                   </HStack>
                 </HStack>
               </Box>
-              <HStack justifyContent="space-between">
-                <Radio.Group
-                  defaultValue="1"
-                  size="sm"
-                  name="exampleGroup"
-                  flexDirection="row"
-                >
-                  {fareType.map((item, index) => {
-                    return (
-                      <Box pt={10} width="12%" key={index}>
-                        <Radio
-                          _text={{
-                            mx: 2,
-                            fontWeight: "bold",
-                            fontSize: "xs",
-                          }}
-                          colorScheme="green"
-                          value="1"
-                          icon={
-                            <Icon
-                              as={<MaterialCommunityIcons name="alien" />}
-                            />
-                          }
-                          my={1}
+              <HStack justifyContent="space-between" alignItems="center">
+                <HStack alignItems="center">
+                  <Text fontWeight="medium" color="coolGray.400" fontSize="xs">
+                    Select Fare Type:
+                  </Text>
+
+                  <Radio.Group
+                    defaultValue="1"
+                    size="sm"
+                    name="exampleGroup"
+                    flexDirection="row"
+                  >
+                    {fareType.map((item, index) => {
+                      return (
+                        <Box
+                          mt={5}
+                          width="16%"
+                          key={index}
+                          px={1}
+                          bg={item.bgColor}
+                          borderRadius={10}
+                          mx={1}
                         >
-                          {item.type}
-                        </Radio>
-                      </Box>
-                    );
-                  })}
-                </Radio.Group>
-                <HStack justifyContent="center" alignItems="center" pt={10}>
+                          <Radio
+                            _text={{
+                              mx: 2,
+                              fontWeight: "bold",
+                              fontSize: "xs",
+                            }}
+                            value="1"
+                            icon={
+                              <Icon
+                                as={<AntDesign name="check" color="#098BFF" />}
+                              />
+                            }
+                            my={1}
+                          >
+                            {item.type}
+                          </Radio>
+                        </Box>
+                      );
+                    })}
+                  </Radio.Group>
+                </HStack>
+
+                <HStack
+                  justifyContent="center"
+                  alignItems="center"
+                  pt={10}
+                  space={2}
+                >
                   <Text fontWeight="bold" fontSize="xs" textAlign="center">
                     Trending Searches:
                   </Text>
-                  <HStack>
-                    <Text fontWeight="bold" fontSize="xs" color="#4A4A4A">
-                      {" "}
-                      Banglore
-                    </Text>
-                    <Icon as={<MaterialCommunityIcons name="alien" />} />
+                  <HStack space={3} alignItems="center">
+                    {Searches.map((item, index) => {
+                      return (
+                        <Pressable
+                          key={index}
+                          borderRadius="md"
+                          px="1"
+                          bg="#F2F2F2"
+                          // @ts-ignore
+                          onPress={() => {
+                            console.log("hello");
+                          }}
+                        >
+                          <HStack alignItems="center" space={2}>
+                            <Text
+                              fontSize={10}
+                              color="coolGray.400"
+                              fontWeight="normal"
+                            >
+                              {item.from}
+                            </Text>
+                            <Icon
+                              as={item.as}
+                              name={item.iconName}
+                              color="#098BFF"
+                              size={6}
+                            />
+                            <Text
+                              fontSize={10}
+                              color="coolGray.400"
+                              fontWeight="normal"
+                            >
+                              {item.to}
+                            </Text>
+                          </HStack>
+                        </Pressable>
+                      );
+                    })}
                   </HStack>
                 </HStack>
               </HStack>
             </VStack>
           </Box>
         </VStack>
-
         <NativeBaseProvider config={config}>
           <Pressable
             // @ts-ignore
@@ -393,7 +458,7 @@ export default function Flights(props: any) {
           >
             <Box
               position="absolute"
-              top={-24}
+              top={-20}
               bottom={0}
               alignSelf="center"
               height={12}
@@ -416,7 +481,25 @@ export default function Flights(props: any) {
             </Box>
           </Pressable>
         </NativeBaseProvider>
+        <HStack alignItems="center" space={1} justifyContent="center">
+          <Icon
+            as={FontAwesome}
+            name="angle-double-down"
+            color="coolGray.200"
+            size={7}
+          />
+          <Text color="white" fontWeight="bold" fontSize="xs">
+            Explore More
+          </Text>
+          <Icon
+            as={FontAwesome}
+            name="angle-double-down"
+            color="coolGray.200"
+            size={7}
+          />
+        </HStack>
       </Box>
+
       <Box bg="coolGray.200">
         <VStack space={5}>
           <Explore />

@@ -95,7 +95,7 @@ export default function HomePage() {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="40%"
+        h="38%"
         shadow={4}
         bg={{
           linearGradient: {
@@ -148,70 +148,68 @@ export default function HomePage() {
             px={8}
             mt={20}
           >
-            <VStack>
-              <HStack justifyContent="space-between">
-                <Radio.Group
-                  defaultValue="1"
-                  size="sm"
-                  name="exampleGroup"
-                  flexDirection="row"
-                  pt={10}
+            <HStack justifyContent="space-between">
+              <Radio.Group
+                defaultValue="1"
+                size="sm"
+                name="exampleGroup"
+                flexDirection="row"
+                pt={10}
+              >
+                <Radio
+                  _text={{
+                    mx: 2,
+                    fontWeight: "bold",
+                    fontSize: "xs",
+                  }}
+                  colorScheme="green"
+                  value="1"
+                  icon={<Icon as={<MaterialCommunityIcons name="alien" />} />}
+                  my={1}
                 >
-                  <Radio
-                    _text={{
-                      mx: 2,
-                      fontWeight: "bold",
-                      fontSize: "xs",
-                    }}
-                    colorScheme="green"
-                    value="1"
-                    icon={<Icon as={<MaterialCommunityIcons name="alien" />} />}
-                    my={1}
-                  >
-                    ONEWAY
-                  </Radio>
-                  <Radio
-                    _text={{
-                      mx: 2,
-                      fontWeight: "bold",
-                      fontSize: "xs",
-                    }}
-                    colorScheme="red"
-                    value="2"
-                    icon={<Icon as={<MaterialCommunityIcons name="fire" />} />}
-                    my={1}
-                  >
-                    ROUNDTRIP
-                  </Radio>
-                  <Radio
-                    colorScheme="warning"
-                    _text={{
-                      mx: 2,
-                      fontWeight: "bold",
-                      fontSize: "xs",
-                    }}
-                    value="3"
-                    icon={
-                      <Icon
-                        as={<MaterialCommunityIcons name="exclamation" />}
-                      />
-                    }
-                    my={1}
-                  >
-                    MULTICITY
-                  </Radio>
-                </Radio.Group>
-                <HStack justifyContent="center" alignItems="center" pt={10}>
-                  <Text fontWeight="bold" fontSize="xs" textAlign="center">
-                    International Flights |
-                  </Text>
+                  ONEWAY
+                </Radio>
+                <Radio
+                  _text={{
+                    mx: 2,
+                    fontWeight: "bold",
+                    fontSize: "xs",
+                  }}
+                  colorScheme="red"
+                  value="2"
+                  icon={<Icon as={<MaterialCommunityIcons name="fire" />} />}
+                  my={1}
+                >
+                  ROUNDTRIP
+                </Radio>
+                <Radio
+                  colorScheme="warning"
+                  _text={{
+                    mx: 2,
+                    fontWeight: "bold",
+                    fontSize: "xs",
+                  }}
+                  value="3"
+                  icon={
+                    <Icon as={<MaterialCommunityIcons name="exclamation" />} />
+                  }
+                  my={1}
+                >
+                  MULTICITY
+                </Radio>
+              </Radio.Group>
+              <HStack justifyContent="center" alignItems="center" pt={10}>
+                <Text fontWeight="bold" fontSize="xs" textAlign="center">
+                  International Flights |
+                </Text>
 
-                  <Text fontWeight="bold" fontSize="xs" color="#4A4A4A">
-                    {" "}
-                    Domestic Flights |
-                  </Text>
-                </HStack>
+                <Text fontWeight="bold" fontSize="xs" color="#4A4A4A">
+                  {" "}
+                  Domestic Flights |
+                </Text>
               </HStack>
+            </HStack>
+            <VStack>
               <Box borderRadius="lg" borderWidth="1" borderColor="coolGray.500">
                 <HStack>
                   <HStack
@@ -347,9 +345,24 @@ export default function HomePage() {
                   </HStack>
                 </HStack>
               </Box>
-              <HStack justifyContent="space-between" alignItems="center">
-                <HStack alignItems="center">
-                  <Text fontWeight="medium" color="coolGray.400" fontSize="xs">
+              <HStack
+                justifyContent="space-between"
+                // alignItems="center"
+                flexGrow={1}
+                // width={{ md: "100%", lg: "80%" }}
+                alignSelf="center"
+
+                // justifyContent="center"
+                // space={2}
+              >
+                <HStack width={{ lg: "60%", md: "30%" }}>
+                  <Text
+                    fontWeight="medium"
+                    color="coolGray.400"
+                    fontSize="xs"
+                    width="8%"
+                    alignSelf="end"
+                  >
                     Select Fare Type:
                   </Text>
 
@@ -363,7 +376,7 @@ export default function HomePage() {
                       return (
                         <Box
                           mt={5}
-                          width="16%"
+                          width="15%"
                           key={index}
                           px={1}
                           bg={item.bgColor}
@@ -374,7 +387,7 @@ export default function HomePage() {
                             _text={{
                               mx: 2,
                               fontWeight: "bold",
-                              fontSize: "xs",
+                              fontSize: "10",
                             }}
                             value="1"
                             icon={
@@ -392,16 +405,16 @@ export default function HomePage() {
                   </Radio.Group>
                 </HStack>
 
-                <HStack
-                  justifyContent="center"
-                  alignItems="center"
-                  pt={10}
-                  space={2}
-                >
-                  <Text fontWeight="bold" fontSize="xs" textAlign="center">
+                <HStack pt={6} flexGrow={1}>
+                  <Text
+                    fontWeight="bold"
+                    fontSize="8"
+                    textAlign="center"
+                    alignSelf="center"
+                  >
                     Trending Searches:
                   </Text>
-                  <HStack space={3} alignItems="center">
+                  <HStack space={2}>
                     {Searches.map((item, index) => {
                       return (
                         <Pressable
