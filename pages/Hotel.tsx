@@ -113,19 +113,21 @@ function MainPageBanner(props: any) {
   return (
     <VStack w="100%" h="380" zIndex={-1}>
       <Box>
-        <Image
-          // @ts-ignore
-          position="absolute"
-          src="/images/hotel1.jpeg"
-          alt="Vercel Logo"
-          top="0"
-          right="0"
-          left="0"
-          bottom="0"
-          zIndex={-1}
-          width="100%"
-          height={500}
-        />
+        <Box px={40} bg="#26262677">
+          <Image
+            // @ts-ignore
+            position="absolute"
+            src="/images/hotel1.jpeg"
+            alt="Vercel Logo"
+            top="0"
+            // right="20"
+            // left="20"
+            bottom="0"
+            zIndex={1}
+            width="800"
+            height={500}
+          />
+        </Box>
         <Pressable
           mt={2}
           rounded="full"
