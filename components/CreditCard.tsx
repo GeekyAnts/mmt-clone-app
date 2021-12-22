@@ -5,7 +5,6 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 const List1 = [
   {
-    imageOne: "/images/trip.png",
     imageTwo: "/images/card.png",
     imageText: "Credit Card",
     subtext: "Compare & apply for the best credit cards in India.",
@@ -14,7 +13,6 @@ const List1 = [
     borderçolor: "#F1F199",
   },
   {
-    imageOne: "/images/trip.png",
     imageTwo: "/images/person.png",
     imageText: "Travel Loan",
     subtext: "Get upto ₹1 lakh limit & pay back in flexible EMIs.",
@@ -23,7 +21,6 @@ const List1 = [
     borderçolor: "#FFCBCA",
   },
   {
-    imageOne: "/images/trip.png",
     imageTwo: "/images/person2.png",
     imageText: "Personal Loan",
     subtext: "Get approval for upto ₹30000 at low rates.",
@@ -31,11 +28,19 @@ const List1 = [
     as: MaterialIcons,
     borderçolor: "#3AE5E0",
   },
+  {
+    imageTwo: "/images/person.png",
+    imageText: "Travel Offers",
+    subtext: "Get Travel offers for upto ₹30000 ",
+    iconName: "arrow-right-alt",
+    as: MaterialIcons,
+    borderçolor: "#FFCBCA",
+  },
 ];
 
 export default function CreditCard(props: any) {
   return (
-    <HStack alignItems="center" mx={40} space={2} mt={5}>
+    <HStack alignItems="center" width="100%" mx={40} space={7} mt={5}>
       {List1.map((item, index) => {
         return (
           <Pressable

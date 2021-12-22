@@ -22,9 +22,9 @@ import Footer from "../components/Footer";
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
 import DestinationList from "../components/DestinationList";
-import HorizontalComponent from "../components/HorizontalComponent";
+
 import Hyperlink from "../components/Hyperlink";
-import MMTLuxe from "../components/MmtLuxe";
+
 import Offers from "../components/Offers";
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
@@ -100,7 +100,7 @@ export default function Flights(props: any) {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="21%"
+        h="23%"
         shadow={4}
         bg={{
           linearGradient: {

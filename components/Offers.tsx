@@ -5,72 +5,36 @@ import {
   Radio,
   VStack,
   Text,
-  Image,
   ScrollView,
+  Link,
 } from "native-base";
+import Image from "next/image";
 
-const reasonList = [
-  "I want to change my phone number",
-  "I have changed my mind",
-  "I have purchased the product elsewhere",
-  "Expected delivery time is very long",
-  "I want to change address for the order",
-  "I want to cancel due to product quality issues",
-];
 const productList = [
   {
-    orderId: "#9726895435345",
-    imageUri: "https://wallpaperaccess.com/full/317501.jpg",
+    imageUri: "/images/hotel5.jpeg",
     item: "HIGH-VOLTAGE DEALS: End 2021 on a Thrilling Note",
     details:
       "with up to 35% OFF* on flights, hotels, holidays &amp; more + get FREE cancellation.",
-    size: "Size : Medium",
-    delivery: "Delivery by Mon 27",
-    rupeeIcon: "rupee",
-    amount: "₹ 1635.00",
-    discount: "5%off",
-    deleteIcon: "delete-outline",
+    linkText: "T&C Applied",
+    OfferText: "Explore More",
   },
 
   {
-    orderId: "#9726895435457",
-    imageUri: "https://wallpaperaccess.com/full/317501.jpg",
+    imageUri: "/images/hotel3.jpeg",
     item: "Validate Your Saved Bank Card(s) Now",
     details:
-      "with up to 35% OFF* on flights, hotels, holidays &amp; more + get FREE cancellation.",
-    size: "Size : Medium",
-    delivery: "Delivery by Mon 27",
-    rupeeIcon: "rupee",
-    amount: "₹ 3535.00",
-    discount: "5%off",
-    deleteIcon: "delete-outline",
+      "from Bangalore. Offer valid on select routes for travel from 16th Dec to 10th Jan.",
+    linkText: "T&C Applied",
+    OfferText: "Explore More",
   },
   {
-    orderId: "#9726895435457",
-    imageUri: "https://wallpaperaccess.com/full/317501.jpg",
+    imageUri: "/images/hotel6.jpeg",
     item: "Validate Your Saved Bank Card(s) Now",
-    details: "Skin care, body kit",
-    size: "Size : Medium",
-    delivery: "Delivery by Mon 27",
-    rupeeIcon: "rupee",
-    amount: "₹ 3535.00",
-    discount: "5%off",
-    deleteIcon: "delete-outline",
-  },
-];
-const List = [
-  {
-    imageOne: "/images/BuildingLogo.png",
-    imageText: "Check the List of States Which Have Eased Travel Restrictions",
-  },
-  {
-    imageOne: "/images/BuildingLogo.png",
-    imageText: "Many international destinations open for Indians now",
-  },
-  {
-    imageOne: "/images/BuildingLogo.png",
-    imageText:
-      "Safe & comfortable hotels for isolation with all 3 meals included",
+    details:
+      "Give travel gift cards to your loved ones for their #2022TravelGoals.",
+    linkText: "T&C Applied",
+    OfferText: "Explore More",
   },
 ];
 export default function Offers() {
@@ -83,18 +47,17 @@ export default function Offers() {
       height="20%"
       pl={6}
       borderRadius={8}
+      alignItems="start"
     >
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {productList.map((item, index) => {
           return (
             <Box
-              mt={{ md: 8, base: 4 }}
               _dark={{ bg: "coolGray.800" }}
               _light={{ bg: "white" }}
               px={{ base: 4, md: 0 }}
-              py={{ base: 8, md: 0 }}
+              py={{ base: 8, md: 2 }}
               key={index}
-              shadow={4}
               borderRadius={6}
               my={8}
               mx={4}
@@ -105,58 +68,19 @@ export default function Offers() {
                 borderRadius={6}
                 pb={{ base: 0, md: 4 }}
               >
-                {/* <VStack justifyContent="center" ml={4} mt={{ base: 0, md: 4 }}>
-                  <Radio.Group name="RadioCard">
-                    <Radio
-                      value="RadioCards"
-                      _light={{
-                        // @ts-ignore
-                        _checked: {
-                          _icon: { color: "primary.900" },
-                          borderColor: "primary.900",
-                        },
-                        borderColor: "coolGray.400",
-                        _text: { color: "coolGray.500" },
-                      }}
-                      _dark={{
-                        // @ts-ignore
-                        _checked: {
-                          _icon: { color: "primary.700" },
-                          borderColor: "primary.700",
-                        },
-                        borderColor: "coolGray.400",
-                        background: {
-                          base: "customGray",
-                          md: "coolGray.800",
-                        },
-                        _text: { color: "coolGray.300" },
-                      }}
-                      _text={{ fontSize: "sm" }}
-                      label="radio"
-                    />
-                  </Radio.Group>
-                </VStack> */}
                 <VStack flex={1}>
                   <HStack
                     space="3"
                     alignItems="center"
                     px="3"
                     py="0"
-                    mb={{ md: 0, base: 3 }}
                     borderRadius="4"
                   >
-                    {/* <Image
-                      src=
-                      alt="Vercel Logo"
-                      width={48}
-                      height={48}
-                      // @ts-ignore
-                    /> */}
                     <Image
-                      source={{ uri: item.imageUri }}
+                      src={item.imageUri}
                       alt="Alternate Text"
-                      height="24"
-                      width="20"
+                      height="120"
+                      width="120"
                       borderRadius="md"
                     />
 
@@ -174,26 +98,9 @@ export default function Offers() {
                         _dark={{ color: "coolGray.400" }}
                         _light={{ color: "coolGray.500" }}
                         maxWidth="80%"
-                        bg="yellow.500"
                       >
                         {item.details}
                       </Text>
-                      {/* <Text
-                        fontSize="sm"
-                        _dark={{ color: "coolGray.400" }}
-                        _light={{ color: "coolGray.500" }}
-                      >
-                        {item.size}
-                      </Text> */}
-                      {/* <Text
-                        fontSize="md"
-                        fontWeight="semibold"
-                        _dark={{ color: "coolGray.100" }}
-                        _light={{ color: "coolGray.700" }}
-                        mt="1"
-                      >
-                        {item.amount}
-                      </Text> */}
                     </VStack>
                   </HStack>
                   <HStack
@@ -211,17 +118,21 @@ export default function Offers() {
                       _dark={{ color: "coolGray.400" }}
                       _light={{ color: "coolGray.800" }}
                     >
-                      T&amp;C's Apply
+                      {item.linkText}
                     </Text>
-                    <Text
-                      fontSize="xs"
-                      fontWeight="bold"
-                      _dark={{ color: "emerald.500" }}
-                      _light={{ color: "emerald.600" }}
-                      ml="2"
+                    <Link
+                      mt={1}
+                      href="https://nativebase.io"
+                      _text={{
+                        _dark: { color: "emerald.500" },
+                        _light: { color: "emerald.600" },
+                        fontSize: "xs",
+                        fontWeight: "bold",
+                        textDecorationLine: "none",
+                      }}
                     >
-                      Explore Now
-                    </Text>
+                      {item.OfferText}
+                    </Link>
                   </HStack>
                 </VStack>
               </HStack>
