@@ -503,8 +503,7 @@ export default function Flights(props: any) {
       <Box bg="coolGray.200">
         <VStack space={5}>
           <Explore />
-          <MMTLuxe />
-          <HorizontalComponent />
+
           <CreditCard />
           <DestinationList />
           <Hyperlink />

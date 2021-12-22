@@ -18,6 +18,12 @@ import {
   Radio,
 } from "native-base";
 import Header from "../components/Header";
+import Explore from "../components/Explore";
+import CreditCard from "../components/CreditCard";
+import DestinationList from "../components/DestinationList";
+import HorizontalComponent from "../components/HorizontalComponent";
+import Hyperlink from "../components/Hyperlink";
+import MMTLuxe from "../components/MmtLuxe";
 import FlightList from "../components/FlightList";
 import Footer from "../components/Footer";
 const fareType = [
@@ -95,7 +101,7 @@ export default function HomePage() {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h="38%"
+        h="21%"
         shadow={4}
         bg={{
           linearGradient: {
@@ -508,8 +514,15 @@ export default function HomePage() {
           />
         </HStack>
       </Box>
-      <Box my={5}>
-        <FlightList />
+      <Box bg="coolGray.200">
+        <VStack space={5}>
+          <Explore />
+          <MMTLuxe />
+          <HorizontalComponent />
+          <CreditCard />
+          <FlightList />
+          <Hyperlink />
+        </VStack>
       </Box>
       <Footer />
     </NativeBaseProvider>
