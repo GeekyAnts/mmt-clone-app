@@ -21,6 +21,7 @@ import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
 import DestinationList from "../components/DestinationList";
 import HorizontalComponent from "../components/HorizontalComponent";
+import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
 const fareType = [
   { type: "Regular Fares" },
@@ -423,6 +424,7 @@ export default function Flights(props: any) {
           <HorizontalComponent />
           <CreditCard />
           <DestinationList />
+          <Hyperlink />
         </VStack>
       </Box>
       <Footer />
