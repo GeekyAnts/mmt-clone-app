@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Center,
-  CheckIcon,
   Divider,
   HStack,
   Icon,
   Link,
   NativeBaseProvider,
   Pressable,
-  Select,
   Text,
   Tooltip,
   VStack,
@@ -18,12 +16,11 @@ import {
   AntDesign,
   Entypo,
   EvilIcons,
+  FontAwesome,
   Ionicons,
-  MaterialCommunityIcons,
   MaterialIcons,
-  SimpleLineIcons,
 } from "@expo/vector-icons";
-import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Image from "next/image";
 
 const config = {
@@ -31,117 +28,6 @@ const config = {
     "linear-gradient": require("expo-linear-gradient").LinearGradient,
   },
 };
-function Header(props: any) {
-  let [service, setService] = React.useState("");
-  const optionList = [
-    {
-      iconName: "plane",
-      iconText: "Flight",
-      as: SimpleLineIcons,
-    },
-    {
-      iconName: "md-business",
-      iconText: "Hotels",
-      as: Ionicons,
-    },
-    {
-      iconName: "home-city-outline",
-      iconText: "HomeStays",
-      as: MaterialCommunityIcons,
-    },
-    {
-      iconName: "airballoon-outline",
-      iconText: "Holiday Packages",
-      as: MaterialCommunityIcons,
-    },
-    {
-      iconName: "train-outline",
-      iconText: "Trains",
-      as: Ionicons,
-    },
-    {
-      iconName: "bus-outline",
-      iconText: "Buses",
-      as: Ionicons,
-    },
-    {
-      iconName: "car",
-      iconText: "Cabs",
-      as: Ionicons,
-    },
-    {
-      iconName: "passport",
-      iconText: "Visa",
-      as: MaterialCommunityIcons,
-    },
-  ];
-  return (
-    <HStack
-      alignItems="center"
-      px={48}
-      py={4}
-      bg="white"
-      justifyContent="space-between"
-    >
-      <HStack alignItems="center" space={5}>
-        <Image
-          src="/images/mmtLogo.png"
-          alt="MakeMyTrip Logo"
-          width={72}
-          height={32}
-        />
-        {optionList.map((item, index) => {
-          return (
-            <VStack key={index} alignItems="center" justifyContent="center">
-              <Icon size="5" as={item.as} name={item.iconName} />
-              <Text fontSize="xs" color="coolGray.500" textAlign="center">
-                {item.iconText}
-              </Text>
-            </VStack>
-          );
-        })}
-      </HStack>
-      <HStack>
-        <VStack alignItems="center">
-          <Box width={20}>
-            <Select
-              selectedValue={service}
-              dropdownOpenIcon={<Icon as={Ionicons} name="home" />}
-              borderColor="white"
-              placeholder="INR"
-              _selectedItem={{
-                bg: "red.200",
-                endIcon: <CheckIcon size="5" />,
-              }}
-              mt={1}
-              onValueChange={(itemValue) => setService(itemValue)}
-            >
-              <Select.Item label="INR-Indian Rupee" value="currency" />
-              <Select.Item label="USD-US Dollor" value="currency" />
-              <Select.Item label="GBP-British Pound" value="currency" />
-              <Select.Item label="YN-Japanese YEN" value="currency" />
-              <Select.Item label="EUR-European Euro" value="currency" />
-              <Select.Item label="ASD-Austrailian Dollor" value="currency" />
-            </Select>
-          </Box>
-        </VStack>
-        <Pressable>
-          <HStack space={2} alignItems="center">
-            <Image
-              src="/images/LoginLogo.png"
-              alt="Vercel Logo"
-              width={40}
-              height={40}
-            />
-            <Text color="coolGray.800" fontSize="sm" fontWeight="semibold">
-              Login or Create Account
-            </Text>
-          </HStack>
-        </Pressable>
-      </HStack>
-    </HStack>
-  );
-}
 function Search(props: any) {
   const information = [
     {
@@ -225,7 +111,7 @@ function Search(props: any) {
 
 function MainPageBanner(props: any) {
   return (
-    <VStack w="100%" h={500} zIndex={-1}>
+    <VStack w="100%" h="380" zIndex={-1}>
       <Box>
         <Image
           // @ts-ignore
@@ -355,21 +241,15 @@ function MainPageBanner(props: any) {
 }
 function HotelCard(props: any) {
   return (
-    <VStack
-      alignItems="end"
-      position="sticky"
-      top={20}
-      px={24}
-      marginTop="-380px"
-    >
+    <VStack width="30%" position="sticky" top="450" alignSelf="end">
       <Box
         bg="white"
         borderRadius="md"
         shadow={4}
         width={96}
-        flex={1}
         p={4}
         mt={2}
+        marginTop="-380px"
       >
         <VStack>
           <Image
@@ -522,7 +402,7 @@ function HotelCard(props: any) {
 }
 function Rating(props: any) {
   return (
-    <HStack alignItems="center" mt={10} space={10} px={48} zIndex={-1}>
+    <HStack alignItems="center" space={10} px={48} mt="-32" zIndex={-1}>
       <HStack alignItems="center" space={2}>
         <Center bg="#37D18F" p={2} rounded="md">
           <VStack alignItems="center">
@@ -636,15 +516,6 @@ function BestOfLuxury(props: any) {
                 <Text textAlign="center" color="white" fontWeight="semibold">
                   {item.subText}
                 </Text>
-
-                {/* <Image
-                src={item.imageOne}
-                alt="Vercel Logo"
-                width={200}
-                height={270}
-                // @ts-ignore
-                borderRadius={20}
-              /> */}
               </Box>
             </Pressable>
           );
@@ -688,7 +559,7 @@ function HighLight(props: any) {
     },
   ];
   return (
-    <VStack px={48} mt={6} zIndex={-1}>
+    <VStack px={48} my={6} zIndex={-1}>
       <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
         Property Highlights
       </Text>
@@ -790,17 +661,39 @@ function HighLight(props: any) {
   );
 }
 
+function Footer(props: any) {
+  return (
+    <Box bg="black" py={10} justifyContent="center" px={40}>
+      <HStack alignItems="center" justifyContent="space-between">
+        <HStack alignItems="center" space={5}>
+          <Icon as={AntDesign} name="twitter" color="white" size={5} />
+          <Icon as={FontAwesome} name="facebook" color="white" size={5} />
+        </HStack>
+        <VStack alignItems="end">
+          <Text color="white" fontWeight="semibold" fontSize="sm">
+            © 2021 MAKEMYTRIP PVT. LTD.
+          </Text>
+          <Text color="white" fontWeight="semibold" fontSize="sm">
+            Country India USA UAE
+          </Text>
+        </VStack>
+      </HStack>
+    </Box>
+  );
+}
 export default function Hotel(props: any) {
   return (
-    <VStack>
+    <>
       <Header />
       <Search />
       <MainPageBanner />
-      <HotelCard />
-      <Rating />
-      <BestOfLuxury />
-      <HighLight />
-      <Footer />
-    </VStack>
+      <Box bg="white" mt={32} zIndex={-1}>
+        <HotelCard />
+        <Rating />
+        <BestOfLuxury />
+        <HighLight />
+        <Footer />
+      </Box>
+    </>
   );
 }
