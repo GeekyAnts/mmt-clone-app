@@ -32,7 +32,7 @@ const fareType = [
   { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
   { type: "Collage Student Fares", bgColor: "#F2F2F2" },
   { type: "Senior Citizen Fares", bgColor: "#F2F2F2" },
-  { type: "Double Seat Fares", bgColor: "#F2F2F2" },
+  { type: "Senior Citizen Fares", bgColor: "#F2F2F2" },
 ];
 const config = {
   dependencies: {
@@ -366,11 +366,16 @@ export default function Flights(props: any) {
                 </HStack>
               </Box>
               <HStack justifyContent="space-between" alignItems="center">
-                <HStack alignItems="center">
-                  <Text fontWeight="medium" color="coolGray.400" fontSize="xs">
-                    Select Fare Type:
-                  </Text>
-
+                <HStack alignItems="center" width="70%" space={1} py={1}>
+                  <Box width="10%">
+                    <Text
+                      fontWeight="medium"
+                      color="coolGray.400"
+                      fontSize="xs"
+                    >
+                      Select A Fare Type:
+                    </Text>
+                  </Box>
                   <Radio.Group
                     defaultValue="1"
                     size="sm"
@@ -391,8 +396,8 @@ export default function Flights(props: any) {
                           <Radio
                             _text={{
                               mx: 2,
-                              fontWeight: "bold",
-                              fontSize: "xs",
+                              fontWeight: "semibold",
+                              fontSize: "10",
                             }}
                             value="1"
                             icon={
@@ -409,14 +414,14 @@ export default function Flights(props: any) {
                     })}
                   </Radio.Group>
                 </HStack>
-
                 <HStack
                   justifyContent="center"
                   alignItems="center"
                   pt={10}
                   space={2}
+                  width="30%"
                 >
-                  <Text fontWeight="bold" fontSize="xs" textAlign="center">
+                  <Text fontWeight="bold" fontSize="10" textAlign="center">
                     Trending Searches:
                   </Text>
                   <HStack space={3} alignItems="center">
@@ -425,14 +430,14 @@ export default function Flights(props: any) {
                         <Pressable
                           key={index}
                           borderRadius="md"
-                          px="1"
+                          px={1}
                           bg="#F2F2F2"
                           // @ts-ignore
                           onPress={() => {
                             console.log("hello");
                           }}
                         >
-                          <HStack alignItems="center" space={2}>
+                          <HStack alignItems="center" space={1}>
                             <Text
                               fontSize={10}
                               color="coolGray.400"
