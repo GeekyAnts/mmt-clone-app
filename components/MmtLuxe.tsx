@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, HStack, Pressable, Text, VStack } from "native-base";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const List = [
   {
@@ -21,6 +22,7 @@ const List = [
 ];
 
 export default function MMTLuxe(props: any) {
+  const router = useRouter();
   return (
     <Pressable
       mx={40}
@@ -68,13 +70,20 @@ export default function MMTLuxe(props: any) {
                   shadow={4}
                 >
                   <VStack alignItems="center" justifyContent="center" space={1}>
-                    <Image
-                      src={item.imageOne}
-                      alt="Vercel Logo"
-                      width="200"
-                      height="150"
+                    <Pressable
                       // @ts-ignore
-                    />
+                      onPress={() => {
+                        router.push("/HotelList");
+                      }}
+                    >
+                      <Image
+                        src={item.imageOne}
+                        alt="Vercel Logo"
+                        width="200"
+                        height="150"
+                        // @ts-ignore
+                      />
+                    </Pressable>
                     <Text fontSize="md" fontWeight="bold" color="coolGray.800">
                       {item.mainText}
                     </Text>

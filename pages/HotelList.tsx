@@ -28,6 +28,7 @@ import {
 import Image from "next/image";
 import DatePicker from "react-datepicker";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
 
 const config = {
   dependencies: {
@@ -501,6 +502,7 @@ function Filters(props: any) {
       mmt: "sponsored",
     },
   ];
+  const router = useRouter();
   return (
     <HStack px={48} justifyContent="space-evenly" space={2} zIndex={-1}>
       <VStack mt={5} flex={1} flexGrow={1}>
@@ -659,7 +661,8 @@ function Filters(props: any) {
               key={index}
               //@ts-ignore
               onPress={() => {
-                console.log("hello");
+                router.push("/Hotel");
+                // console.log("hello");
               }}
             >
               <Box

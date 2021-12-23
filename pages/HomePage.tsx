@@ -26,6 +26,7 @@ import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
 import FlightList from "../components/FlightList";
 import Footer from "../components/Footer";
+import { useRouter } from "next/router";
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
   { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
@@ -96,8 +97,10 @@ const Searches = [
     as: MaterialIcons,
   },
 ];
+
 export default function HomePage() {
   const [tabName, setTabName] = React.useState("Login");
+  const router = useRouter();
   return (
     <NativeBaseProvider config={config}>
       <Box
@@ -130,16 +133,27 @@ export default function HomePage() {
             <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
               {optionList.map((item, index) => {
                 return (
-                  <VStack
-                    key={index}
-                    alignItems="center"
-                    justifyContent="center"
+                  <Pressable
+                  // @ts-ignore
+                  // onPress={() => {
+                  //   router.push("/Flights");
+                  // }}
                   >
-                    <Icon size="5" as={item.as} name={item.iconName} />
-                    <Text fontSize="xs" color="coolGray.500" textAlign="center">
-                      {item.iconText}
-                    </Text>
-                  </VStack>
+                    <VStack
+                      key={index}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Icon size="5" as={item.as} name={item.iconName} />
+                      <Text
+                        fontSize="xs"
+                        color="coolGray.500"
+                        textAlign="center"
+                      >
+                        {item.iconText}
+                      </Text>
+                    </VStack>
+                  </Pressable>
                 );
               })}
             </HStack>

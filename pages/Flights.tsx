@@ -26,6 +26,7 @@ import DestinationList from "../components/DestinationList";
 import Hyperlink from "../components/Hyperlink";
 
 import Offers from "../components/Offers";
+import { useRouter } from "next/router";
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
   { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
@@ -97,6 +98,7 @@ const Searches = [
 ];
 
 export default function Flights(props: any) {
+  const router = useRouter();
   return (
     <NativeBaseProvider config={config}>
       <Box
@@ -129,16 +131,27 @@ export default function Flights(props: any) {
             <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
               {optionList.map((item, index) => {
                 return (
-                  <VStack
-                    key={index}
-                    alignItems="center"
-                    justifyContent="center"
+                  <Pressable
+                    // @ts-ignore
+                    onPress={() => {
+                      router.push("/HomePage");
+                    }}
                   >
-                    <Icon size="5" as={item.as} name={item.iconName} />
-                    <Text fontSize="xs" color="coolGray.500" textAlign="center">
-                      {item.iconText}
-                    </Text>
-                  </VStack>
+                    <VStack
+                      key={index}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Icon size="5" as={item.as} name={item.iconName} />
+                      <Text
+                        fontSize="xs"
+                        color="coolGray.500"
+                        textAlign="center"
+                      >
+                        {item.iconText}
+                      </Text>
+                    </VStack>
+                  </Pressable>
                 );
               })}
             </HStack>
