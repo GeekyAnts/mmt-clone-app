@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Center,
@@ -20,6 +20,7 @@ import {
   Ionicons,
   MaterialIcons,
 } from "@expo/vector-icons";
+import DatePicker from "react-datepicker";
 import Header from "../components/Header";
 import Image from "next/image";
 
@@ -27,6 +28,18 @@ const config = {
   dependencies: {
     "linear-gradient": require("expo-linear-gradient").LinearGradient,
   },
+};
+const DatePopup = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  return (
+    <Box zIndex={-1}>
+      <DatePicker
+        selected={startDate}
+        onChange={(date: any) => setStartDate(date)}
+        padding={10}
+      />
+    </Box>
+  );
 };
 function Search(props: any) {
   const information = [
@@ -63,9 +76,7 @@ function Search(props: any) {
             <HStack key={index}>
               <Pressable bg="coolGray.600" px={2} py={1} borderRadius="sm">
                 <VStack>
-                  <Text fontSize="xs" color="#008CFF" fontWeight="medium">
-                    {item.mainText}
-                  </Text>
+                  <DatePopup />
                   <Text fontSize="md" color="white" fontWeight="normal">
                     {item.subText}
                   </Text>

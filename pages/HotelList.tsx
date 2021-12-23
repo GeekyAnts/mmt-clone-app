@@ -12,7 +12,6 @@ import {
   Link,
   NativeBaseProvider,
   Pressable,
-  ScrollView,
   Select,
   Text,
   VStack,
@@ -20,10 +19,7 @@ import {
 import {
   AntDesign,
   EvilIcons,
-  Fontisto,
-  Ionicons,
   MaterialCommunityIcons,
-  SimpleLineIcons,
 } from "@expo/vector-icons";
 import Image from "next/image";
 //@ts-ignore
