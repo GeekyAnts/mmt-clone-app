@@ -28,19 +28,11 @@ const List1 = [
     as: MaterialIcons,
     borderçolor: "#3AE5E0",
   },
-  {
-    imageTwo: "/images/person.png",
-    imageText: "Travel Offers",
-    subtext: "Get Travel offers for upto ₹30000 ",
-    iconName: "arrow-right-alt",
-    as: MaterialIcons,
-    borderçolor: "#FFCBCA",
-  },
 ];
 
 export default function CreditCard(props: any) {
   return (
-    <HStack alignItems="center" width="100%" mx={40} space={7} mt={5}>
+    <HStack alignItems="center" width="100%" mx={40} space={3} mt={5}>
       {List1.map((item, index) => {
         return (
           <Pressable
@@ -59,7 +51,7 @@ export default function CreditCard(props: any) {
               bg="white"
               py={3}
             >
-              <HStack alignItems="center" space={1}>
+              <HStack alignItems="center">
                 <Image
                   src={item.imageTwo}
                   // @ts-ignore

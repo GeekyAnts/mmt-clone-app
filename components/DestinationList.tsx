@@ -6,17 +6,17 @@ const List1 = [
   {
     imageOne: "/images/goa.jpeg",
     place: "Goa",
-    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels",
   },
   {
     imageOne: "/images/delhi.jpeg",
     place: "Delhi",
-    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels",
   },
   {
     imageOne: "/images/bangalore.jpeg",
     place: "Bangalore",
-    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels",
   },
 ];
 
@@ -24,17 +24,17 @@ const List2 = [
   {
     imageOne: "/images/delhi.jpeg",
     place: "Ooty",
-    linkText: "Hotels, Resorts, Cottges, Budget Hotels, Homestay",
+    linkText: "Hotels, Resorts, Cottges, Budget Hotels",
   },
   {
     imageOne: "/images/mumbai.jpeg",
     place: "Mumbai",
-    linkText: "Hotels, Budget Hotels, Resorts, Couple Hotels,Mumbai Airport",
+    linkText: "Hotels, Budget Hotels, Resorts, Couple Hotels",
   },
   {
     imageOne: "/images/shimla.jpeg",
     place: "Shimla",
-    linkText: "Hotels, Budget Hotels, Best Hotels, Resorts, Near Mall Road",
+    linkText: "Hotels, Budget Hotels, Best Hotels, Resorts",
   },
 ];
 
@@ -47,24 +47,38 @@ const List3 = [
   {
     imageOne: "/images/mnali.jpeg",
     place: "Manali",
-    linkText: "Hotels, Resorts, Budget Hotels, Best Hotels, Mall Road",
+    linkText: "Hotels, Resorts, Budget Hotels, Best Hotels",
   },
   {
     imageOne: "/images/delhi.jpeg",
     place: "Others",
-    linkText: "Puri Hotels, OYO Delhi, Alleppey Houseboat, Mahabaleshwar,",
+    linkText: "Puri Hotels, OYO Delhi, Alleppey Houseboat",
   },
 ];
 
 export default function DestinationList(props: any) {
   return (
-    <Box shadow={5} mx={40} px={4} py={5} bg="white" borderRadius={10} mt={5}>
-      <HStack justifyContent="space-evenly" space={2}>
-        <VStack justifyContent="space-evenly" alignItems="start" space={3}>
+    <Box
+      shadow={5}
+      mx={40}
+      px={6}
+      py={5}
+      bg="white"
+      borderRadius={10}
+      mt={5}
+      flexGrow={1}
+    >
+      <HStack justifyContent="space-evenly" flexGrow={1}>
+        <VStack
+          justifyContent="space-evenly"
+          alignItems="start"
+          space={3}
+          flexGrow={1}
+        >
           {List1.map((item, index) => {
             return (
-              <VStack key={index} pt="2">
-                <HStack alignItems="center" space={3}>
+              <VStack key={index} pt="2" flexGrow={1}>
+                <HStack alignItems="center" space={1} flexGrow={1}>
                   <Box rounded="full" overflow="hidden">
                     <Image
                       src={item.imageOne}
@@ -89,6 +103,9 @@ export default function DestinationList(props: any) {
                         fontSize: "10",
                         fontWeight: "medium",
                         textDecorationLine: "none",
+                        // numberOfLines:{2},
+                        maxWidth: "80%",
+                        // lineHeight: { md: 3, lg: 10 },
                       }}
                     >
                       {item.linkText}
@@ -99,10 +116,10 @@ export default function DestinationList(props: any) {
             );
           })}
         </VStack>
-        <VStack justifyContent="space-evenly" mt={2} space={3}>
+        <VStack justifyContent="space-evenly" mt={2} space={3} flexGrow={1}>
           {List2.map((item, index) => {
             return (
-              <HStack alignItems="center" space={3} key={index}>
+              <HStack alignItems="center" space={1} key={index} flexGrow={1}>
                 <Box rounded="full" overflow="hidden">
                   <Image
                     src={item.imageOne}
@@ -114,7 +131,7 @@ export default function DestinationList(props: any) {
                     rounded="full"
                   />
                 </Box>
-                <VStack>
+                <VStack flexGrow={1}>
                   <Text
                     fontWeight="semibold"
                     color="coolGray.800"
@@ -128,6 +145,7 @@ export default function DestinationList(props: any) {
                       color: "coolGray.800",
                       fontSize: "10",
                       fontWeight: "medium",
+                      maxWidth: "80%",
                       textDecorationLine: "none",
                     }}
                   >
@@ -138,11 +156,11 @@ export default function DestinationList(props: any) {
             );
           })}
         </VStack>
-        <VStack justifyContent="space-evenly" mt={2}>
+        <VStack justifyContent="space-evenly" mt={2} flexGrow={1}>
           {List3.map((item, index) => {
             return (
               <VStack key={index}>
-                <HStack alignItems="center" space={3}>
+                <HStack alignItems="center" space={1} flexGrow={1}>
                   <Box rounded="full" overflow="hidden">
                     <Image
                       src={item.imageOne}
@@ -168,6 +186,7 @@ export default function DestinationList(props: any) {
                         color: "coolGray.800",
                         fontSize: "10",
                         fontWeight: "medium",
+                        maxWidth: "80%",
                         textDecorationLine: "none",
                       }}
                     >
