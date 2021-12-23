@@ -98,7 +98,7 @@ const Searches = [
   },
 ];
 
-export default function HomePage() {
+export default function ExploreHotel() {
   const [tabName, setTabName] = React.useState("Login");
   const router = useRouter();
   return (

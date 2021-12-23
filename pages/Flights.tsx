@@ -134,7 +134,7 @@ export default function Flights(props: any) {
                   <Pressable
                     // @ts-ignore
                     onPress={() => {
-                      router.push("/HomePage");
+                      router.push("/ExploreHotel");
                     }}
                   >
                     <VStack
