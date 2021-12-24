@@ -345,10 +345,7 @@ export default function Flights(props: any) {
                     </Text>
                   </HStack>
                   <Text lineHeight="undefined" fontSize="xs">
-                    Economie
-                  </Text>
-                  <Text lineHeight="undefined" fontSize="xs">
-                    Premium
+                    Economic/Premium Economy
                   </Text>
                 </VStack>
               </HStack>
