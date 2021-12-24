@@ -45,13 +45,13 @@ export default function Explore(props: any) {
   return (
     <Box
       bg="white"
+      width="40%"
       shadow={6}
       rounded="full"
-      px={5}
+      px={3}
       py={3}
       justifyContent="center"
-      mt={5}
-      mx={96}
+      mx={80}
     >
       <Pressable
         // @ts-ignore
@@ -62,7 +62,7 @@ export default function Explore(props: any) {
         <HStack alignItems="center" justifyContent="space-evenly">
           {List.map((item, index) => {
             return (
-              <HStack key={index} alignItems="center" space={2}>
+              <HStack key={index} alignItems="center" space={3}>
                 <Icon as={item.as} name={item.iconName} color="#1E93FD" />
                 {item.subText == false ? (
                   <Text fontSize="sm" color="coolGray.800" fontWeight="medium">
@@ -86,7 +86,6 @@ export default function Explore(props: any) {
                     </Text>
                   </VStack>
                 )}
-                <Divider orientation="vertical" bg="red.500" />
               </HStack>
             );
           })}
