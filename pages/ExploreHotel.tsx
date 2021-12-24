@@ -20,7 +20,6 @@ import {
 import Header from "../components/Header";
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
-import DestinationList from "../components/DestinationList";
 import HorizontalComponent from "../components/HorizontalComponent";
 import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
@@ -115,7 +114,7 @@ export default function ExploreHotel() {
         }}
       >
         <VStack>
-          <Header />
+          {/* <Header /> */}
           <Box
             shadow="4"
             position="absolute"

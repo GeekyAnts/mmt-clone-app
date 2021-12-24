@@ -108,7 +108,7 @@ export default function Flights(props: any) {
         }}
       >
         <VStack>
-          {/* <Header /> */}
+          <Header />
           {/* <Box
             shadow="4"
             position="absolute"

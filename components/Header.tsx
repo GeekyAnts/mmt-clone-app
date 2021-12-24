@@ -1,26 +1,15 @@
 import React, { useState } from "react";
 import {
   Box,
-  Center,
-  Checkbox,
   CheckIcon,
-  Divider,
   HStack,
   Icon,
-  IconButton,
-  Input,
-  Link,
-  NativeBaseProvider,
   Pressable,
-  ScrollView,
   Select,
   Text,
   VStack,
 } from "native-base";
 import {
-  AntDesign,
-  EvilIcons,
-  Fontisto,
   Ionicons,
   MaterialCommunityIcons,
   SimpleLineIcons,
