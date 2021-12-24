@@ -25,13 +25,13 @@ export default function MMTLuxe(props: any) {
   const router = useRouter();
   return (
     <Pressable
-      mx={40}
+      px={{ lg: "40", md: 10 }}
       //@ts-ignore
       onPress={() => {
         console.log("hello");
       }}
     >
-      <Box bg="coolGray.100" p={4} flex={1}>
+      <Box bg="coolGray.100" p={4} flex={1} borderRadius={10}>
         <HStack alignItems="center" justifyContent="space-between">
           <VStack space={2} width="40%">
             <Text color="coolGray.800" fontSize={10} fontWeight="extrabold">

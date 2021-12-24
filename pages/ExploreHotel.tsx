@@ -320,8 +320,11 @@ export default function ExploreHotel() {
           </HStack>
         </VStack>
       </Box>
-      <VStack bg="coolGray.200" space={2}>
+      <VStack bg="coolGray.200" space={2} pt={5}>
         <MMTLuxe />
+        <HorizontalComponent />
+        <Hyperlink />
+        <Footer />
       </VStack>
     </NativeBaseProvider>
   );
