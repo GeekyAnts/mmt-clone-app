@@ -32,22 +32,22 @@ export default function HorizontalComponent(props: any) {
                 height={24}
               >
                 <HStack px={6} py={4}>
-                  <HStack alignItems="center" space={2}>
+                  <HStack alignItems="center" space={3}>
                     <Image
                       src={item.imageOne}
                       alt="Vercel Logo"
                       width={48}
                       height={48}
                       // @ts-ignore
-                      bg="red.100"
                     />
                     <Text
                       noOfLines={2}
-                      textAlign="center"
+                      // textAlign="center"
                       fontWeight="medium"
                       color="coolGray.800"
                       fontSize="sm"
                       flexGrow={1}
+                      width="64"
                     >
                       {item.imageText}
                     </Text>
