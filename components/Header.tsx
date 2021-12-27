@@ -62,7 +62,7 @@ export default function Header(props: any) {
   return (
     <HStack
       alignItems="center"
-      px={{ lg: 40, md: 10 }}
+      px={{ lg: 32, md: 10 }}
       py={4}
       bg="white"
       justifyContent="space-between"

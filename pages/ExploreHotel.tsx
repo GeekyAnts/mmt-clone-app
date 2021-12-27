@@ -81,7 +81,7 @@ export default function ExploreHotel() {
   return (
     <NativeBaseProvider config={config}>
       <Box
-        h={{ lg: "400px" }}
+        h={{ lg: "480px" }}
         shadow={4}
         bg={{
           linearGradient: {
@@ -94,13 +94,53 @@ export default function ExploreHotel() {
         <VStack>
           <Header />
           <Box
+            shadow="4"
+            position="absolute"
+            top={24}
+            mx={20}
+            borderRadius={10}
+            zIndex={1}
+            bg="white"
+            alignSelf="center"
+            alignItems="center"
+            py="4"
+            flexGrow={1}
+            width="40%"
+          >
+            <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
+              {optionList.map((item, index) => {
+                return (
+                  <Pressable
+                    key={index}
+                    // @ts-ignore
+                    onPress={() => {
+                      router.push("/ExploreHotel");
+                    }}
+                  >
+                    <VStack alignItems="center" justifyContent="center">
+                      <Icon size="5" as={item.as} name={item.iconName} />
+                      <Text
+                        fontSize="xs"
+                        color="coolGray.500"
+                        textAlign="center"
+                      >
+                        {item.iconText}
+                      </Text>
+                    </VStack>
+                  </Pressable>
+                );
+              })}
+            </HStack>
+          </Box>
+          <Box
             px={8}
             width="80%"
             height="56"
             bgColor="white"
             borderRadius="md"
             alignSelf="center"
-            mt={3}
+            mt="20"
+            // mt={3}
           >
             <VStack space={2} mt={2}>
               <HStack alignItems="end" justifyContent="center" space={2}>

@@ -18,7 +18,7 @@ const List = [
 ];
 export default function HorizontalComponent(props: any) {
   return (
-    <Box px={{ lg: "48", md: "10" }} mt={3} width="100%">
+    <Box px={{ lg: "40", md: "10" }} mt={3}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <HStack space={4} flexDirection={{ lg: "row", md: "row" }}>
           {List.map((item, index) => {
@@ -27,11 +27,11 @@ export default function HorizontalComponent(props: any) {
                 key={index}
                 borderRadius={10}
                 bg="white"
-                px={10}
-                width={80}
+                // px={10}
+                // width={80}
                 height={24}
               >
-                <HStack px={3} py={4}>
+                <HStack px={6} py={4}>
                   <HStack alignItems="center" space={2}>
                     <Image
                       src={item.imageOne}
@@ -39,9 +39,10 @@ export default function HorizontalComponent(props: any) {
                       width={48}
                       height={48}
                       // @ts-ignore
+                      bg="red.100"
                     />
                     <Text
-                      noOfLines={1}
+                      noOfLines={2}
                       textAlign="center"
                       fontWeight="medium"
                       color="coolGray.800"

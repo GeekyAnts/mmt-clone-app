@@ -52,6 +52,7 @@ export default function Explore(props: any) {
       py={3}
       justifyContent="center"
       mx={80}
+      alignSelf="center"
     >
       <Pressable
         // @ts-ignore

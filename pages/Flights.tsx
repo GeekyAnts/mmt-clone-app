@@ -98,7 +98,7 @@ export default function Flights(props: any) {
     <>
       <Box
         shadow={4}
-        h={{ lg: "420px" }}
+        h={{ lg: "480px" }}
         bg={{
           linearGradient: {
             colors: ["#071323", "#144478"],
@@ -109,7 +109,7 @@ export default function Flights(props: any) {
       >
         <VStack>
           <Header />
-          {/* <Box
+          <Box
             shadow="4"
             position="absolute"
             top={24}
@@ -147,7 +147,7 @@ export default function Flights(props: any) {
                 );
               })}
             </HStack>
-          </Box> */}
+          </Box>
           <Box
             px={8}
             width="80%"
@@ -155,6 +155,7 @@ export default function Flights(props: any) {
             bgColor="white"
             borderRadius="md"
             alignSelf="center"
+            mt="20"
           >
             <VStack>
               <HStack justifyContent="space-between" pt="4" pb="4">
@@ -452,7 +453,7 @@ export default function Flights(props: any) {
             </VStack>
           </Box>
         </VStack>
-        {/* <Pressable
+        <Pressable
           // @ts-ignore
           onPress={() => {
             console.log("hello");
@@ -481,8 +482,14 @@ export default function Flights(props: any) {
               SEARCH
             </Text>
           </Box>
-        </Pressable> */}
-        <HStack alignItems="center" space={1} justifyContent="center">
+        </Pressable>
+        <HStack
+          alignItems="center"
+          space={1}
+          justifyContent="center"
+          mt="auto"
+          // alignSelf="start"
+        >
           <Icon
             as={FontAwesome}
             name="angle-double-down"
