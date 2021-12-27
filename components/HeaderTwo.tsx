@@ -1,20 +1,6 @@
 import React, { useState } from "react";
-import {
-  Box,
-  CheckIcon,
-  HStack,
-  Icon,
-  Pressable,
-  Select,
-  Text,
-  VStack,
-} from "native-base";
-import {
-  EvilIcons,
-  Ionicons,
-  MaterialCommunityIcons,
-  SimpleLineIcons,
-} from "@expo/vector-icons";
+import { HStack, Icon, Text, VStack } from "native-base";
+import { EvilIcons } from "@expo/vector-icons";
 import Image from "next/image";
 export default function Header(props: any) {
   let [service, setService] = React.useState("");
@@ -135,44 +121,6 @@ export default function Header(props: any) {
           />
         </HStack>
       </HStack>
-      {/* <HStack>
-        <VStack alignItems="center">
-          <Box width={20}>
-            <Select
-              selectedValue={service}
-              dropdownOpenIcon={<Icon as={Ionicons} name="home" />}
-              borderColor="white"
-              placeholder="INR"
-              _selectedItem={{
-                bg: "red.200",
-                endIcon: <CheckIcon size="5" />,
-              }}
-              mt={1}
-              onValueChange={(itemValue) => setService(itemValue)}
-            >
-              <Select.Item label="INR-Indian Rupee" value="currency" />
-              <Select.Item label="USD-US Dollor" value="currency" />
-              <Select.Item label="GBP-British Pound" value="currency" />
-              <Select.Item label="YN-Japanese YEN" value="currency" />
-              <Select.Item label="EUR-European Euro" value="currency" />
-              <Select.Item label="ASD-Austrailian Dollor" value="currency" />
-            </Select>
-          </Box>
-        </VStack>
-        <Pressable>
-          <HStack space={2} alignItems="center">
-            <Image
-              src="/images/LoginLogo.png"
-              alt="Vercel Logo"
-              width={40}
-              height={40}
-            />
-            <Text color="coolGray.800" fontSize="sm" fontWeight="semibold">
-              Login or Create Account
-            </Text>
-          </HStack>
-        </Pressable>
-      </HStack> */}
     </HStack>
   );
 }

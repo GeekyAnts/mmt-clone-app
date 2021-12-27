@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  HStack,
-  Icon,
-  Text,
-  VStack,
-  NativeBaseProvider,
-  Radio,
-  Pressable,
-} from "native-base";
+import { Box, HStack, Icon, Text, VStack, Radio, Pressable } from "native-base";
 import {
   AntDesign,
   FontAwesome,
@@ -17,7 +8,6 @@ import {
   MaterialIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
@@ -484,13 +474,7 @@ export default function Flights(props: any) {
             </Text>
           </Box>
         </Pressable>
-        <HStack
-          alignItems="center"
-          space={1}
-          justifyContent="center"
-          mt="auto"
-          // alignSelf="start"
-        >
+        <HStack alignItems="center" space={1} justifyContent="center" mt="auto">
           <Icon
             as={FontAwesome}
             name="angle-double-down"

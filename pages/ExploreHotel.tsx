@@ -14,16 +14,12 @@ import {
   VStack,
   Pressable,
   NativeBaseProvider,
-  Radio,
   Link,
 } from "native-base";
 import Header from "../components/Header";
-import Explore from "../components/Explore";
-import CreditCard from "../components/CreditCard";
 import HorizontalComponent from "../components/HorizontalComponent";
 import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
-import FlightList from "../components/FlightList";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 const config = {
@@ -369,12 +365,3 @@ export default function ExploreHotel() {
     </NativeBaseProvider>
   );
 }
-
-//  <Box bg="coolGray.200">
-//    <VStack space={5}>
-//      <HorizontalComponent />
-//      <CreditCard />
-//      <FlightList />
-//      <Hyperlink />
-//    </VStack>
-//  </Box>;
