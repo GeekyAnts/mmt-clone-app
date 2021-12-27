@@ -1,26 +1,15 @@
 import React, { useState } from "react";
 import {
   Box,
-  Center,
-  Checkbox,
   CheckIcon,
-  Divider,
   HStack,
   Icon,
-  IconButton,
-  Input,
-  Link,
-  NativeBaseProvider,
   Pressable,
-  ScrollView,
   Select,
   Text,
   VStack,
 } from "native-base";
 import {
-  AntDesign,
-  EvilIcons,
-  Fontisto,
   Ionicons,
   MaterialCommunityIcons,
   SimpleLineIcons,
@@ -73,7 +62,7 @@ export default function Header(props: any) {
   return (
     <HStack
       alignItems="center"
-      px={48}
+      px={{ lg: 40, md: 10 }}
       py={4}
       bg="white"
       justifyContent="space-between"

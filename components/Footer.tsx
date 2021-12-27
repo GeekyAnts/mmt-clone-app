@@ -4,7 +4,7 @@ import { AntDesign, FontAwesome } from "@expo/vector-icons";
 export default function Footer(pros: any) {
   return (
     <>
-      <Box px={40} py={10} bg="coolGray.300" zIndex={-1}>
+      <Box px={{ lg: 40, md: 10 }} py={10} bg="coolGray.300" zIndex={-1}>
         <VStack py={2}>
           <HStack alignItems="center" justifyContent="space-between">
             <VStack space={1} width="50%" mt={3}>
@@ -83,7 +83,7 @@ export default function Footer(pros: any) {
           </HStack>
         </VStack>
       </Box>
-      <Box bg="black" py={10} justifyContent="center" px={40}>
+      <Box bg="black" py={10} justifyContent="center" px={{ lg: 40, md: 10 }}>
         <HStack alignItems="center" justifyContent="space-between">
           <HStack alignItems="center" space={5}>
             <Icon as={AntDesign} name="twitter" color="white" size={5} />

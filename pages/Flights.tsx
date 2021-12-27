@@ -22,11 +22,10 @@ import Footer from "../components/Footer";
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
 import DestinationList from "../components/DestinationList";
-
 import Hyperlink from "../components/Hyperlink";
-
 import Offers from "../components/Offers";
 import { useRouter } from "next/router";
+
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
   { type: "Armed Forces Fares", bgColor: "#F2F2F2" },
@@ -34,11 +33,6 @@ const fareType = [
   { type: "Senior Citizen Fares", bgColor: "#F2F2F2" },
   { type: "Senior Citizen Fares", bgColor: "#F2F2F2" },
 ];
-const config = {
-  dependencies: {
-    "linear-gradient": require("expo-linear-gradient").LinearGradient,
-  },
-};
 
 const optionList = [
   {
@@ -82,6 +76,7 @@ const optionList = [
     as: MaterialCommunityIcons,
   },
 ];
+
 const Searches = [
   {
     from: "Mumbai",
@@ -100,10 +95,10 @@ const Searches = [
 export default function Flights(props: any) {
   const router = useRouter();
   return (
-    <NativeBaseProvider config={config}>
+    <>
       <Box
-        h="23%"
         shadow={4}
+        h={{ lg: "420px" }}
         bg={{
           linearGradient: {
             colors: ["#071323", "#144478"],
@@ -114,7 +109,7 @@ export default function Flights(props: any) {
       >
         <VStack>
           <Header />
-          <Box
+          {/* <Box
             shadow="4"
             position="absolute"
             top={24}
@@ -132,16 +127,13 @@ export default function Flights(props: any) {
               {optionList.map((item, index) => {
                 return (
                   <Pressable
+                    key={index}
                     // @ts-ignore
                     onPress={() => {
                       router.push("/ExploreHotel");
                     }}
                   >
-                    <VStack
-                      key={index}
-                      alignItems="center"
-                      justifyContent="center"
-                    >
+                    <VStack alignItems="center" justifyContent="center">
                       <Icon size="5" as={item.as} name={item.iconName} />
                       <Text
                         fontSize="xs"
@@ -155,216 +147,208 @@ export default function Flights(props: any) {
                 );
               })}
             </HStack>
-          </Box>
+          </Box> */}
           <Box
-            bgColor="white"
-            height="64"
-            width="80%"
-            alignSelf="center"
-            borderRadius="md"
-            zIndex="-1"
             px={8}
-            mt={20}
+            width="80%"
+            height="64"
+            bgColor="white"
+            borderRadius="md"
+            alignSelf="center"
           >
             <VStack>
-              <HStack justifyContent="space-between">
+              <HStack justifyContent="space-between" pt="4" pb="4">
                 <Radio.Group
-                  defaultValue="1"
                   size="sm"
-                  name="exampleGroup"
+                  defaultValue="1"
                   flexDirection="row"
-                  pt={10}
+                  name="tripSettingsRadioGroup"
                 >
-                  <Radio
-                    _text={{
-                      mx: 2,
-                      fontWeight: "bold",
-                      fontSize: "xs",
-                    }}
-                    colorScheme="green"
-                    value="1"
-                    icon={<Icon as={<MaterialCommunityIcons name="alien" />} />}
-                    my={1}
-                  >
-                    ONEWAY
-                  </Radio>
-                  <Radio
-                    _text={{
-                      mx: 2,
-                      fontWeight: "bold",
-                      fontSize: "xs",
-                    }}
-                    colorScheme="red"
-                    value="2"
-                    icon={<Icon as={<MaterialCommunityIcons name="fire" />} />}
-                    my={1}
-                  >
-                    ROUNDTRIP
-                  </Radio>
-                  <Radio
-                    colorScheme="warning"
-                    _text={{
-                      mx: 2,
-                      fontWeight: "bold",
-                      fontSize: "xs",
-                    }}
-                    value="3"
-                    icon={
-                      <Icon
-                        as={<MaterialCommunityIcons name="exclamation" />}
-                      />
-                    }
-                    my={1}
-                  >
-                    MULTICITY
-                  </Radio>
+                  <HStack space="3">
+                    <Radio
+                      value="1"
+                      _text={{
+                        fontSize: "xs",
+                        fontWeight: "bold",
+                      }}
+                      colorScheme="green"
+                      icon={
+                        <Icon as={<MaterialCommunityIcons name="alien" />} />
+                      }
+                    >
+                      ONEWAY
+                    </Radio>
+                    <Radio
+                      value="2"
+                      _text={{
+                        fontSize: "xs",
+                        fontWeight: "bold",
+                      }}
+                      colorScheme="red"
+                      icon={
+                        <Icon as={<MaterialCommunityIcons name="fire" />} />
+                      }
+                    >
+                      ROUNDTRIP
+                    </Radio>
+                    <Radio
+                      value="3"
+                      _text={{
+                        fontWeight: "bold",
+                        fontSize: "xs",
+                      }}
+                      colorScheme="warning"
+                      icon={
+                        <Icon
+                          as={<MaterialCommunityIcons name="exclamation" />}
+                        />
+                      }
+                    >
+                      MULTICITY
+                    </Radio>
+                  </HStack>
                 </Radio.Group>
-                <HStack justifyContent="center" alignItems="center" pt={10}>
+                <HStack justifyContent="center" alignItems="center">
                   <Text fontWeight="bold" fontSize="xs" textAlign="center">
                     International Flights |
                   </Text>
 
                   <Text fontWeight="bold" fontSize="xs" color="#4A4A4A">
-                    {" "}
                     Domestic Flights |
                   </Text>
                 </HStack>
               </HStack>
-              <Box borderRadius="lg" borderWidth="1" borderColor="coolGray.500">
-                <HStack>
-                  <HStack
-                    width="50%"
-                    borderRightWidth="1"
-                    borderColor="coolGray.500"
+              <HStack
+                borderWidth="1"
+                borderRadius="lg"
+                borderColor="coolGray.300"
+              >
+                <VStack
+                  py="4"
+                  px="4"
+                  w={{ lg: "56" }}
+                  borderRightWidth="1"
+                  borderRightColor="coolGray.300"
+                >
+                  <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                    FROM
+                  </Text>
+                  <Text
+                    color="black"
+                    fontSize="4xl"
+                    lineHeight="md"
+                    fontWeight="bold"
                   >
-                    <VStack
-                      borderRightWidth="1"
-                      borderColor="coolGray.500"
-                      px="5"
-                    >
-                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                        FROM
-                      </Text>
-                      <Text color="black" fontSize="lg" fontWeight="bold">
-                        Delhi
-                      </Text>
-                      <Text color="black" fontSize="xs" fontWeight="bold">
-                        DEL,Delhi Airport India
-                      </Text>
-                    </VStack>
-                    <VStack px={5}>
-                      <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                        TO
-                      </Text>
-                      <Text color="black" fontSize="lg" fontWeight="bold">
-                        Banglore
-                      </Text>
-                      <Text
-                        lineHeight="20px"
-                        color="black"
-                        fontSize="xs"
-                        fontWeight="bold"
-                      >
-                        BLR, Kempegowda International Airport India
-                      </Text>
-                    </VStack>
+                    Delhi
+                  </Text>
+                  <Text color="black" fontSize="xs" noOfLines={1}>
+                    DEL,Delhi Airport India
+                  </Text>
+                </VStack>
+                <VStack
+                  py="4"
+                  px="4"
+                  w={{ lg: "56" }}
+                  borderRightWidth="1"
+                  borderRightColor="coolGray.300"
+                >
+                  <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                    TO
+                  </Text>
+                  <Text
+                    color="black"
+                    fontSize="4xl"
+                    lineHeight="md"
+                    fontWeight="bold"
+                  >
+                    Banglore
+                  </Text>
+                  <Text color="black" fontSize="xs" noOfLines={1}>
+                    BLR, Kempegowda International Airport India
+                  </Text>
+                </VStack>
+                <VStack
+                  py="4"
+                  px="4"
+                  w={{ lg: "40" }}
+                  borderRightWidth="1"
+                  borderRightColor="coolGray.300"
+                >
+                  <HStack justifyContent="unset" alignItems="center">
+                    <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                      DEPERATURE
+                    </Text>
+                    <Icon
+                      size="sm"
+                      color="blue.700"
+                      as={MaterialIcons}
+                      name="keyboard-arrow-down"
+                    />
                   </HStack>
-                  <HStack width="50%">
-                    <VStack
-                      width="30%"
-                      borderRightWidth="1"
-                      borderColor="coolGray.500"
-                      pl={5}
-                    >
-                      <HStack justifyContent="unset" alignItems="center">
-                        <Text
-                          color="#4A4A4A"
-                          fontSize="xs"
-                          fontWeight="bold"
-                          pb={1}
-                        >
-                          DEPERATURE
-                        </Text>
-                        <Icon
-                          size="sm"
-                          as={MaterialIcons}
-                          name="keyboard-arrow-down"
-                          color="black"
-                          mb={1}
-                        />
-                      </HStack>
-
-                      <Text
-                        lineHeight="16"
-                        color="#4A4A4A"
-                        fontSize="xs"
-                        fontWeight="bold"
-                      >
-                        Tap to add a return date for bigger discounts
-                      </Text>
-                    </VStack>
-                    <VStack
-                      width="30%"
-                      borderRightWidth="1"
-                      borderColor="coolGray.500"
-                      pl={5}
-                    >
-                      <HStack justifyContent="unset" alignItems="center">
-                        <Text
-                          color="#4A4A4A"
-                          fontSize="xs"
-                          fontWeight="bold"
-                          pb={1}
-                        >
-                          RETURN
-                        </Text>
-                        <Icon
-                          size="sm"
-                          as={MaterialIcons}
-                          name="keyboard-arrow-down"
-                          color="black"
-                          mb={1}
-                        />
-                      </HStack>
-
-                      <Text
-                        lineHeight="16"
-                        color="#4A4A4A"
-                        fontSize="xs"
-                        fontWeight="bold"
-                      >
-                        Tap to add a return date for bigger discounts
-                      </Text>
-                    </VStack>
-                    <VStack width="40%" pl={5}>
-                      <HStack alignItems="center">
-                        <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
-                          TRAVELLERS &amp; CLASS
-                        </Text>
-                        <Icon
-                          size="sm"
-                          as={MaterialIcons}
-                          name="keyboard-arrow-down"
-                          color="black"
-                          mb={1}
-                        />
-                      </HStack>
-                      <HStack space={1} alignItems="center">
-                        {" "}
-                        <Text color="black" fontSize="lg" fontWeight="bold">
-                          2
-                        </Text>{" "}
-                        <Text color="#4A4A4A" fontSize="md" fontWeight="bold">
-                          Travellers
-                        </Text>
-                      </HStack>
-                      <Text color="#4A4A4A" fontSize="sm" fontWeight="medium">
-                        Economy/Premium Economy
-                      </Text>
-                    </VStack>
+                  <HStack alignItems="flex-end" space="2">
+                    <Text fontSize="3xl" fontWeight="bold">
+                      25
+                    </Text>
+                    <Text fontSize="xl" fontWeight="bold">
+                      Dec21
+                    </Text>
                   </HStack>
-                </HStack>
-              </Box>
+                  <Text color="black" fontSize="xs" noOfLines={1}>
+                    Saturday
+                  </Text>
+                </VStack>
+                <VStack
+                  py="4"
+                  px="4"
+                  w={{ lg: "40" }}
+                  borderRightWidth="1"
+                  borderRightColor="coolGray.300"
+                >
+                  <HStack justifyContent="unset" alignItems="center">
+                    <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                      Return
+                    </Text>
+                    <Icon
+                      size="sm"
+                      color="blue.700"
+                      as={MaterialIcons}
+                      name="keyboard-arrow-down"
+                    />
+                  </HStack>
+                  <Text
+                    pt="1"
+                    fontSize="xs"
+                    fontWeight="bold"
+                    color="coolGray.600"
+                  >
+                    Tap to add a return date for biggest discounts
+                  </Text>
+                </VStack>
+                <VStack py="4" px="4">
+                  <HStack justifyContent="unset" alignItems="center">
+                    <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
+                      TRAVELS AND CLASSES
+                    </Text>
+                    <Icon
+                      size="sm"
+                      color="blue.700"
+                      as={MaterialIcons}
+                      name="keyboard-arrow-down"
+                    />
+                  </HStack>
+                  <HStack alignItems="flex-end" space="2">
+                    <Text fontSize="3xl" fontWeight="bold">
+                      1
+                    </Text>
+                    <Text fontSize="xl" fontWeight="bold">
+                      Traveller
+                    </Text>
+                  </HStack>
+                  <Text lineHeight="undefined" fontSize="xs">
+                    Economic/Premium Economy
+                  </Text>
+                </VStack>
+              </HStack>
               <HStack justifyContent="space-between" alignItems="center">
                 <HStack alignItems="center" width="70%" space={1} py={1}>
                   <Box width="10%">
@@ -468,38 +452,36 @@ export default function Flights(props: any) {
             </VStack>
           </Box>
         </VStack>
-        <NativeBaseProvider config={config}>
-          <Pressable
-            // @ts-ignore
-            onPress={() => {
-              console.log("hello");
+        {/* <Pressable
+          // @ts-ignore
+          onPress={() => {
+            console.log("hello");
+          }}
+        >
+          <Box
+            position="absolute"
+            top={-20}
+            bottom={0}
+            alignSelf="center"
+            height={12}
+            borderRadius="full"
+            alignItems="center"
+            justifyContent="center"
+            width={40}
+            bg={{
+              // @ts-ignore
+              linearGradient: {
+                colors: ["#008CFF", "#0a488a"],
+                start: [0, 0],
+                end: [0, 0],
+              },
             }}
           >
-            <Box
-              position="absolute"
-              top={-20}
-              bottom={0}
-              alignSelf="center"
-              height={12}
-              borderRadius="full"
-              alignItems="center"
-              justifyContent="center"
-              width={40}
-              bg={{
-                // @ts-ignore
-                linearGradient: {
-                  colors: ["#008CFF", "#0a488a"],
-                  start: [0, 0],
-                  end: [0, 0],
-                },
-              }}
-            >
-              <Text color="white" fontWeight="bold" fontSize="md">
-                SEARCH
-              </Text>
-            </Box>
-          </Pressable>
-        </NativeBaseProvider>
+            <Text color="white" fontWeight="bold" fontSize="md">
+              SEARCH
+            </Text>
+          </Box>
+        </Pressable> */}
         <HStack alignItems="center" space={1} justifyContent="center">
           <Icon
             as={FontAwesome}
@@ -518,7 +500,6 @@ export default function Flights(props: any) {
           />
         </HStack>
       </Box>
-
       <Box bg="coolGray.200">
         <VStack space={5}>
           <Explore />
@@ -529,6 +510,6 @@ export default function Flights(props: any) {
         </VStack>
       </Box>
       <Footer />
-    </NativeBaseProvider>
+    </>
   );
 }

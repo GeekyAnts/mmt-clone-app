@@ -33,7 +33,7 @@ export default function Hyperlink(props: any) {
     <>
       {List.map((item, index) => {
         return (
-          <VStack key={index} my={4} px={40}>
+          <VStack key={index} my={4} px={{ lg: "40", md: "10" }}>
             <Text fontSize="xs" fontWeight="semibold" color="coolGray.800">
               {item.linkType}
             </Text>
