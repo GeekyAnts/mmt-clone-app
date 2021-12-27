@@ -33,7 +33,7 @@ export default function Hyperlink(props: any) {
     <>
       {List.map((item, index) => {
         return (
-          <VStack key={index} my={4} px={{ lg: "40", md: "10" }}>
+          <VStack key={index} py={3} px={{ lg: "40", md: "10" }}>
             <Text fontSize="xs" fontWeight="semibold" color="coolGray.800">
               {item.linkType}
             </Text>
@@ -42,7 +42,7 @@ export default function Hyperlink(props: any) {
               href="https://nativebase.io"
               _text={{
                 color: "coolGray.500",
-                fontSize: "xs",
+                fontSize: "10",
                 fontWeight: "bold",
                 textDecorationLine: "none",
               }}

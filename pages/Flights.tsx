@@ -3,6 +3,8 @@ import { Box, HStack, Icon, Text, VStack, Radio, Pressable } from "native-base";
 import {
   AntDesign,
   FontAwesome,
+  Fontisto,
+  Foundation,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
@@ -16,6 +18,8 @@ import Hyperlink from "../components/Hyperlink";
 import Offers from "../components/Offers";
 import { useRouter } from "next/router";
 import HeaderTwo from "../components/HeaderTwo";
+import Download from "../components/Download";
+import FlightScroll from "../components/FlightScroll";
 
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
@@ -66,6 +70,11 @@ const optionList = [
     iconText: "Visa",
     as: MaterialCommunityIcons,
   },
+  {
+    iconName: "plane",
+    iconText: "Charter Flight",
+    as: Fontisto,
+  },
 ];
 
 const Searches = [
@@ -103,7 +112,7 @@ export default function Flights(props: any) {
           <Box
             shadow="4"
             position="absolute"
-            top={24}
+            top={20}
             mx={20}
             borderRadius={10}
             zIndex={1}
@@ -112,7 +121,8 @@ export default function Flights(props: any) {
             alignItems="center"
             py="4"
             flexGrow={1}
-            width="40%"
+            px={4}
+            width="50%"
           >
             <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
               {optionList.map((item, index) => {
@@ -146,7 +156,7 @@ export default function Flights(props: any) {
             bgColor="white"
             borderRadius="md"
             alignSelf="center"
-            mt="20"
+            mt="24"
           >
             <VStack>
               <HStack justifyContent="space-between" pt="4" pb="4">
@@ -495,8 +505,10 @@ export default function Flights(props: any) {
       <Box bg="coolGray.200">
         <VStack space={5}>
           <Explore />
+          <FlightScroll />
           <Offers />
           <CreditCard />
+          <Download />
           <DestinationList />
           <Hyperlink />
         </VStack>
