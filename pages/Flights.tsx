@@ -25,6 +25,7 @@ import DestinationList from "../components/DestinationList";
 import Hyperlink from "../components/Hyperlink";
 import Offers from "../components/Offers";
 import { useRouter } from "next/router";
+import HeaderTwo from "../components/HeaderTwo";
 
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
@@ -108,7 +109,7 @@ export default function Flights(props: any) {
         }}
       >
         <VStack>
-          <Header />
+          <HeaderTwo />
           <Box
             shadow="4"
             position="absolute"
