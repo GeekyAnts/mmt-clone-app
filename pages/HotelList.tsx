@@ -25,6 +25,7 @@ import Image from "next/image";
 //@ts-ignore
 import DatePicker from "react-datepicker";
 import Header from "../components/Header";
+import Header2 from "../components/HeaderTwo";
 import { useRouter } from "next/router";
 
 const config = {
@@ -741,6 +742,7 @@ export default function HotelList(props: any) {
   return (
     <VStack>
       <Header />
+
       <Search />
       <HotelInformation />
       <Filters />

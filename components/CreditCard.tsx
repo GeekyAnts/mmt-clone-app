@@ -23,7 +23,7 @@ const List1 = [
   {
     imageTwo: "/images/person2.png",
     imageText: "Personal Loan",
-    subtext: "Get approval for upto ₹3000 at low interest rates.",
+    subtext: "Get approval for upto ₹3000 at low rates.",
     iconName: "arrow-right-alt",
     as: MaterialIcons,
     borderçolor: "#3AE5E0",

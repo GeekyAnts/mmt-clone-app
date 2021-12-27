@@ -21,15 +21,17 @@ export default function Header(props: any) {
 
   return (
     <HStack
+      pt={2}
       alignItems="center"
-      px={{ lg: 32, md: 10 }}
+      pr={{ lg: 40, md: 10 }}
+      pl={{ lg: 20, md: 6 }}
       justifyContent="space-between"
     >
       <Image
         src="/images/christmas_logo.png"
         alt="MakeMyTrip Logo"
-        width={72}
-        height={32}
+        width="200"
+        height={64}
       />
       <HStack alignItems="center">
         <HStack
