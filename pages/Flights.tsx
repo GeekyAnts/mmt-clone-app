@@ -92,7 +92,7 @@ export default function Flights(props: any) {
         h={{ lg: "480px" }}
         bg={{
           linearGradient: {
-            colors: ["#071323", "#144478"],
+            colors: ["#0A1221", "#124276"],
             start: [0, 0],
             end: [0, 1],
           },
@@ -455,15 +455,15 @@ export default function Flights(props: any) {
             top={-20}
             bottom={0}
             alignSelf="center"
-            height={12}
+            height={10}
             borderRadius="full"
             alignItems="center"
             justifyContent="center"
-            width={40}
+            width={48}
             bg={{
               // @ts-ignore
               linearGradient: {
-                colors: ["#008CFF", "#0a488a"],
+                colors: ["#4EADFD", "#0E64F3"],
                 start: [0, 0],
                 end: [0, 0],
               },

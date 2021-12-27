@@ -13,10 +13,10 @@ export default function Header(props: any) {
       justifyContent="space-between"
     >
       <Image
-        src="/images/christmas_logo.png"
+        src="/images/mmt.png"
         alt="MakeMyTrip Logo"
-        width="200"
-        height={64}
+        width="130"
+        height={32}
       />
       <HStack alignItems="center">
         <HStack
@@ -24,7 +24,7 @@ export default function Header(props: any) {
           space={2}
           borderLeftWidth={1}
           borderLeftStyle="dashed"
-          borderLeftColor="coolGray.300"
+          borderLeftColor="coolGray.700"
         >
           <Image
             src="/images/mmtbiz.png"
@@ -46,7 +46,7 @@ export default function Header(props: any) {
           space={2}
           borderLeftWidth={1}
           borderLeftStyle="dashed"
-          borderLeftColor="coolGray.300"
+          borderLeftColor="coolGray.700"
         >
           <Image
             src="/images/mmtbag.png"
@@ -76,9 +76,9 @@ export default function Header(props: any) {
             bg={{
               // @ts-ignore
               linearGradient: {
-                colors: ["#008CFF", "#0a488a"],
+                colors: ["#4FACFC", "#0a488a"],
                 start: [0, 0],
-                end: [0, 0],
+                end: [1, 0],
               },
             }}
           >
@@ -88,7 +88,7 @@ export default function Header(props: any) {
               width={24}
               height={24}
             />
-            <Text color="white" fontWeight="semibold" fontSize="sm">
+            <Text color="white" fontWeight="bold" fontSize="10">
               Login or Create Account
             </Text>
             <Icon
@@ -120,7 +120,7 @@ export default function Header(props: any) {
               width={12}
               height={12}
             />
-            <Text color="coolGray.50" fontWeight="semibold" fontSize="sm">
+            <Text color="coolGray.50" fontWeight="semibold" fontSize="10">
               IN | ENG | INR
             </Text>
             <Icon
