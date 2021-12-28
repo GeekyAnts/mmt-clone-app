@@ -12,7 +12,7 @@ export default function Footer(pros: any) {
                 Q - How do I make a flight booking on MakeMyTrip?
               </Text>
               <Text
-                fontSize="xxs"
+                fontSize="12"
                 color="coolGray.800"
                 fontWeight="thin"
                 textAlign="start"
@@ -34,7 +34,7 @@ export default function Footer(pros: any) {
                 Q - Can I avail domestic flight offers on MakeMyTrip?
               </Text>
               <Text
-                fontSize="xxs"
+                fontSize="12"
                 color="coolGray.800"
                 fontWeight="thin"
                 textAlign="start"
@@ -55,7 +55,7 @@ export default function Footer(pros: any) {
               <Text fontSize="sm" fontWeight="semibold" color="coolGray.800">
                 Q - How can I avail budget air tickets on MakeMyTrip?
               </Text>
-              <Text fontSize="xxs" color="coolGray.800" fontWeight="thin">
+              <Text fontSize="12" color="coolGray.800" fontWeight="thin">
                 A: It’s super-easy to avail budget airfare while booking your
                 flight tickets on MakeMyTrip. Just select the ‘Price’ filter
                 once the available flight options are displayed and adjust
@@ -64,12 +64,12 @@ export default function Footer(pros: any) {
                 the top and continue downward in ascending order.
               </Text>
             </VStack>
-            <VStack space={1} width="45%">
+            <VStack space={2} width="45%">
               <Text fontSize="sm" fontWeight="semibold" color="coolGray.800">
                 Q - Why could I not avail the flight booking offers at the time
                 of checkout?
               </Text>
-              <Text fontSize="xxs" color="coolGray.800" fontWeight="thin">
+              <Text fontSize="12" color="coolGray.800" fontWeight="thin">
                 A: MakeMyTrip makes use of a world-class real-time reservation
                 database to list airfare and availability. As dynamic changes in
                 airfare take place, or the available flight tickets sell out,
