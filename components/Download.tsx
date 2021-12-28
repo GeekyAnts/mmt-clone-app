@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import {
   Box,
   Divider,
@@ -25,8 +25,10 @@ export default function Download(props: any) {
       bg="white"
       py="5"
       w="100%"
-      px={{ lg: 40 }}
+      shadow="4"
       mt={4}
+      // bg="red.100"
+      pl={6}
       //   alignItems={"center"}
     >
       <Text color="black" fontWeight="extrabold" fontSize="4xl">
@@ -36,21 +38,36 @@ export default function Download(props: any) {
         Get the MakeMyTrip mobile App and Save More!
       </Text>
       <HStack alignItems="center" justifyContent="space-between">
-        <VStack mt={6}>
+        <VStack
+          mt={6}
+          alignItems="flex-start"
+          alignContent="flex-start"
+          alignSelf=""
+          // bg="red.900"
+        >
           <Text fontSize="xs" color="coolGray.800" fontWeight="semibold">
             8% Off upto Rs 5000 use coupon code WELCOMEMMT on APP
           </Text>
           <Input
-            w={{
-              base: "75%",
-              md: "25%",
-            }}
-            // InputLeftElement={
-            //   <HStack>
-            //     <Icon as={FontAwesome5} name="flag-usa" />
-            //   </HStack>
-            // }
+            // w={{
+            //   base: "75%",
+            //   md: "25%",
+
+            // }}
             placeholder="Enter Mobile Number"
+            InputLeftElement={
+              <HStack space="2" pl="2">
+                <Image
+                  src="/images/india_image.png"
+                  alt="indian flag"
+                  height={12}
+                  width={20}
+                />
+                <Text fontWeight="semibold" fontSize="xs">
+                  +91
+                </Text>
+              </HStack>
+            }
             InputRightElement={
               <Pressable
                 p="2"
@@ -69,28 +86,39 @@ export default function Download(props: any) {
           />
         </VStack>
         <Divider orientation="vertical" />
-        <VStack>
-          <Text>MORE WAYS TO GET THE APP</Text>
-          <HStack space={3} alignItems="unset">
-            <VStack space={2}>
-              <Image
+        <VStack pr="10">
+          <Text fontSize="10" fontWeight="semibold">
+            MORE WAYS TO GET THE APP
+          </Text>
+          <HStack space={3}>
+            {/* <VStack space={2}> */}
+            <Image
+              src="/images/image_store.png"
+              alt="vercel logo"
+              // layout="fill"
+              width={120}
+              height={48}
+            />
+            {/* <Image
                 src="/images/appstore.png"
                 alt="Vercel Logo"
-                width={64}
+                // layout="fill"
+                width={96}
                 height={48}
               />
               <Image
                 src="/images/playstore.png"
                 alt="Vercel Logo"
-                width={40}
-                height={64}
-              />
-            </VStack>
+                // layout="fill"
+                width={96}
+                height={72}
+              /> */}
+            {/* </VStack> */}
             <VStack alignItems="center">
               <Image
                 src="/images/qrcode.png"
                 alt="Vercel Logo"
-                width={64}
+                width={96}
                 height={96}
               />
               <Text fontSize="10" color="black" fontWeight="semibold">

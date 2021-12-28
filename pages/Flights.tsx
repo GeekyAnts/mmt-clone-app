@@ -508,7 +508,10 @@ export default function Flights(props: any) {
           <FlightScroll />
           <Offers />
           <CreditCard />
-          <Download />
+          <Box mx="40">
+            <Download />
+          </Box>
+
           <DestinationList />
           <Hyperlink />
         </VStack>
