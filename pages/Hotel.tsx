@@ -131,8 +131,6 @@ function MainPageBanner(props: any) {
             src="/images/hotel1.jpeg"
             alt="Vercel Logo"
             top="0"
-            // right="20"
-            // left="20"
             bottom="0"
             zIndex={1}
             width="800"

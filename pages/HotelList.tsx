@@ -134,7 +134,7 @@ function Search(props: any) {
 function HotelInformation(props: any) {
   let [service, setService] = React.useState("");
   return (
-    <Box bg="#CFE5FA" px={48} py={5} flex={1} zIndex={-1}>
+    <Box bg="#CFE5FA" px={{ lg: "40", md: "20" }} py={5} flex={1} zIndex={-1}>
       <HStack justifyContent="space-between">
         <VStack>
           <HStack alignItems="center">
@@ -227,7 +227,7 @@ function HotelInformation(props: any) {
 function Filters(props: any) {
   const filterType = [
     {
-      filterType: "Free Cancellation, Zero Payment Now",
+      filterType: "Free Cancellation,Zero Payment",
       numberAviable: "(0)",
     },
     {
@@ -375,8 +375,8 @@ function Filters(props: any) {
   ];
   const router = useRouter();
   return (
-    <HStack px={48} justifyContent="space-evenly" space={2} zIndex={-1}>
-      <VStack mt={5} flex={1} flexGrow={1}>
+    <HStack px={{ lg: "40", md: "24" }} space={2} zIndex={-1}>
+      <VStack width="25%">
         <Text fontSize="lg" color="coolGray.800" fontWeight="semibold">
           Select Filters
         </Text>
@@ -473,11 +473,11 @@ function Filters(props: any) {
           Your Budget
         </Text>
         <HStack alignItems="center" space={2}>
-          <Input placeholder="Min" width={20} py={2} />
+          <Input placeholder="Min" width={24} py={2} />
           <Text color="coolGray.800" fontWeight="semibold" fontSize="sm">
             TO
           </Text>
-          <Input placeholder="Max" width={20} py={2} />
+          <Input placeholder="Max" width={24} py={2} />
           <IconButton
             size="sm"
             variant="unstyled"
@@ -521,11 +521,10 @@ function Filters(props: any) {
           );
         })}
       </VStack>
-      <VStack flex={4} mt={5}>
+      <VStack width="75%">
         <Text color="coolGray.800" fontSize="3xl" fontWeight="bold">
           Recommended for You
         </Text>
-
         {hotelInfo.map((item, index) => {
           return (
             <Pressable
@@ -533,7 +532,6 @@ function Filters(props: any) {
               //@ts-ignore
               onPress={() => {
                 router.push("/Hotel");
-                // console.log("hello");
               }}
             >
               <Box

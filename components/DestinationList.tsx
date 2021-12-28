@@ -103,9 +103,7 @@ export default function DestinationList(props: any) {
                         fontSize: "10",
                         fontWeight: "medium",
                         textDecorationLine: "none",
-                        // numberOfLines:{2},
                         maxWidth: "80%",
-                        // lineHeight: { md: 3, lg: 10 },
                       }}
                     >
                       {item.linkText}

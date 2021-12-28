@@ -5,7 +5,7 @@ import Image from "next/image";
 const List = [
   {
     imageOne: "/images/BuildingLogo.png",
-    imageText: "Check the List of States Which Have Eased Travel Restrictions",
+    imageText: "Check the List of States Which Have Eased Restrictions",
   },
   {
     imageOne: "/images/BuildingLogo.png",
@@ -13,20 +13,26 @@ const List = [
   },
   {
     imageOne: "/images/BuildingLogo.png",
-    imageText:
-      "Safe & comfortable hotels for isolation with all 3 meals included",
+    imageText: "Safe & comfortable hotels for isolation with all 3 meals",
   },
 ];
 export default function HorizontalComponent(props: any) {
   return (
-    <Box mx={40} mt={3}>
+    <Box px={{ lg: "40", md: "10" }} mt={3}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        <HStack alignItems="center" space={10}>
+        <HStack space={4} flexDirection={{ lg: "row", md: "row" }}>
           {List.map((item, index) => {
             return (
-              <Box shadow={5} key={index} borderRadius={10} bg="white">
-                <HStack space={10} px={3} py={4}>
-                  <HStack alignItems="center" space={2}>
+              <Box
+                key={index}
+                borderRadius={10}
+                bg="white"
+                // px={10}
+                // width={80}
+                height={24}
+              >
+                <HStack px={6} py={4}>
+                  <HStack alignItems="center" space={3}>
                     <Image
                       src={item.imageOne}
                       alt="Vercel Logo"
@@ -35,10 +41,13 @@ export default function HorizontalComponent(props: any) {
                       // @ts-ignore
                     />
                     <Text
-                      textAlign="center"
+                      noOfLines={2}
+                      // textAlign="center"
                       fontWeight="medium"
                       color="coolGray.800"
                       fontSize="sm"
+                      flexGrow={1}
+                      width="64"
                     >
                       {item.imageText}
                     </Text>

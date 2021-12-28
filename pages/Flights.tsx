@@ -1,23 +1,15 @@
 import React from "react";
-import {
-  Box,
-  HStack,
-  Icon,
-  Text,
-  VStack,
-  NativeBaseProvider,
-  Radio,
-  Pressable,
-} from "native-base";
+import { Box, HStack, Icon, Text, VStack, Radio, Pressable } from "native-base";
 import {
   AntDesign,
   FontAwesome,
+  Fontisto,
+  Foundation,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
@@ -25,6 +17,9 @@ import DestinationList from "../components/DestinationList";
 import Hyperlink from "../components/Hyperlink";
 import Offers from "../components/Offers";
 import { useRouter } from "next/router";
+import HeaderTwo from "../components/HeaderTwo";
+import Download from "../components/Download";
+import FlightScroll from "../components/FlightScroll";
 
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
@@ -75,6 +70,11 @@ const optionList = [
     iconText: "Visa",
     as: MaterialCommunityIcons,
   },
+  {
+    iconName: "plane",
+    iconText: "Charter Flight",
+    as: Fontisto,
+  },
 ];
 
 const Searches = [
@@ -98,21 +98,21 @@ export default function Flights(props: any) {
     <>
       <Box
         shadow={4}
-        h={{ lg: "420px" }}
+        h={{ lg: "480px" }}
         bg={{
           linearGradient: {
-            colors: ["#071323", "#144478"],
+            colors: ["#0A1221", "#124276"],
             start: [0, 0],
             end: [0, 1],
           },
         }}
       >
         <VStack>
-          {/* <Header /> */}
-          {/* <Box
+          <HeaderTwo />
+          <Box
             shadow="4"
             position="absolute"
-            top={24}
+            top={20}
             mx={20}
             borderRadius={10}
             zIndex={1}
@@ -121,7 +121,8 @@ export default function Flights(props: any) {
             alignItems="center"
             py="4"
             flexGrow={1}
-            width="40%"
+            px={4}
+            width="50%"
           >
             <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
               {optionList.map((item, index) => {
@@ -147,7 +148,7 @@ export default function Flights(props: any) {
                 );
               })}
             </HStack>
-          </Box> */}
+          </Box>
           <Box
             px={8}
             width="80%"
@@ -155,6 +156,7 @@ export default function Flights(props: any) {
             bgColor="white"
             borderRadius="md"
             alignSelf="center"
+            mt="24"
           >
             <VStack>
               <HStack justifyContent="space-between" pt="4" pb="4">
@@ -345,10 +347,7 @@ export default function Flights(props: any) {
                     </Text>
                   </HStack>
                   <Text lineHeight="undefined" fontSize="xs">
-                    Economie
-                  </Text>
-                  <Text lineHeight="undefined" fontSize="xs">
-                    Premium
+                    Economic/Premium Economy
                   </Text>
                 </VStack>
               </HStack>
@@ -455,7 +454,7 @@ export default function Flights(props: any) {
             </VStack>
           </Box>
         </VStack>
-        {/* <Pressable
+        <Pressable
           // @ts-ignore
           onPress={() => {
             console.log("hello");
@@ -466,15 +465,15 @@ export default function Flights(props: any) {
             top={-20}
             bottom={0}
             alignSelf="center"
-            height={12}
+            height={10}
             borderRadius="full"
             alignItems="center"
             justifyContent="center"
-            width={40}
+            width={48}
             bg={{
               // @ts-ignore
               linearGradient: {
-                colors: ["#008CFF", "#0a488a"],
+                colors: ["#4EADFD", "#0E64F3"],
                 start: [0, 0],
                 end: [0, 0],
               },
@@ -484,8 +483,8 @@ export default function Flights(props: any) {
               SEARCH
             </Text>
           </Box>
-        </Pressable> */}
-        <HStack alignItems="center" space={1} justifyContent="center">
+        </Pressable>
+        <HStack alignItems="center" space={1} justifyContent="center" mt="auto">
           <Icon
             as={FontAwesome}
             name="angle-double-down"
@@ -506,8 +505,13 @@ export default function Flights(props: any) {
       <Box bg="coolGray.200">
         <VStack space={5}>
           <Explore />
+          <FlightScroll />
           <Offers />
           <CreditCard />
+          <Box mx="40">
+            <Download />
+          </Box>
+
           <DestinationList />
           <Hyperlink />
         </VStack>
