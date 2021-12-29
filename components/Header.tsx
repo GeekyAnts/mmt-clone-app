@@ -15,8 +15,22 @@ import {
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import Image from "next/image";
+
 export default function Header(props: any) {
+  const [nav, setNav] = useState(true);
   let [service, setService] = React.useState("");
+  const changeVisibility = () => {
+    if (window.scrollY >= 40) {
+      setNav(false);
+    } else setNav(true);
+    // console.log(window.scrollY);
+  };
+
+  React.useEffect(() => {
+    // window is accessible here.
+    console.log("window.innerHeight", window.innerHeight);
+    window.addEventListener("scroll", changeVisibility);
+  }, []);
   const optionList = [
     {
       iconName: "plane",
@@ -59,13 +73,18 @@ export default function Header(props: any) {
       as: MaterialCommunityIcons,
     },
   ];
-  return (
+  return nav ? (
+    <></>
+  ) : (
     <HStack
       alignItems="center"
       px={{ lg: 32, md: 10 }}
       py={4}
       bg="white"
       justifyContent="space-between"
+      position="sticky"
+      top={0}
+      zIndex={1}
     >
       <HStack alignItems="center" space={5}>
         <Image

@@ -1,11 +1,23 @@
 import React, { useState } from "react";
-import { HStack, Icon, Pressable, Text, VStack } from "native-base";
+import { Hidden, HStack, Icon, Pressable, Text, VStack } from "native-base";
 import { EvilIcons } from "@expo/vector-icons";
 import Image from "next/image";
 export default function Header(props: any) {
-  let [service, setService] = React.useState("");
+  const [nav, setNav] = useState(true);
+  const changeVisibility = () => {
+    if (window.scrollY >= 40) {
+      setNav(false);
+    } else setNav(true);
+    // console.log(window.scrollY);
+  };
 
-  return (
+  React.useEffect(() => {
+    // window is accessible here.
+    console.log("window.innerHeight", window.innerHeight);
+    window.addEventListener("scroll", changeVisibility);
+  }, []);
+
+  return nav ? (
     <HStack
       alignItems="center"
       pr={{ lg: 40, md: 10 }}
@@ -135,5 +147,7 @@ export default function Header(props: any) {
         </Pressable>
       </HStack>
     </HStack>
+  ) : (
+    <> </>
   );
 }
