@@ -17,20 +17,7 @@ import {
 import Image from "next/image";
 
 export default function Header(props: any) {
-  const [nav, setNav] = useState(true);
   let [service, setService] = React.useState("");
-  const changeVisibility = () => {
-    if (window.scrollY >= 40) {
-      setNav(false);
-    } else setNav(true);
-    // console.log(window.scrollY);
-  };
-
-  React.useEffect(() => {
-    // window is accessible here.
-    console.log("window.innerHeight", window.innerHeight);
-    window.addEventListener("scroll", changeVisibility);
-  }, []);
 
   const optionList = [
     {
