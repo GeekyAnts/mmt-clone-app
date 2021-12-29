@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, HStack, Icon, Text, VStack, Radio, Pressable } from "native-base";
 import {
   AntDesign,
@@ -20,6 +20,7 @@ import { useRouter } from "next/router";
 import HeaderTwo from "../components/HeaderTwo";
 import Download from "../components/Download";
 import FlightScroll from "../components/FlightScroll";
+import Header from "../components/Header";
 
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
@@ -94,6 +95,19 @@ const Searches = [
 
 export default function Flights(props: any) {
   const router = useRouter();
+  const [nav, setNav] = useState(true);
+  const changeVisibility = () => {
+    if (window.scrollY >= 40) {
+      setNav(false);
+    } else setNav(true);
+    // console.log(window.scrollY);
+  };
+
+  React.useEffect(() => {
+    // window is accessible here.
+    console.log("window.innerHeight", window.innerHeight);
+    window.addEventListener("scroll", changeVisibility);
+  }, []);
   return (
     <>
       <Box
@@ -109,46 +123,51 @@ export default function Flights(props: any) {
       >
         <VStack>
           <HeaderTwo />
-          <Box
-            shadow="4"
-            position="absolute"
-            top={20}
-            mx={20}
-            borderRadius={10}
-            zIndex={1}
-            bg="white"
-            alignSelf="center"
-            alignItems="center"
-            py="4"
-            flexGrow={1}
-            px={4}
-            width="50%"
-          >
-            <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
-              {optionList.map((item, index) => {
-                return (
-                  <Pressable
-                    key={index}
-                    // @ts-ignore
-                    onPress={() => {
-                      router.push("/ExploreHotel");
-                    }}
-                  >
-                    <VStack alignItems="center" justifyContent="center">
-                      <Icon size="5" as={item.as} name={item.iconName} />
-                      <Text
-                        fontSize="xs"
-                        color="coolGray.500"
-                        textAlign="center"
-                      >
-                        {item.iconText}
-                      </Text>
-                    </VStack>
-                  </Pressable>
-                );
-              })}
-            </HStack>
-          </Box>
+          <Header />
+          {nav ? (
+            <Box
+              shadow="4"
+              position="absolute"
+              top={20}
+              mx={20}
+              borderRadius={10}
+              zIndex={1}
+              bg="white"
+              alignSelf="center"
+              alignItems="center"
+              py="4"
+              flexGrow={1}
+              px={4}
+              width="50%"
+            >
+              <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
+                {optionList.map((item, index) => {
+                  return (
+                    <Pressable
+                      key={index}
+                      // @ts-ignore
+                      onPress={() => {
+                        router.push("/ExploreHotel");
+                      }}
+                    >
+                      <VStack alignItems="center" justifyContent="center">
+                        <Icon size="5" as={item.as} name={item.iconName} />
+                        <Text
+                          fontSize="xs"
+                          color="coolGray.500"
+                          textAlign="center"
+                        >
+                          {item.iconText}
+                        </Text>
+                      </VStack>
+                    </Pressable>
+                  );
+                })}
+              </HStack>
+            </Box>
+          ) : (
+            <></>
+          )}
           <Box
             px={8}
             width="80%"
