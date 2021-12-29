@@ -31,6 +31,7 @@ export default function Header(props: any) {
     console.log("window.innerHeight", window.innerHeight);
     window.addEventListener("scroll", changeVisibility);
   }, []);
+
   const optionList = [
     {
       iconName: "plane",
@@ -73,9 +74,7 @@ export default function Header(props: any) {
       as: MaterialCommunityIcons,
     },
   ];
-  return nav ? (
-    <></>
-  ) : (
+  return (
     <HStack
       alignItems="center"
       px={{ lg: 32, md: 10 }}

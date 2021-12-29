@@ -105,7 +105,7 @@ export default function Flights(props: any) {
 
   React.useEffect(() => {
     // window is accessible here.
-    console.log("window.innerHeight", window.innerHeight);
+    // console.log("window.innerHeight", window.innerHeight);
     window.addEventListener("scroll", changeVisibility);
   }, []);
   return (
@@ -123,7 +123,7 @@ export default function Flights(props: any) {
       >
         <VStack>
           <HeaderTwo />
-          <Header />
+          {nav ? <></> : <Header />}
           {nav ? (
             <Box
               shadow="4"
