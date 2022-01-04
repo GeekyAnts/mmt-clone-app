@@ -51,7 +51,6 @@ export default function Offers() {
           px={{ base: 4, md: 4 }}
           pt="2"
           space={4}
-          width="45%"
           borderBottomWidth={1}
           borderBottomColor="coolGray.300"
         >
