@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FontAwesome,
   Ionicons,
@@ -22,6 +22,7 @@ import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
+import HeaderTwo from "../components/HeaderTwo";
 const config = {
   dependencies: {
     "linear-gradient": require("expo-linear-gradient").LinearGradient,
@@ -74,6 +75,20 @@ const optionList = [
 export default function ExploreHotel() {
   const [tabName, setTabName] = React.useState("Login");
   const router = useRouter();
+  const [nav, setNav] = useState(true);
+  const changeVisibility = () => {
+    if (window.scrollY >= 40) {
+      setNav(false);
+    } else setNav(true);
+    // console.log(window.scrollY);
+  };
+
+  React.useEffect(() => {
+    // window is accessible here.
+    // console.log("window.innerHeight", window.innerHeight);
+    window.addEventListener("scroll", changeVisibility);
+  }, []);
+
   return (
     <NativeBaseProvider config={config}>
       <Box
@@ -88,46 +103,51 @@ export default function ExploreHotel() {
         }}
       >
         <VStack>
-          <Header />
-          <Box
-            shadow="4"
-            position="absolute"
-            top={24}
-            mx={20}
-            borderRadius={10}
-            zIndex={1}
-            bg="white"
-            alignSelf="center"
-            alignItems="center"
-            py="4"
-            flexGrow={1}
-            width="40%"
-          >
-            <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
-              {optionList.map((item, index) => {
-                return (
-                  <Pressable
-                    key={index}
-                    // @ts-ignore
-                    onPress={() => {
-                      router.push("/ExploreHotel");
-                    }}
-                  >
-                    <VStack alignItems="center" justifyContent="center">
-                      <Icon size="5" as={item.as} name={item.iconName} />
-                      <Text
-                        fontSize="xs"
-                        color="coolGray.500"
-                        textAlign="center"
-                      >
-                        {item.iconText}
-                      </Text>
-                    </VStack>
-                  </Pressable>
-                );
-              })}
-            </HStack>
-          </Box>
+          <HeaderTwo />
+          {nav ? <></> : <Header />}
+          {nav ? (
+            <Box
+              shadow="4"
+              position="absolute"
+              top={16}
+              mx={20}
+              borderRadius={10}
+              zIndex={1}
+              bg="white"
+              alignSelf="center"
+              alignItems="center"
+              py="4"
+              flexGrow={1}
+              width="40%"
+            >
+              <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
+                {optionList.map((item, index) => {
+                  return (
+                    <Pressable
+                      key={index}
+                      // @ts-ignore
+                      onPress={() => {
+                        router.push("/ExploreHotel");
+                      }}
+                    >
+                      <VStack alignItems="center" justifyContent="center">
+                        <Icon size="5" as={item.as} name={item.iconName} />
+                        <Text
+                          fontSize="xs"
+                          color="coolGray.500"
+                          textAlign="center"
+                        >
+                          {item.iconText}
+                        </Text>
+                      </VStack>
+                    </Pressable>
+                  );
+                })}
+              </HStack>
+            </Box>
+          ) : (
+            <></>
+          )}
           <Box
             px={8}
             width="80%"
@@ -135,7 +155,7 @@ export default function ExploreHotel() {
             bgColor="white"
             borderRadius="md"
             alignSelf="center"
-            mt="20"
+            mt="24"
             // mt={3}
           >
             <VStack space={2} mt={2}>
