@@ -38,7 +38,7 @@ export default function MMTLuxe(props: any) {
               INTRODUCING
             </Text>
             <Text color="#E1BE5A" fontWeight="bold" fontSize="2xl">
-              MMT Luxe
+              MYT Luxe
             </Text>
             <Text color="#E1BE5A" fontWeight="bold" fontSize="2xl">
               Selections

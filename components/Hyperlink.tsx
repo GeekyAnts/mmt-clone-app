@@ -9,7 +9,7 @@ const List = [
   {
     linkType: "PRODUCT OFFERING",
     linkText:
-      "About Us, Investor Relations, Careers, Corporate Travel, MMT Foundation, CSR Policy, myPartner - Travel Agent Portal, Foreign Exchange, List your hotel, Partners- Redbus, Partners- Goibibo",
+      "About Us, Investor Relations, Careers, Corporate Travel, MYT Foundation, CSR Policy, myPartner - Travel Agent Portal, Foreign Exchange, List your hotel, Partners- Redbus, Partners- Goibibo",
   },
   {
     linkType: "PRODUCT OFFERING",

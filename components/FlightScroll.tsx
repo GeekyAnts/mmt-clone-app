@@ -19,6 +19,11 @@ const List = [
     imageText: "Flight booking impacted due to COVID-19?",
     linkText: " Check refund status here ",
   },
+  {
+    imageOne: "/images/plane2.png",
+    imageText: "Flight booking impacted due to COVID-19?",
+    linkText: " Check refund status here ",
+  },
 ];
 export default function FlightScroll(props: any) {
   return (

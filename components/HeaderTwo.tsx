@@ -24,12 +24,15 @@ export default function Header(props: any) {
       pl={{ lg: 20, md: 6 }}
       justifyContent="space-between"
     >
-      <Image
+      {/* <Image
         src="/images/mmt.png"
-        alt="MakeMyTrip Logo"
+        alt="MakeYourTrip Logo"
         width="130"
         height={32}
-      />
+      /> */}
+      <Text color="white" fontWeight="bold">
+        Make Your Trip
+      </Text>
       <HStack alignItems="center">
         <HStack
           px={2}
@@ -40,7 +43,7 @@ export default function Header(props: any) {
         >
           <Image
             src="/images/mmtbiz.png"
-            alt="MakeMyTrip Logo"
+            alt="MakeYourTrip Logo"
             width={32}
             height={24}
           />
@@ -49,7 +52,7 @@ export default function Header(props: any) {
               Introducing myBiz
             </Text>
             <Text color="coolGray.200" fontSize={10} fontWeight="semibold">
-              MakeMyTrip for Business
+              MakeYourTrip for Business
             </Text>
           </VStack>
         </HStack>
@@ -62,7 +65,7 @@ export default function Header(props: any) {
         >
           <Image
             src="/images/mmtbag.png"
-            alt="MakeMyTrip Logo"
+            alt="MakeYourTrip Logo"
             width={32}
             height={19}
           />

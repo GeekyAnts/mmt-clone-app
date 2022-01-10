@@ -238,7 +238,7 @@ function MainPageBanner(props: any) {
                   fontSize: "md",
                 }}
               >
-                MMT LUXE
+                MYT LUXE
               </Center>
               <Text color="white" fontWeight="semibold" fontSize="sm">
                 Plush Goa Resort Offering Scenic Arabian Sea Views
@@ -265,7 +265,7 @@ function HotelCard(props: any) {
         <VStack>
           <Image
             src="/images/hotel7.jpeg"
-            alt="MakeMyTrip Logo"
+            alt="MakeYourTrip Logo"
             width={120}
             height={200}
           />
@@ -445,7 +445,7 @@ function Rating(props: any) {
       <HStack alignItems="center" space={2}>
         <Image
           src="/images/hotel5.jpeg"
-          alt="MakeMyTrip Logo"
+          alt="MakeYourTrip Logo"
           width={40}
           height={40}
         />
@@ -682,7 +682,7 @@ function Footer(props: any) {
         </HStack>
         <VStack alignItems="end">
           <Text color="white" fontWeight="semibold" fontSize="sm">
-            © 2021 MAKEMYTRIP PVT. LTD.
+            © 2021 MakeYourTrip PVT. LTD.
           </Text>
           <Text color="white" fontWeight="semibold" fontSize="sm">
             Country India USA UAE

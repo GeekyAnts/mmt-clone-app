@@ -9,7 +9,7 @@ export default function Footer(pros: any) {
           <HStack alignItems="center" justifyContent="space-between">
             <VStack space={1} width="50%" mt={3}>
               <Text fontSize="sm" fontWeight="semibold" color="coolGray.800">
-                Q - How do I make a flight booking on MakeMyTrip?
+                Q - How do I make a flight booking on MakeYourTrip?
               </Text>
               <Text
                 fontSize="12"
@@ -17,21 +17,21 @@ export default function Footer(pros: any) {
                 fontWeight="thin"
                 textAlign="start"
               >
-                A: You can book a flight on MakeMyTrip in five easy steps: Head
-                over to the MakeMyTrip flight booking page, Enter your departure
-                and arrival destinations, Select your air travel dates, Choose
-                from our wide range of flights based on your airfare
-                preferences, Click on ‘Book Now’ and your air flight booking is
-                done. Alternatively, you can also use the MakeMyTrip app for
-                your flight ticket booking. Download the MakeMyTrip app, Put in
-                the details i.e. date of journey, departure and arrival
-                destinations, travel class of your choice, Select on your best
-                comfortable option and click on 'Book Now'.
+                A: You can book a flight on MakeYourTrip in five easy steps:
+                Head over to the MakeYourTrip flight booking page, Enter your
+                departure and arrival destinations, Select your air travel
+                dates, Choose from our wide range of flights based on your
+                airfare preferences, Click on ‘Book Now’ and your air flight
+                booking is done. Alternatively, you can also use the
+                MakeYourTrip app for your flight ticket booking. Download the
+                MakeYourTrip app, Put in the details i.e. date of journey,
+                departure and arrival destinations, travel class of your choice,
+                Select on your best comfortable option and click on 'Book Now'.
               </Text>
             </VStack>
             <VStack space={1} width="45%">
               <Text fontSize="sm" fontWeight="semibold" color="coolGray.800">
-                Q - Can I avail domestic flight offers on MakeMyTrip?
+                Q - Can I avail domestic flight offers on MakeYourTrip?
               </Text>
               <Text
                 fontSize="12"
@@ -53,13 +53,13 @@ export default function Footer(pros: any) {
           <HStack alignItems="center" justifyContent="space-between" space={2}>
             <VStack space={1} width="50%">
               <Text fontSize="sm" fontWeight="semibold" color="coolGray.800">
-                Q - How can I avail budget air tickets on MakeMyTrip?
+                Q - How can I avail budget air tickets on MakeYourTrip?
               </Text>
               <Text fontSize="12" color="coolGray.800" fontWeight="thin">
                 A: It’s super-easy to avail budget airfare while booking your
-                flight tickets on MakeMyTrip. Just select the ‘Price’ filter
+                flight tickets on MakeYourTrip. Just select the ‘Price’ filter
                 once the available flight options are displayed and adjust
-                according to your convenience. On the MakeMyTrip app, you can
+                according to your convenience. On the MakeYourTrip app, you can
                 select the downward arrow, which will show the lowest airfare at
                 the top and continue downward in ascending order.
               </Text>
@@ -70,7 +70,7 @@ export default function Footer(pros: any) {
                 of checkout?
               </Text>
               <Text fontSize="12" color="coolGray.800" fontWeight="thin">
-                A: MakeMyTrip makes use of a world-class real-time reservation
+                A: MakeYourTrip makes use of a world-class real-time reservation
                 database to list airfare and availability. As dynamic changes in
                 airfare take place, or the available flight tickets sell out,
                 the database reflects the changes in real-time. Hence, we
@@ -91,7 +91,7 @@ export default function Footer(pros: any) {
           </HStack>
           <VStack alignItems="end">
             <Text color="white" fontWeight="semibold" fontSize="sm">
-              © 2021 MAKEMYTRIP PVT. LTD.
+              © 2021 MakeYourTrip PVT. LTD.
             </Text>
             <Text color="white" fontWeight="semibold" fontSize="sm">
               Country India USA UAE
