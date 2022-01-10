@@ -73,12 +73,16 @@ export default function Header(props: any) {
       zIndex={1}
     >
       <HStack alignItems="center" space={5}>
-        <Image
+        {/* <Image
           src="/images/mmtLogo.png"
-          alt="MakeMyTrip Logo"
+          alt="MakeYourTrip Logo"
           width={72}
           height={32}
-        />
+        /> */}
+
+        <Text color="blue.900" fontWeight="bold">
+          Make Your Trip
+        </Text>
         {optionList.map((item, index) => {
           return (
             <VStack key={index} alignItems="center" justifyContent="center">

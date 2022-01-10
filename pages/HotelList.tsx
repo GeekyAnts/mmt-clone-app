@@ -326,7 +326,7 @@ function Filters(props: any) {
       exclusiveOfferIcon: "flash-circle",
       exclusiveOffer:
         "Exclusive offer - SBI Credit Card Users. Get INR 1199 Off",
-      mmt: "MMTLUXE",
+      mmt: "MYTLUXE",
     },
     {
       imageOne: "/images/hotel1.jpeg",

@@ -17,7 +17,7 @@ export default function Download(props: any) {
         Download App Now !
       </Text>
       <Text color="coolGray.700" fontWeight="semibold" fontSize="xl">
-        Get the MakeMyTrip mobile App and Save More!
+        Get the MakeYourTrip mobile App and Save More!
       </Text>
       <HStack alignItems="center" justifyContent="space-between">
         <VStack
@@ -27,7 +27,7 @@ export default function Download(props: any) {
           alignSelf=""
         >
           <Text fontSize="xs" color="coolGray.800" fontWeight="semibold">
-            8% Off upto Rs 5000 use coupon code WELCOMEMMT on APP
+            8% Off upto Rs 5000 use coupon code WELCOMEMYT on APP
           </Text>
           <Input
             placeholder="Enter Mobile Number"
