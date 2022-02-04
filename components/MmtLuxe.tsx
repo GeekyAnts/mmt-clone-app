@@ -51,6 +51,7 @@ export default function MMTLuxe(props: any) {
               variant="unstyled"
               bg="#E1BE5A"
               rounded="full"
+              //@ts-ignore
               onPress={() => {
                 console.log("hello");
               }}
@@ -81,7 +82,7 @@ export default function MMTLuxe(props: any) {
                         alt="Vercel Logo"
                         width="200"
                         height="150"
-                        // @ts-ignore
+                      // @ts-ignore
                       />
                     </Pressable>
                     <Text fontSize="md" fontWeight="bold" color="coolGray.800">

@@ -28,6 +28,7 @@ const List = [
 export default function FlightScroll(props: any) {
   return (
     <Box px={{ lg: "40", md: "10" }} mt={3}>
+      {/* @ts-ignore */}
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <HStack space={4} flexDirection={{ lg: "row", md: "row" }}>
           {List.map((item, index) => {
@@ -40,7 +41,7 @@ export default function FlightScroll(props: any) {
                       alt="Vercel Logo"
                       width={48}
                       height={48}
-                      // @ts-ignore
+                    // @ts-ignore
                     />
                     {item.linkText == false ? (
                       <Text
@@ -85,6 +86,6 @@ export default function FlightScroll(props: any) {
           })}
         </HStack>
       </ScrollView>
-    </Box>
+    </Box >
   );
 }

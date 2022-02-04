@@ -93,6 +93,7 @@ export default function Offers() {
           </Pressable>
           <Pressable
             px="2"
+            //@ts-ignore
             onPress={() => {
               setTabName("Bank Offers");
             }}
@@ -129,6 +130,7 @@ export default function Offers() {
             </Box>
           </Pressable>
           <Pressable
+            //@ts-ignore
             onPress={() => {
               setTabName("Domastic Flight");
             }}
@@ -169,6 +171,7 @@ export default function Offers() {
           </Pressable>
           <Pressable
             px="2"
+            //@ts-ignore
             onPress={() => {
               setTabName("International Flight");
             }}
@@ -210,6 +213,7 @@ export default function Offers() {
           </Pressable>
           <Pressable
             px="2"
+            //@ts-ignore
             onPress={() => {
               setTabName("More");
             }}
@@ -244,11 +248,12 @@ export default function Offers() {
         </HStack>
       </HStack>
       {tabName == "All Offers" ||
-      "Bank Offers" ||
-      "Domestic Flight" ||
-      "International Flight" ||
-      "More" ? (
+        "Bank Offers" ||
+        "Domestic Flight" ||
+        "International Flight" ||
+        "More" ? (
         <HStack bg="white" space={4} px={4} alignItems="start">
+          {/* @ts-ignore */}
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {productList.map((item, index) => {
               return (
@@ -281,6 +286,7 @@ export default function Offers() {
                           alt="Alternate Text"
                           height="120"
                           width="120"
+                          //@ts-ignore
                           borderRadius="md"
                         />
 

@@ -36,6 +36,7 @@ const DatePopup = () => {
       <DatePicker
         selected={startDate}
         onChange={(date: any) => setStartDate(date)}
+        //@ts-ignore
         padding={10}
       />
     </Box>

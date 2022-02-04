@@ -40,6 +40,7 @@ const DatePopup = () => {
       <DatePicker
         selected={startDate}
         onChange={(date: any) => setStartDate(date)}
+        //@ts-ignore
         padding={10}
       />
     </Box>
@@ -485,6 +486,7 @@ function Filters(props: any) {
             icon={
               <Icon size="md" as={AntDesign} name="arrowright" color="white" />
             }
+            //@ts-ignore
             onPress={() => {
               console.log("hello");
             }}

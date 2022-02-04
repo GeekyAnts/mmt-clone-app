@@ -26,7 +26,7 @@ export default function Footer(pros: any) {
                 MakeYourTrip app for your flight ticket booking. Download the
                 MakeYourTrip app, Put in the details i.e. date of journey,
                 departure and arrival destinations, travel class of your choice,
-                Select on your best comfortable option and click on 'Book Now'.
+                Select on your best comfortable option and click on ‘Book Now‘.
               </Text>
             </VStack>
             <VStack space={1} width="45%">
