@@ -77,7 +77,6 @@ export default function FlightList(props: any) {
                       alt="Vercel Logo"
                       width={64}
                       height={64}
-                      // @ts-ignore
                     />
                   </Box>
                   <VStack>

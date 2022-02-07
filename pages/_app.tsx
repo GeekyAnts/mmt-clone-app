@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { NativeBaseProvider } from "native-base";
 import "react-datepicker/dist/react-datepicker.css";
+import * as React from 'react';
 
 const config = {
   dependencies: {
@@ -11,7 +12,7 @@ const config = {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NativeBaseProvider config={config}>
+    <NativeBaseProvider config={config} isSSR>
       <Component {...pageProps} />
     </NativeBaseProvider>
   );

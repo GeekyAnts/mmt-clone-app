@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import {
-  FontAwesome,
-  Ionicons,
-  MaterialCommunityIcons,
-  MaterialIcons,
-  SimpleLineIcons,
-} from "@expo/vector-icons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
 import {
   Box,
   HStack,
@@ -156,7 +154,7 @@ export default function ExploreHotel() {
             borderRadius="md"
             alignSelf="center"
             mt="24"
-            // mt={3}
+          // mt={3}
           >
             <VStack space={2} mt={2}>
               <HStack alignItems="end" justifyContent="center" space={2}>
@@ -343,7 +341,6 @@ export default function ExploreHotel() {
                 justifyContent="center"
                 width={40}
                 bg={{
-                  // @ts-ignore
                   linearGradient: {
                     colors: ["#008CFF", "#0a488a"],
                     start: [0, 0],

@@ -16,11 +16,9 @@ import {
   Text,
   VStack,
 } from "native-base";
-import {
-  AntDesign,
-  EvilIcons,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Image from "next/image";
 //@ts-ignore
 import DatePicker from "react-datepicker";
@@ -114,7 +112,6 @@ function Search(props: any) {
               justifyContent="center"
               width={32}
               bg={{
-                // @ts-ignore
                 linearGradient: {
                   colors: ["#008CFF", "#0a488a"],
                   start: [0, 0],

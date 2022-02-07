@@ -85,7 +85,6 @@ export default function DestinationList(props: any) {
                       alt="Vercel Logo"
                       width={48}
                       height={48}
-                      // @ts-ignore
                     />
                   </Box>
                   <VStack>
