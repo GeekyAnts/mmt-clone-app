@@ -12,7 +12,7 @@ const config = {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NativeBaseProvider config={config}>
+    <NativeBaseProvider config={config} isSSR>
       <Component {...pageProps} />
     </NativeBaseProvider>
   );
