@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Hidden, HStack, Icon, Pressable, Text, VStack } from "native-base";
-import { EvilIcons } from "@expo/vector-icons";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 import Image from "next/image";
 export default function Header(props: any) {
   const [nav, setNav] = useState(true);

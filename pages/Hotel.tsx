@@ -12,14 +12,12 @@ import {
   Tooltip,
   VStack,
 } from "native-base";
-import {
-  AntDesign,
-  Entypo,
-  EvilIcons,
-  FontAwesome,
-  Ionicons,
-  MaterialIcons,
-} from "@expo/vector-icons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Entypo from "@expo/vector-icons/Entypo";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 import DatePicker from "react-datepicker";
 import Header from "../components/Header";
 import Image from "next/image";

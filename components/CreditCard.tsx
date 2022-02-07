@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, HStack, Icon, Pressable, Text, VStack } from "native-base";
 import Image from "next/image";
-import { MaterialIcons } from "@expo/vector-icons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 
 const List1 = [
   {
@@ -66,7 +66,7 @@ export default function CreditCard(props: any) {
                   alt="Vercel Logo"
                   width={48}
                   height={48}
-                  // @ts-ignore
+                // @ts-ignore
                 />
                 <VStack space={1}>
                   <Text

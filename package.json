@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@expo/next-adapter": "^3.1.17",
     "@expo/vector-icons": "^12.0.5",
     "@react-native-community/datetimepicker": "^5.0.1",
     "expo-font": "^10.0.3",
@@ -17,11 +18,13 @@
     "react": "17.0.2",
     "react-datepicker": "^4.5.0",
     "react-dom": "17.0.2",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-safe-area-context": "^3.3.2",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "^0.17.5"
   },
   "devDependencies": {
-    "@expo/next-adapter": "^3.1.10",
+    "@native-base/next-adapter": "^1.1.0",
     "@types/node": "16.11.11",
     "@types/react": "17.0.37",
     "@types/react-datepicker": "^4.3.3",

@@ -1,21 +1,26 @@
-// @generated: @expo/next-adapter@3.1.10
-// Learn more: https://github.com/expo/expo/blob/master/docs/pages/versions/unversioned/guides/using-nextjs.md#withexpo
+const { withNativebase } = require("@native-base/next-adapter");
 
-const { withExpo } = require("@expo/next-adapter");
-const withFonts = require("next-fonts");
-const withPlugins = require("next-compose-plugins");
-const withTM = require("next-transpile-modules")([
-  "react-native-web",
-  "native-base",
-]);
-
-const nextConfig = {};
-
-module.exports = withPlugins(
-  [
-    withTM,
-    [withFonts, { projectRoot: __dirname }],
-    [withExpo, { projectRoot: __dirname }],
+module.exports = withNativebase({
+  dependencies: [
+    "@expo/next-adapter",
+    "react-native-vector-icons",
+    "react-native-vector-icons-for-web",
   ],
-  nextConfig
-);
+  nextConfig: {
+    projectRoot: __dirname,
+    webpack: (config, options) => {
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        "react-native$": "react-native-web",
+        "@expo/vector-icons": "react-native-vector-icons",
+      };
+      config.resolve.extensions = [
+        ".web.js",
+        ".web.ts",
+        ".web.tsx",
+        ...config.resolve.extensions,
+      ];
+      return config;
+    },
+  },
+});

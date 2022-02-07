@@ -39,7 +39,6 @@ export default function HorizontalComponent(props: any) {
                       alt="Vercel Logo"
                       width={48}
                       height={48}
-                    // @ts-ignore
                     />
                     <Text
                       noOfLines={2}

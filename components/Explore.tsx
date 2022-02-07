@@ -1,19 +1,16 @@
 import React from "react";
 import {
   Box,
-  Divider,
   HStack,
   Icon,
   Pressable,
   Text,
   VStack,
 } from "native-base";
-import {
-  Entypo,
-  FontAwesome,
-  MaterialCommunityIcons,
-  MaterialIcons,
-} from "@expo/vector-icons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Entypo from "@expo/vector-icons/Entypo";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 const List = [
   {
     iconName: "road",
