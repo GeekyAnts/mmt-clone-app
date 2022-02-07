@@ -89,7 +89,6 @@ export default function Header(props: any) {
             alignItems="center"
             p={2}
             bg={{
-              // @ts-ignore
               linearGradient: {
                 colors: ["#4FACFC", "#0a488a"],
                 start: [0, 0],

@@ -487,7 +487,6 @@ export default function Flights(props: any) {
             justifyContent="center"
             width={48}
             bg={{
-              // @ts-ignore
               linearGradient: {
                 colors: ["#4EADFD", "#0E64F3"],
                 start: [0, 0],

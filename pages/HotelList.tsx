@@ -112,7 +112,6 @@ function Search(props: any) {
               justifyContent="center"
               width={32}
               bg={{
-                // @ts-ignore
                 linearGradient: {
                   colors: ["#008CFF", "#0a488a"],
                   start: [0, 0],

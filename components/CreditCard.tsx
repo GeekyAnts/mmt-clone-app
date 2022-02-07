@@ -66,7 +66,6 @@ export default function CreditCard(props: any) {
                   alt="Vercel Logo"
                   width={48}
                   height={48}
-                // @ts-ignore
                 />
                 <VStack space={1}>
                   <Text

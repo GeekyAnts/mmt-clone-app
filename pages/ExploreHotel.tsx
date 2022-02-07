@@ -341,7 +341,6 @@ export default function ExploreHotel() {
                 justifyContent="center"
                 width={40}
                 bg={{
-                  // @ts-ignore
                   linearGradient: {
                     colors: ["#008CFF", "#0a488a"],
                     start: [0, 0],
