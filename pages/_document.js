@@ -20,7 +20,7 @@ import { AppRegistry } from "react-native";
 class Document extends NativebaseDocument {
   render() {
     return (
-      <Html style={{ height: "100%" }}>
+      <Html>
         <Head />
         <body>
           <Main />
