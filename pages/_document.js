@@ -22,7 +22,7 @@ class Document extends NativebaseDocument {
     return (
       <Html style={{ height: "100%" }}>
         <Head />
-        <body style={{ height: "100%", overflow: "hidden" }}>
+        <body>
           <Main />
           <NextScript />
         </body>

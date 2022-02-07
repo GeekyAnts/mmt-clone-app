@@ -5,6 +5,7 @@ module.exports = withNativebase({
     "@expo/next-adapter",
     "react-native-vector-icons",
     "react-native-vector-icons-for-web",
+    "expo-linear-gradient"
   ],
   nextConfig: {
     projectRoot: __dirname,
