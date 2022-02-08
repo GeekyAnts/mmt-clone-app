@@ -1,1 +1,1 @@
-Hotel flow in MakeYourTrip using native base
+Hotel flow in MakeYourTrip using NativeBase
