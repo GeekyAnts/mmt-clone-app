@@ -13,7 +13,7 @@ export default function Header(props: any) {
 
   React.useEffect(() => {
     // window is accessible here.
-    console.log("window.innerHeight", window.innerHeight);
+    // console.log("window.innerHeight", window.innerHeight);
     window.addEventListener("scroll", changeVisibility);
   }, []);
 
