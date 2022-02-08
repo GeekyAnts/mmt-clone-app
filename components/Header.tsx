@@ -119,7 +119,7 @@ export default function Header(props: any) {
         <Pressable>
           <HStack space={2} alignItems="center">
             <Image
-              src="/images/loginlogo.png"
+              src="/images/mmtLoginLogo.png"
               alt="Vercel Logo"
               width={40}
               height={40}
