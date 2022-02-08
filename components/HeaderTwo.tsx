@@ -97,7 +97,7 @@ export default function Header(props: any) {
             }}
           >
             <Image
-              src="/images/Loginlogo2.png"
+              src="/images/loginlogo2.png"
               alt="Vercel Logo"
               width={24}
               height={24}
