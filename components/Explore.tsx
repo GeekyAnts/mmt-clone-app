@@ -7,10 +7,7 @@ import {
   Text,
   VStack,
 } from "native-base";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Entypo from "@expo/vector-icons/Entypo";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { MaterialCommunityIcons, MaterialIcons, FontAwesome, Entypo } from "@native-base/icons";
 const List = [
   {
     iconName: "road",

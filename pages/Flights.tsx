@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Box, HStack, Icon, Text, VStack, Radio, Pressable } from "native-base";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import Fontisto from "@expo/vector-icons/Fontisto";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
+import { MaterialIcons, FontAwesome, Ionicons, MaterialCommunityIcons, SimpleLineIcons, AntDesign, Fontisto } from "@native-base/icons";
 import Footer from "../components/Footer";
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";

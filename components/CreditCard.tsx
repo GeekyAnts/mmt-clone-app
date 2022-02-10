@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, HStack, Icon, Pressable, Text, VStack } from "native-base";
 import Image from "next/image";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons"
+import { MaterialIcons } from "@native-base/icons";
 
 const List1 = [
   {

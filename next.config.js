@@ -1,25 +1,18 @@
 const { withNativebase } = require("@native-base/next-adapter");
-const path = require('path');
+const path = require("path");
 
 module.exports = withNativebase({
-  dependencies: [
-    "@expo/next-adapter",
-    "react-native-vector-icons",
-    "react-native-vector-icons-for-web",
-    "expo-linear-gradient"
-  ],
+  dependencies: ["@native-base/icons"],
   nextConfig: {
-    // projectRoot: __dirname,
     webpack: (config, options) => {
       config.module.rules.push({
         test: /\.ttf$/,
         loader: "url-loader", // or directly file-loader
-        include: path.resolve(__dirname, "node_modules/react-native-vector-icons"),
+        include: path.resolve(__dirname, "node_modules/@native-base/icons"),
       });
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
         "react-native$": "react-native-web",
-        "@expo/vector-icons": "react-native-vector-icons",
       };
       config.resolve.extensions = [
         ".web.js",

@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
+import { MaterialIcons, FontAwesome, Ionicons, MaterialCommunityIcons, SimpleLineIcons } from "@native-base/icons";
 import {
   Box,
   HStack,

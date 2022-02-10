@@ -4,15 +4,15 @@ import { NativeBaseProvider } from "native-base";
 import "react-datepicker/dist/react-datepicker.css";
 import * as React from 'react';
 
-const config = {
-  dependencies: {
-    "linear-gradient": require("expo-linear-gradient").LinearGradient,
-  },
-};
+// const config = {
+//   dependencies: {
+//     "linear-gradient": require("react-native-linear-gradient").default,
+//   },
+// };
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NativeBaseProvider config={config} isSSR>
+    <NativeBaseProvider isSSR>
       <Component {...pageProps} />
     </NativeBaseProvider>
   );

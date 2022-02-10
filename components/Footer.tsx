@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Divider, HStack, Icon, Text, VStack } from "native-base";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { AntDesign, FontAwesome } from "@native-base/icons";
 export default function Footer(pros: any) {
   return (
     <>

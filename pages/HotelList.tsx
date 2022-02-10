@@ -16,9 +16,7 @@ import {
   Text,
   VStack,
 } from "native-base";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import EvilIcons from "@expo/vector-icons/EvilIcons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { EvilIcons, MaterialCommunityIcons, AntDesign } from "@native-base/icons";
 import Image from "next/image";
 //@ts-ignore
 import DatePicker from "react-datepicker";
