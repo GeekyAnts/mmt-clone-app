@@ -12,19 +12,21 @@ import {
   Tooltip,
   VStack,
 } from "native-base";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import Entypo from "@expo/vector-icons/Entypo";
-import EvilIcons from "@expo/vector-icons/EvilIcons";
+import {
+  FontAwesome,
+  Ionicons,
+  AntDesign,
+  MaterialIcons,
+  Entypo,
+  EvilIcons,
+} from "@native-base/icons";
 import DatePicker from "react-datepicker";
 import Header from "../components/Header";
 import Image from "next/image";
 
 const config = {
   dependencies: {
-    "linear-gradient": require("expo-linear-gradient").LinearGradient,
+    "linear-gradient": require("react-native-linear-gradient").default,
   },
 };
 const DatePopup = () => {
@@ -86,7 +88,7 @@ function Search(props: any) {
         })}
       </HStack>
       <HStack>
-        <NativeBaseProvider config={config}>
+        <NativeBaseProvider config={config} isSSR>
           <Pressable
             // @ts-ignore
             onPress={() => {
@@ -349,7 +351,7 @@ function HotelCard(props: any) {
               />
             </HStack>
           </Pressable>
-          <NativeBaseProvider config={config}>
+          <NativeBaseProvider config={config} isSSR>
             <Pressable
               mt={5}
               // @ts-ignore

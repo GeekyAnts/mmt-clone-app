@@ -16,9 +16,11 @@ import {
   Text,
   VStack,
 } from "native-base";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import EvilIcons from "@expo/vector-icons/EvilIcons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import {
+  AntDesign,
+  EvilIcons,
+  MaterialCommunityIcons,
+} from "@native-base/icons";
 import Image from "next/image";
 //@ts-ignore
 import DatePicker from "react-datepicker";
@@ -27,7 +29,7 @@ import { useRouter } from "next/router";
 
 const config = {
   dependencies: {
-    "linear-gradient": require("expo-linear-gradient").LinearGradient,
+    "linear-gradient": require("react-native-linear-gradient").default,
   },
 };
 
@@ -98,7 +100,7 @@ function Search(props: any) {
         })}
       </HStack>
       <HStack>
-        <NativeBaseProvider config={config}>
+        <NativeBaseProvider config={config} isSSR>
           <Pressable
             // @ts-ignore
             onPress={() => {
@@ -667,7 +669,7 @@ function Filters(props: any) {
                       >
                         No Cost
                       </Text>
-                      <NativeBaseProvider config={config}>
+                      <NativeBaseProvider config={config} isSSR>
                         <Center
                           width={10}
                           rounded="full"

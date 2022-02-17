@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
+import {
+  FontAwesome,
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+  SimpleLineIcons,
+} from "@native-base/icons";
 import {
   Box,
   HStack,
@@ -23,7 +25,7 @@ import { useRouter } from "next/router";
 import HeaderTwo from "../components/HeaderTwo";
 const config = {
   dependencies: {
-    "linear-gradient": require("expo-linear-gradient").LinearGradient,
+    "linear-gradient": require("react-native-linear-gradient").default,
   },
 };
 
@@ -88,7 +90,7 @@ export default function ExploreHotel() {
   }, []);
 
   return (
-    <NativeBaseProvider config={config}>
+    <NativeBaseProvider config={config} isSSR>
       <Box
         h={{ lg: "480px" }}
         shadow={4}
@@ -154,7 +156,7 @@ export default function ExploreHotel() {
             borderRadius="md"
             alignSelf="center"
             mt="24"
-          // mt={3}
+            // mt={3}
           >
             <VStack space={2} mt={2}>
               <HStack alignItems="end" justifyContent="center" space={2}>
@@ -322,7 +324,7 @@ export default function ExploreHotel() {
               </HStack>
             </VStack>
           </Box>
-          <NativeBaseProvider config={config}>
+          <NativeBaseProvider config={config} isSSR>
             <Pressable
               alignItems="center"
               position="absolute"
