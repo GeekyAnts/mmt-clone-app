@@ -9,9 +9,11 @@ import {
   Text,
   VStack,
 } from "native-base";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
+import {
+  Ionicons,
+  MaterialCommunityIcons,
+  SimpleLineIcons,
+} from "@native-base/icons";
 import Image from "next/image";
 
 export default function Header(props: any) {

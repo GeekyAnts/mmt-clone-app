@@ -2,11 +2,11 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { NativeBaseProvider } from "native-base";
 import "react-datepicker/dist/react-datepicker.css";
-import * as React from 'react';
+import * as React from "react";
 
 const config = {
   dependencies: {
-    "linear-gradient": require("expo-linear-gradient").LinearGradient,
+    "linear-gradient": require("react-native-linear-gradient").default,
   },
 };
 
