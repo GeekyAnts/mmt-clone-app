@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Box, HStack, Icon, Text, VStack, Radio, Pressable } from "native-base";
+import {
+  Box,
+  HStack,
+  Icon,
+  Text,
+  VStack,
+  Radio,
+  Pressable,
+  ScrollView,
+} from "native-base";
 import {
   AntDesign,
   Fontisto,
@@ -108,7 +117,7 @@ export default function Flights(props: any) {
     window.addEventListener("scroll", changeVisibility);
   }, []);
   return (
-    <>
+    <ScrollView h="100vh">
       <Box
         shadow={4}
         h={{ lg: "480px" }}
@@ -534,6 +543,6 @@ export default function Flights(props: any) {
         </VStack>
       </Box>
       <Footer />
-    </>
+    </ScrollView>
   );
 }
