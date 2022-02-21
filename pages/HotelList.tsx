@@ -12,6 +12,7 @@ import {
   Link,
   NativeBaseProvider,
   Pressable,
+  ScrollView,
   Select,
   Text,
   VStack,
@@ -739,11 +740,13 @@ function Filters(props: any) {
 }
 export default function HotelList(props: any) {
   return (
-    <VStack>
-      <Header />
-      <Search />
-      <HotelInformation />
-      <Filters />
-    </VStack>
+    <ScrollView h="100vh">
+      <VStack>
+        <Header />
+        <Search />
+        <HotelInformation />
+        <Filters />
+      </VStack>
+    </ScrollView>
   );
 }

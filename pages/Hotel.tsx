@@ -8,6 +8,7 @@ import {
   Link,
   NativeBaseProvider,
   Pressable,
+  ScrollView,
   Text,
   Tooltip,
   VStack,
@@ -693,7 +694,7 @@ function Footer(props: any) {
 }
 export default function Hotel(props: any) {
   return (
-    <>
+    <ScrollView h="100vh">
       <Header />
       <Search />
       <MainPageBanner />
@@ -704,6 +705,6 @@ export default function Hotel(props: any) {
         <HighLight />
         <Footer />
       </Box>
-    </>
+    </ScrollView>
   );
 }
