@@ -1,4 +1,4 @@
-import { Link, VStack, Text } from "native-base";
+import { Link, VStack, Text, Box } from "native-base";
 import React from "react";
 const List = [
   {
@@ -30,20 +30,20 @@ const List = [
 
 export default function Hyperlink(props: any) {
   return (
-    <>
+    <Box py="10">
       {List.map((item, index) => {
         return (
-          <VStack key={index} py={3} px={{ lg: "40", md: "10" }}>
-            <Text fontSize="xs" fontWeight="semibold" color="coolGray.800">
+          <VStack key={index} mb="5">
+            <Text fontSize="10" fontWeight="bold" color="coolGray.800">
               {item.linkType}
             </Text>
             <Link
-              mt={1}
+              mt="1"
               href="https://nativebase.io"
               _text={{
-                color: "coolGray.500",
-                fontSize: "10",
-                fontWeight: "bold",
+                color: "darkText.200",
+                fontSize: "xs",
+
                 textDecorationLine: "none",
               }}
             >
@@ -52,6 +52,6 @@ export default function Hyperlink(props: any) {
           </VStack>
         );
       })}
-    </>
+    </Box>
   );
 }

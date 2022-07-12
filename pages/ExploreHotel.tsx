@@ -21,6 +21,7 @@ import Header from "../components/Header";
 import HorizontalComponent from "../components/HorizontalComponent";
 import Hyperlink from "../components/Hyperlink";
 import MMTLuxe from "../components/MmtLuxe";
+import Questions from "../components/Questions";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import HeaderTwo from "../components/HeaderTwo";
@@ -390,6 +391,7 @@ export default function ExploreHotel() {
           <MMTLuxe />
           <HorizontalComponent />
           <Hyperlink />
+          <Questions />
           <Footer />
         </VStack>
       </ScrollView>

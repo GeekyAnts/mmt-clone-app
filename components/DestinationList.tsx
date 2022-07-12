@@ -2,6 +2,53 @@ import React, { useState } from "react";
 import { Box, HStack, Link, Text, VStack } from "native-base";
 import Image from "next/image";
 
+const list = [
+  {
+    imageOne: "/images/goa.jpeg",
+    place: "Goa",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels",
+  },
+  {
+    imageOne: "/images/delhi.jpeg",
+    place: "Delhi",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels",
+  },
+  {
+    imageOne: "/images/bangalore.jpeg",
+    place: "Bangalore",
+    linkText: "Hotels, Budget Hotels, Resorts, Best Hotels",
+  },
+  {
+    imageOne: "/images/delhi.jpeg",
+    place: "Ooty",
+    linkText: "Hotels, Resorts, Cottges, Budget Hotels",
+  },
+  {
+    imageOne: "/images/mumbai.jpeg",
+    place: "Mumbai",
+    linkText: "Hotels, Budget Hotels, Resorts, Couple Hotels",
+  },
+  {
+    imageOne: "/images/shimla.jpeg",
+    place: "Shimla",
+    linkText: "Hotels, Budget Hotels, Best Hotels, Resorts",
+  },
+  {
+    imageOne: "/images/jaipur.jpeg",
+    place: "Jaipur",
+    linkText: "Hotels, Resorts, Cottges, Budget Hotels",
+  },
+  {
+    imageOne: "/images/mnali.jpeg",
+    place: "Manali",
+    linkText: "Hotels, Resorts, Budget Hotels, Best Hotels",
+  },
+  {
+    imageOne: "/images/delhi.jpeg",
+    place: "Others",
+    linkText: "Puri Hotels, OYO Delhi, Alleppey Houseboat",
+  },
+];
 const List1 = [
   {
     imageOne: "/images/goa.jpeg",
@@ -60,20 +107,20 @@ export default function DestinationList(props: any) {
   return (
     <Box
       shadow={5}
-      mx={40}
+      // mx={40}
       px={6}
       py={5}
       bg="white"
       borderRadius={10}
       mt={5}
-      flexGrow={1}
+      // flexGrow={1}
     >
       <HStack justifyContent="space-evenly" flexGrow={1}>
         <VStack
           justifyContent="space-evenly"
           alignItems="start"
           space={3}
-          flexGrow={1}
+          // flexGrow={1}
         >
           {List1.map((item, index) => {
             return (
