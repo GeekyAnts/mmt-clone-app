@@ -18,7 +18,7 @@ import {
   MaterialIcons,
   SimpleLineIcons,
 } from "@native-base/icons";
-import Footer from "../components/Footer";
+
 import Explore from "../components/Explore";
 import CreditCard from "../components/CreditCard";
 import DestinationList from "../components/DestinationList";
@@ -29,6 +29,8 @@ import HeaderTwo from "../components/HeaderTwo";
 import Download from "../components/Download";
 import FlightScroll from "../components/FlightScroll";
 import Header from "../components/Header";
+import Questions from "../components/Questions";
+import Footer from "../components/Footer";
 
 const fareType = [
   { type: "Regular Normal Fares", bgColor: "#80C6FF" },
@@ -528,8 +530,9 @@ export default function Flights(props: any) {
           />
         </HStack>
       </Box>
-      <Box bg="coolGray.200">
-        <VStack space={5}>
+      <Box bg="slateGray.50" alignItems="center" px="8">
+        <Box width="100%" maxW="1200">
+          {/* <VStack space={5}> */}
           <Explore />
           <FlightScroll />
           <Offers />
@@ -540,8 +543,10 @@ export default function Flights(props: any) {
 
           <DestinationList />
           <Hyperlink />
-        </VStack>
+          {/* </VStack> */}
+        </Box>
       </Box>
+      <Questions />
       <Footer />
     </ScrollView>
   );
