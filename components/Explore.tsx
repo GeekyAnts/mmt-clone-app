@@ -37,14 +37,13 @@ const List = [
 export default function Explore(props: any) {
   return (
     <Box
-      bg="white"
-      width="40%"
       shadow={6}
       rounded="full"
       px={3}
       py={3}
+      mt={{ base: 2, md: 0 }}
+      mx={{ base: 4, md: 0 }}
       justifyContent="center"
-      mx={80}
       alignSelf="center"
     >
       <Pressable
@@ -53,10 +52,15 @@ export default function Explore(props: any) {
           console.log("hello");
         }}
       >
-        <HStack alignItems="center" justifyContent="space-evenly">
+        <HStack
+          alignItems="center"
+          flexWrap="wrap"
+          justifyContent="space-evenly"
+          space={{ base: 2, md: 4 }}
+        >
           {List.map((item, index) => {
             return (
-              <HStack key={index} alignItems="center" space={3}>
+              <HStack key={index} alignItems="center" space={4}>
                 <Icon as={item.as} name={item.iconName} color="#1E93FD" />
                 {item.subText == false ? (
                   <Text fontSize="sm" color="coolGray.800" fontWeight="medium">

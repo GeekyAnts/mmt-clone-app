@@ -106,17 +106,23 @@ const List3 = [
 export default function DestinationList(props: any) {
   return (
     <Box
+      mx={{ base: 4, md: 0 }}
       shadow={5}
       // mx={40}
       px={6}
       py={5}
       bg="white"
       borderRadius={10}
-      mt={5}
+      w="100%"
       // flexGrow={1}
     >
-      <HStack justifyContent="space-evenly" flexGrow={1}>
+      <HStack
+        justifyContent="space-evenly"
+        flexDirection={{ base: "column", md: "row" }}
+        flexGrow={1}
+      >
         <VStack
+          w={{ base: "100%", md: "auto" }}
           justifyContent="space-evenly"
           alignItems="start"
           space={3}

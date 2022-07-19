@@ -33,21 +33,23 @@ const List1 = [
 export default function CreditCard(props: any) {
   return (
     <HStack
+      w="100%"
       alignItems="center"
-      width="100%"
-      mx={{ lg: 40, md: 0 }}
       space={{ lg: 4, md: 3 }}
-      mt={5}
       flexDirection={{ md: "column", lg: "row" }}
+      // px={{ base: 4, md: 0 }}
+      justifyContent="space-between"
     >
       {List1.map((item, index) => {
         return (
           <Pressable
+            w={{ base: "100%", md: "auto" }}
             key={index}
             // @ts-ignore
             onPress={() => {
               console.log("hello");
             }}
+            mt={{ base: 4, md: 0 }}
           >
             <Box
               borderColor={item.borderçolor}
@@ -57,6 +59,7 @@ export default function CreditCard(props: any) {
               borderLeftWidth={20}
               bg="white"
               py={3}
+              borderRadius="md"
             >
               <HStack alignItems="center">
                 <Image

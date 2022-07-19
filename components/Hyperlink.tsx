@@ -30,7 +30,7 @@ const List = [
 
 export default function Hyperlink(props: any) {
   return (
-    <Box py="10">
+    <Box py="10" w="100%" px={{ base: 4, md: 0 }}>
       {List.map((item, index) => {
         return (
           <VStack key={index} mb="5">

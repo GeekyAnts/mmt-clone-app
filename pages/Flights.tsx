@@ -45,46 +45,55 @@ const optionList = [
     iconName: "plane",
     iconText: "Flight",
     as: SimpleLineIcons,
+    link: "/Flights",
   },
   {
     iconName: "md-business",
     iconText: "Hotels",
     as: Ionicons,
+    link: "/ExploreHotel",
   },
   {
     iconName: "home-city-outline",
     iconText: "HomeStays",
     as: MaterialCommunityIcons,
+    link: "/Flights",
   },
   {
     iconName: "airballoon-outline",
     iconText: "Holiday Packages",
     as: MaterialCommunityIcons,
+    link: "/ExploreHotel",
   },
   {
     iconName: "train-outline",
     iconText: "Trains",
     as: Ionicons,
+    link: "/ExploreHotel",
   },
   {
     iconName: "bus-outline",
     iconText: "Buses",
     as: Ionicons,
+    link: "/ExploreHotel",
   },
   {
     iconName: "car",
     iconText: "Cabs",
     as: Ionicons,
+    link: "/ExploreHotel",
   },
   {
     iconName: "passport",
     iconText: "Visa",
     as: MaterialCommunityIcons,
+    link: "/ExploreHotel",
   },
   {
     iconName: "plane",
     iconText: "Charter Flight",
     as: Fontisto,
+    link: "/ExploreHotel",
   },
 ];
 
@@ -106,23 +115,33 @@ const Searches = [
 export default function Flights(props: any) {
   const router = useRouter();
   const [nav, setNav] = useState(true);
-  const changeVisibility = () => {
-    if (window.scrollY >= 40) {
-      setNav(false);
-    } else setNav(true);
-    // console.log(window.scrollY);
-  };
+  // const changeVisibility = () => {
+  //   if (window.scrollY >= 40) {
+  //     setNav(false);
+  //   } else setNav(true);
+  //   // console.log(window.scrollY);
+  // };
 
-  React.useEffect(() => {
-    // window is accessible here.
-    // console.log("window.innerHeight", window.innerHeight);
-    window.addEventListener("scroll", changeVisibility);
-  }, []);
+  // React.useEffect(() => {
+  //   // window is accessible here.
+  //   // console.log("window.innerHeight", window.innerHeight);
+  //   window.addEventListener("scroll", changeVisibility);
+  // }, []);
+  // return (
+  //   <ScrollView>
+  //     <Box bg="primary.400" p="12" h="2000" rounded="lg">
+  //       fdfdfdfd
+  //     </Box>
+  //     <Box mt="auto" bg="primary.400" p="12" rounded="lg">
+  //       Box
+  //     </Box>
+  //   </ScrollView>
+  // );
   return (
     <ScrollView h="100vh">
       <Box
         shadow={4}
-        h={{ lg: "480px" }}
+        h={{ base: "100vh", lg: "480px" }}
         bg={{
           linearGradient: {
             colors: ["#0A1221", "#124276"],
@@ -138,7 +157,7 @@ export default function Flights(props: any) {
             <Box
               shadow="4"
               position="absolute"
-              top={20}
+              top={{ base: 12, md: 20 }}
               mx={20}
               borderRadius={10}
               zIndex={1}
@@ -148,16 +167,21 @@ export default function Flights(props: any) {
               py="4"
               flexGrow={1}
               px={4}
-              width="50%"
+              width={{ base: "95%", md: "50%" }}
             >
-              <HStack justifyContent="space-evenly" flexGrow={1} width="100%">
+              <HStack
+                justifyContent="space-evenly"
+                flexGrow={1}
+                flexWrap="wrap"
+                width="100%"
+              >
                 {optionList.map((item, index) => {
                   return (
                     <Pressable
                       key={index}
                       // @ts-ignore
                       onPress={() => {
-                        router.push("/ExploreHotel");
+                        router.push(item.link);
                       }}
                     >
                       <VStack alignItems="center" justifyContent="center">
@@ -180,15 +204,20 @@ export default function Flights(props: any) {
           )}
           <Box
             px={8}
-            width="80%"
-            height="64"
+            width={{ base: "95%", md: "80%" }}
+            height={{ base: "70vh", lg: "64" }}
             bgColor="white"
             borderRadius="md"
             alignSelf="center"
-            mt="24"
+            mt={{ base: 110, md: 24 }}
           >
             <VStack>
-              <HStack justifyContent="space-between" pt="4" pb="4">
+              <HStack
+                justifyContent="space-between"
+                flexWrap="wrap"
+                pt="4"
+                pb="4"
+              >
                 <Radio.Group
                   size="sm"
                   defaultValue="1"
@@ -253,9 +282,10 @@ export default function Flights(props: any) {
                 borderWidth="1"
                 borderRadius="lg"
                 borderColor="coolGray.300"
+                flexDirection={{ base: "column", md: "row" }}
               >
                 <VStack
-                  py="4"
+                  py={{ base: 1, md: 4 }}
                   px="4"
                   w={{ lg: "56" }}
                   borderRightWidth="1"
@@ -266,7 +296,7 @@ export default function Flights(props: any) {
                   </Text>
                   <Text
                     color="black"
-                    fontSize="4xl"
+                    fontSize={{ base: "xl", md: "4xl" }}
                     lineHeight="md"
                     fontWeight="bold"
                   >
@@ -277,7 +307,7 @@ export default function Flights(props: any) {
                   </Text>
                 </VStack>
                 <VStack
-                  py="4"
+                  py={{ base: 1, md: 4 }}
                   px="4"
                   w={{ lg: "56" }}
                   borderRightWidth="1"
@@ -288,7 +318,7 @@ export default function Flights(props: any) {
                   </Text>
                   <Text
                     color="black"
-                    fontSize="4xl"
+                    fontSize={{ base: "xl", md: "4xl" }}
                     lineHeight="md"
                     fontWeight="bold"
                   >
@@ -299,7 +329,7 @@ export default function Flights(props: any) {
                   </Text>
                 </VStack>
                 <VStack
-                  py="4"
+                  py={{ base: 1, md: 4 }}
                   px="4"
                   w={{ lg: "40" }}
                   borderRightWidth="1"
@@ -317,7 +347,10 @@ export default function Flights(props: any) {
                     />
                   </HStack>
                   <HStack alignItems="flex-end" space="2">
-                    <Text fontSize="3xl" fontWeight="bold">
+                    <Text
+                      fontSize={{ base: "xl", md: "4xl" }}
+                      fontWeight="bold"
+                    >
                       25
                     </Text>
                     <Text fontSize="xl" fontWeight="bold">
@@ -329,7 +362,7 @@ export default function Flights(props: any) {
                   </Text>
                 </VStack>
                 <VStack
-                  py="4"
+                  py={{ base: 1, md: 4 }}
                   px="4"
                   w={{ lg: "40" }}
                   borderRightWidth="1"
@@ -355,7 +388,7 @@ export default function Flights(props: any) {
                     Tap to add a return date for biggest discounts
                   </Text>
                 </VStack>
-                <VStack py="4" px="4">
+                <VStack py={{ base: 1, md: 4 }} px="4">
                   <HStack justifyContent="unset" alignItems="center">
                     <Text color="#4A4A4A" fontSize="xs" fontWeight="bold">
                       TRAVELS AND CLASSES
@@ -368,7 +401,10 @@ export default function Flights(props: any) {
                     />
                   </HStack>
                   <HStack alignItems="flex-end" space="2">
-                    <Text fontSize="3xl" fontWeight="bold">
+                    <Text
+                      fontSize={{ base: "xl", md: "4xl" }}
+                      fontWeight="bold"
+                    >
                       1
                     </Text>
                     <Text fontSize="xl" fontWeight="bold">
@@ -380,9 +416,24 @@ export default function Flights(props: any) {
                   </Text>
                 </VStack>
               </HStack>
-              <HStack justifyContent="space-between" alignItems="center">
-                <HStack alignItems="center" width="70%" space={1} py={1}>
-                  <Box width="10%">
+              <HStack
+                justifyContent={{ md: "space-between" }}
+                alignItems="center"
+                w="100%"
+                // flexWrap="wrap"
+              >
+                <HStack
+                  alignItems="center"
+                  //flexWrap="wrap"
+                  //  width="70%"
+                  // w="100%"
+                  space={1}
+                  py={1}
+                  // bg="red.500"
+                >
+                  <Box
+                  //  width={{ md: "10%" }}
+                  >
                     <Text
                       fontWeight="medium"
                       color="coolGray.400"
@@ -391,16 +442,18 @@ export default function Flights(props: any) {
                       Select A Fare Type:
                     </Text>
                   </Box>
-                  <Radio.Group
+                  {/* <Radio.Group
                     defaultValue="1"
                     size="sm"
                     name="exampleGroup"
-                    flexDirection="row"
+                    flexDirection={{ base: "row", md: "row" }}
+                    //w="100%"
+                    flexWrap="wrap"
                   >
                     {fareType.map((item, index) => {
                       return (
                         <Box
-                          mt={5}
+                          mt={{ base: 1, md: 5 }}
                           width="16%"
                           key={index}
                           px={1}
@@ -427,19 +480,20 @@ export default function Flights(props: any) {
                         </Box>
                       );
                     })}
-                  </Radio.Group>
+                  </Radio.Group> */}
                 </HStack>
-                <HStack
+                {/* <HStack
                   justifyContent="center"
                   alignItems="center"
                   pt={10}
                   space={2}
-                  width="30%"
+                  flexWrap="wrap"
+                  // width="30%"
                 >
                   <Text fontWeight="bold" fontSize="10" textAlign="center">
                     Trending Searches:
                   </Text>
-                  <HStack space={3} alignItems="center">
+                  <HStack space={3} alignItems="center" flexWrap="wrap">
                     {Searches.map((item, index) => {
                       return (
                         <Pressable
@@ -478,7 +532,7 @@ export default function Flights(props: any) {
                       );
                     })}
                   </HStack>
-                </HStack>
+                </HStack> */}
               </HStack>
             </VStack>
           </Box>
@@ -530,21 +584,25 @@ export default function Flights(props: any) {
           />
         </HStack>
       </Box>
-      <Box bg="slateGray.50" alignItems="center" px="8">
-        <Box width="100%" maxW="1200">
+      <Box bg="slateGray.50" alignItems="center">
+        <VStack
+          space="6"
+          width="100%"
+          alignItems="center"
+          px={{ base: 4, md: 40 }}
+        >
           {/* <VStack space={5}> */}
           <Explore />
           <FlightScroll />
           <Offers />
           <CreditCard />
-          <Box mx="40">
-            <Download />
-          </Box>
+
+          <Download />
 
           <DestinationList />
           <Hyperlink />
           {/* </VStack> */}
-        </Box>
+        </VStack>
       </Box>
       <Questions />
       <Footer />

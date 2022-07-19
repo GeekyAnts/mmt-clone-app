@@ -18,22 +18,33 @@ const List = [
 ];
 export default function HorizontalComponent(props: any) {
   return (
-    <Box px={{ lg: "40", md: "10" }} mt={3}>
+    <Box mt={3} w="100%">
       {/* @ts-ignore */}
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        <HStack space={4} flexDirection={{ lg: "row", md: "row" }}>
+      <ScrollView
+        w="100%"
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      >
+        <HStack
+          w="100%"
+          space={4}
+          flexDirection={{ base: "column", lg: "row", md: "row" }}
+        >
           {List.map((item, index) => {
             return (
               <Box
                 key={index}
                 borderRadius={10}
                 bg="white"
-                // px={10}
-                // width={80}
+                w={{ base: "100%", md: "auto" }}
                 height={24}
               >
-                <HStack px={6} py={4}>
-                  <HStack alignItems="center" space={3}>
+                <HStack w={{ base: "100%", md: "auto" }} px={6} py={4}>
+                  <HStack
+                    w={{ base: "100%", md: "auto" }}
+                    alignItems="center"
+                    space={3}
+                  >
                     <Image
                       src={item.imageOne}
                       alt="Vercel Logo"

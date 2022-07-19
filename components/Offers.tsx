@@ -9,8 +9,10 @@ import {
   Link,
   Pressable,
   Divider,
+  Hidden,
+  Image,
 } from "native-base";
-import Image from "next/image";
+// import Image from "next/image";
 
 const productList = [
   {
@@ -42,17 +44,31 @@ const productList = [
 export default function Offers() {
   const [tabName, setTabName] = React.useState("All Offers");
   return (
-    <VStack bg="white" shadow={6} mx={40} height="20%" borderRadius={8}>
-      <HStack bg="white" px={6} alignItems="center" space={4} pt={4}>
-        <Text fontSize="5xl" fontWeight="extraBold" color="coolGray.700">
+    <VStack w="100%" bg="white" shadow={6} borderRadius={10}>
+      <HStack
+        w="100%"
+        borderTopRadius={10}
+        px={6}
+        alignItems="center"
+        space={4}
+        pt={{ base: 2, md: 5 }}
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        <Text
+          fontSize={{ base: "2xl", md: "4xl" }}
+          fontWeight={{ base: "xl", md: "extraBold" }}
+          color="coolGray.700"
+        >
           Offers
         </Text>
         <HStack
           px={{ base: 4, md: 4 }}
-          pt="2"
-          space={4}
+          pt={{ base: 0, md: 2 }}
+          space={{ base: 0, md: 4 }}
           borderBottomWidth={1}
           borderBottomColor="coolGray.300"
+          w={{ base: "100%", md: "auto" }}
+          flexWrap="wrap"
         >
           <Pressable
             px="2"
@@ -62,7 +78,7 @@ export default function Offers() {
             }}
           >
             <Text
-              fontSize="md"
+              fontSize={{ base: "sm", md: "md" }}
               fontWeight="medium"
               _light={{
                 color: tabName == "All Offers" ? "#0A8CFF" : "#4A4A4A",
@@ -99,7 +115,7 @@ export default function Offers() {
             }}
           >
             <Text
-              fontSize="md"
+              fontSize={{ base: "sm", md: "md" }}
               fontWeight="medium"
               _light={{
                 color: tabName == "Bank Offers" ? "#0A8CFF" : "#4A4A4A",
@@ -137,7 +153,7 @@ export default function Offers() {
             px="2"
           >
             <Text
-              fontSize="md"
+              fontSize={{ base: "sm", md: "md" }}
               fontWeight="medium"
               _light={{
                 color: tabName == "Domastic Flight" ? "#0A8CFF" : "#4A4A4A",
@@ -177,7 +193,7 @@ export default function Offers() {
             }}
           >
             <Text
-              fontSize="md"
+              fontSize={{ base: "sm", md: "md" }}
               fontWeight="medium"
               _light={{
                 color:
@@ -211,50 +227,63 @@ export default function Offers() {
               />
             </Box>
           </Pressable>
-          <Pressable
-            px="2"
-            //@ts-ignore
-            onPress={() => {
-              setTabName("More");
-            }}
-          >
-            <Text
-              fontSize="md"
-              fontWeight="medium"
-              _light={{
-                color: tabName == "More" ? "#0A8CFF" : "#4A4A4A",
-              }}
-              _dark={{
-                color: tabName == "More" ? "coolGray.50" : "coolGray.400",
+          <Hidden from="base" till="md">
+            <Pressable
+              px="2"
+              //@ts-ignore
+              onPress={() => {
+                setTabName("More");
               }}
             >
-              More
-            </Text>
-            <Box mt="2">
-              <Divider
-                py="0.5"
+              <Text
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight="medium"
                 _light={{
-                  bg: {
-                    base: tabName == "More" ? "#0A8CFF" : "white",
-                    md: tabName == "More" ? "#0A8CFF" : "white",
-                  },
+                  color: tabName == "More" ? "#0A8CFF" : "#4A4A4A",
                 }}
                 _dark={{
-                  bg: tabName == "More" ? "primary.700" : "coolGray.900",
+                  color: tabName == "More" ? "coolGray.50" : "coolGray.400",
                 }}
-              />
-            </Box>
-          </Pressable>
+              >
+                More
+              </Text>
+              <Box mt="2">
+                <Divider
+                  py="0.5"
+                  _light={{
+                    bg: {
+                      base: tabName == "More" ? "#0A8CFF" : "white",
+                      md: tabName == "More" ? "#0A8CFF" : "white",
+                    },
+                  }}
+                  _dark={{
+                    bg: tabName == "More" ? "primary.700" : "coolGray.900",
+                  }}
+                />
+              </Box>
+            </Pressable>
+          </Hidden>
         </HStack>
       </HStack>
       {tabName == "All Offers" ||
-        "Bank Offers" ||
-        "Domestic Flight" ||
-        "International Flight" ||
-        "More" ? (
-        <HStack bg="white" space={4} px={4} alignItems="start">
+      "Bank Offers" ||
+      "Domestic Flight" ||
+      "International Flight" ||
+      "More" ? (
+        <HStack
+          w="100%"
+          bg="white"
+          space={4}
+          px={4}
+          alignItems="start"
+          borderBottomRadius={10}
+        >
           {/* @ts-ignore */}
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <ScrollView
+            width="100%"
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          >
             {productList.map((item, index) => {
               return (
                 <Box
@@ -266,14 +295,16 @@ export default function Offers() {
                   borderRadius={6}
                   my={8}
                   mx={4}
+                  //w={{ base: "420", md: "auto" }}
                 >
                   <HStack
                     _dark={{ bg: { base: "customGray", md: "coolGray.800" } }}
                     _light={{ bg: "coolGray.50" }}
                     borderRadius={6}
                     pb={{ base: 0, md: 4 }}
+                    //w={{ base: "420", md: "auto" }}
                   >
-                    <VStack flex={1}>
+                    <VStack>
                       <HStack
                         space="3"
                         alignItems="center"
@@ -284,13 +315,13 @@ export default function Offers() {
                         <Image
                           src={item.imageUri}
                           alt="Alternate Text"
-                          height="120"
-                          width="120"
+                          height={{ base: "85", md: "120" }}
+                          width={{ base: "85", md: "120" }}
                           //@ts-ignore
                           borderRadius="md"
                         />
 
-                        <VStack mt="2" flex={1}>
+                        <VStack mt="2" w={{ base: "300", md: "auto" }}>
                           <Text
                             fontSize="md"
                             fontWeight="bold"
