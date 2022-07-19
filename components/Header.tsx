@@ -64,15 +64,16 @@ export default function Header(props: any) {
   return (
     <HStack
       alignItems="center"
-      px={{ lg: 32, md: 10 }}
+      px={{ base: 4, lg: 32, md: 10 }}
       py={4}
-      bg="white"
       justifyContent="space-between"
       position="sticky"
       top={0}
       zIndex={1}
+      w="100%"
+      bg="white"
     >
-      <HStack alignItems="center" space={5}>
+      <HStack alignItems="center" space={5} w="100%" flexWrap="wrap">
         {/* <Image
           src="/images/mmtLogo.png"
           alt="MakeYourTrip Logo"

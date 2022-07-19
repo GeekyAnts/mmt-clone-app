@@ -1,6 +1,14 @@
 import React from "react";
-import { Box, Button, HStack, Pressable, Text, VStack } from "native-base";
-import Image from "next/image";
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  Pressable,
+  Text,
+  VStack,
+} from "native-base";
+
 import { useRouter } from "next/router";
 
 const List = [
@@ -25,15 +33,25 @@ export default function MMTLuxe(props: any) {
   const router = useRouter();
   return (
     <Pressable
-      px={{ lg: "40", md: 10 }}
       //@ts-ignore
       onPress={() => {
         console.log("hello");
       }}
+      w="100%"
     >
-      <Box bg="coolGray.100" p={4} flex={1} borderRadius={10}>
-        <HStack alignItems="center" justifyContent="space-between">
-          <VStack space={2} width="40%">
+      <Box
+        px={{ base: 4, md: 4 }}
+        bg="coolGray.100"
+        p={4}
+        flex={1}
+        borderRadius={10}
+      >
+        <HStack
+          alignItems="center"
+          justifyContent="space-between"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <VStack space={{ md: 2 }} width={{ base: "100%", md: "40%" }}>
             <Text color="coolGray.800" fontSize={10} fontWeight="extrabold">
               INTRODUCING
             </Text>
@@ -55,32 +73,48 @@ export default function MMTLuxe(props: any) {
               onPress={() => {
                 console.log("hello");
               }}
+              my={{ base: 1, md: 0 }}
             >
               Learn More
             </Button>
           </VStack>
-          <HStack alignItems="center" space={5} width="60%">
+          <HStack
+            alignItems="center"
+            space={5}
+            width={{ base: "100%", md: "60%" }}
+            flexWrap="wrap"
+            mt={{ base: 2, md: 0 }}
+          >
             {List.map((item, index) => {
               return (
                 <Box
-                  width="200"
+                  width={{ base: "100%", md: 200 }}
+                  // width={{ base: "350", md: 200 }}
                   height="250"
                   bg="white"
                   key={index}
                   borderRadius={10}
                   shadow={4}
                 >
-                  <VStack alignItems="center" justifyContent="center" space={1}>
+                  <VStack
+                    alignItems="center"
+                    justifyContent="center"
+                    space={1}
+                    width={{ base: "100%", md: 200 }}
+                  >
                     <Pressable
                       // @ts-ignore
                       onPress={() => {
                         router.push("/HotelList");
                       }}
+                      width={{ base: "100%", md: 200 }}
                     >
                       <Image
+                        borderTopRadius={10}
                         src={item.imageOne}
                         alt="Vercel Logo"
-                        width="200"
+                        // width={{ base: "350", md: 200 }}
+                        width={{ base: "100%", md: 200 }}
                         height="150"
                       />
                     </Pressable>

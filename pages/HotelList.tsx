@@ -5,6 +5,7 @@ import {
   Checkbox,
   CheckIcon,
   Divider,
+  Hidden,
   HStack,
   Icon,
   IconButton,
@@ -27,6 +28,7 @@ import Image from "next/image";
 import DatePicker from "react-datepicker";
 import Header from "../components/Header";
 import { useRouter } from "next/router";
+import Footer from "../components/Footer";
 
 const config = {
   dependencies: {
@@ -49,7 +51,6 @@ const DatePopup = () => {
 };
 
 function Search(props: any) {
-  const [startDate, setStartDate] = useState(new Date());
   const information = [
     {
       mainText: "CITY, AREA OR PROPERTY",
@@ -71,24 +72,25 @@ function Search(props: any) {
   return (
     <HStack
       bg="#09223D"
-      px={48}
+      px={{ base: 4, md: 48 }}
       py={1}
-      justifyContent="space-between"
+      space={{ base: 4, md: 10 }}
       alignItems="center"
       position="sticky"
       top={0}
+      w="100%"
+      flexWrap="wrap"
     >
-      <HStack space={4} alignItems="center">
+      <HStack
+        space={4}
+        alignItems="center"
+        w={{ base: "100%", md: "auto" }}
+        flexWrap="wrap"
+      >
         {information.map((item, index) => {
           return (
             <HStack key={index}>
-              <Pressable
-                bg="coolGray.600"
-                px={2}
-                py={1}
-                borderRadius="sm"
-                zIndex={-1}
-              >
+              <Pressable bg="coolGray.600" px={2} py={1} borderRadius="sm">
                 <VStack>
                   <DatePopup />
                   <Text fontSize="md" color="white" fontWeight="normal">
@@ -100,7 +102,7 @@ function Search(props: any) {
           );
         })}
       </HStack>
-      <HStack>
+      <HStack my={{ base: 4, md: 0 }}>
         <NativeBaseProvider config={config} isSSR>
           <Pressable
             // @ts-ignore
@@ -135,8 +137,17 @@ function Search(props: any) {
 function HotelInformation(props: any) {
   let [service, setService] = React.useState("");
   return (
-    <Box bg="#CFE5FA" px={{ lg: "40", md: "20" }} py={5} flex={1} zIndex={-1}>
-      <HStack justifyContent="space-between">
+    <Box
+      bg="#CFE5FA"
+      px={{ base: 4, lg: "40", md: "20" }}
+      py={{ base: 2, md: 5 }}
+      flex={1}
+      zIndex={-1}
+    >
+      <HStack
+        justifyContent="space-between"
+        flexDirection={{ base: "column", md: "row" }}
+      >
         <VStack>
           <HStack alignItems="center">
             <Link
@@ -155,10 +166,15 @@ function HotelInformation(props: any) {
               Hotels and more in Goa
             </Text>
           </HStack>
-          <Text fontWeight="bold" color="coolGray.800" fontSize="4xl" mt={16}>
+          <Text
+            fontWeight="bold"
+            color="coolGray.800"
+            fontSize={{ base: "xl", md: "4xl" }}
+            mt={{ base: 2, md: 16 }}
+          >
             Hotels, Villas, Apartments and more in Goa
           </Text>
-          <HStack alignItems="center">
+          <HStack alignItems="center" flex={1} flexWrap="wrap">
             <HStack alignItems="center">
               <Text fontSize="sm" color="coolGray.800" fontWeight="semibold">
                 Sort By:
@@ -190,7 +206,7 @@ function HotelInformation(props: any) {
             </HStack>
           </HStack>
         </VStack>
-        <VStack space={10}>
+        <VStack space={{ base: 2, md: 10 }} mt={{ base: 2, md: 0 }}>
           <Image
             src="/images/hotel1.jpeg"
             alt="Vercel Logo"
@@ -376,12 +392,17 @@ function Filters(props: any) {
   ];
   const router = useRouter();
   return (
-    <HStack px={{ lg: "40", md: "24" }} space={2} zIndex={-1}>
-      <VStack width="25%">
+    <HStack
+      px={{ base: 4, lg: "40", md: "24" }}
+      space={2}
+      zIndex={-1}
+      flexDirection={{ base: "column", md: "row" }}
+    >
+      <VStack width={{ base: "100%", md: "25%" }}>
         <Text fontSize="lg" color="coolGray.800" fontWeight="semibold">
           Select Filters
         </Text>
-        <VStack mt={5}>
+        <VStack mt={{ base: 2, md: 5 }}>
           <Text fontSize="md" color="coolGray.800" fontWeight="medium">
             Popular Filters
           </Text>
@@ -433,7 +454,7 @@ function Filters(props: any) {
         >
           See 4 more
         </Link>
-        <VStack mt={5}>
+        <VStack mt={{ base: 2, md: 5 }}>
           <Text fontSize="md" color="coolGray.800" fontWeight="medium">
             Price
           </Text>
@@ -470,7 +491,12 @@ function Filters(props: any) {
             })}
           </VStack>
         </VStack>
-        <Text fontSize="md" color="coolGray.800" fontWeight="medium" mt={5}>
+        <Text
+          fontSize="md"
+          color="coolGray.800"
+          fontWeight="medium"
+          mt={{ base: 2, md: 5 }}
+        >
           Your Budget
         </Text>
         <HStack alignItems="center" space={2}>
@@ -492,7 +518,12 @@ function Filters(props: any) {
             }}
           />
         </HStack>
-        <Text fontSize="md" color="coolGray.800" fontWeight="medium" mt={5}>
+        <Text
+          fontSize="md"
+          color="coolGray.800"
+          fontWeight="medium"
+          mt={{ base: 2, md: 5 }}
+        >
           Locality
         </Text>
         {Locality.map((item, index) => {
@@ -507,7 +538,12 @@ function Filters(props: any) {
             </Checkbox>
           );
         })}
-        <Text fontSize="md" color="coolGray.800" fontWeight="medium" mt={5}>
+        <Text
+          fontSize="md"
+          color="coolGray.800"
+          fontWeight="medium"
+          mt={{ base: 2, md: 5 }}
+        >
           Other Areas
         </Text>
         {otherArea.map((item, index) => {
@@ -523,7 +559,7 @@ function Filters(props: any) {
           );
         })}
       </VStack>
-      <VStack width="75%">
+      <VStack width={{ base: "100%", md: "75%" }}>
         <Text color="coolGray.800" fontSize="3xl" fontWeight="bold">
           Recommended for You
         </Text>
@@ -544,9 +580,11 @@ function Filters(props: any) {
                 mt={2}
               >
                 <HStack
-                  alignItems="center"
-                  justifyContent="space-evenly"
+                  alignItems={{ base: "left", md: "center" }}
+                  justifyContent={{ md: "space-evenly" }}
                   py={2}
+                  px={{ base: 4, md: 0 }}
+                  flexDirection={{ base: "column", md: "row" }}
                 >
                   <VStack space={2}>
                     <Image
@@ -584,6 +622,7 @@ function Filters(props: any) {
                   </VStack>
                   <VStack alignItems="start" space={2}>
                     <Pressable
+                      mt={{ base: 2, md: 0 }}
                       p="2"
                       borderWidth="1"
                       borderRadius="md"
@@ -633,8 +672,11 @@ function Filters(props: any) {
                       </Text>
                     </HStack>
                   </VStack>
-                  <Divider orientation="vertical" />
-                  <VStack alignItems="end">
+                  <Hidden from="base" till="md">
+                    <Divider orientation="vertical" />
+                  </Hidden>
+
+                  <VStack alignItems={{ base: "start", md: "end" }}>
                     <Text
                       textDecorationLine="line-through"
                       color="coolGray.500"
@@ -746,6 +788,7 @@ export default function HotelList(props: any) {
         <Search />
         <HotelInformation />
         <Filters />
+        <Footer />
       </VStack>
     </ScrollView>
   );

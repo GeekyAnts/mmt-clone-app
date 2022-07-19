@@ -4,9 +4,16 @@ import { AntDesign, FontAwesome } from "@native-base/icons";
 
 export default function Questions(pros: any) {
   return (
-    <Box bg="slateYellow.200" alignItems="center" px="8">
-      <Box py={16} width="100%" maxW="1200">
+    <Box
+      bg="slateYellow.200"
+      //alignItems="center"
+      px={{ base: 4, md: 40 }}
+      pt={{ base: 4, md: 0 }}
+      w="100%"
+    >
+      <Box py={16} w="100%">
         <Stack
+          w="100%"
           direction={{ base: "column", md: "row" }}
           justifyContent="space-between"
           space={{ base: "12", md: "16", lg: "32" }}

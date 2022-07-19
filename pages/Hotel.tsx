@@ -12,6 +12,7 @@ import {
   Text,
   Tooltip,
   VStack,
+  Image,
 } from "native-base";
 import {
   FontAwesome,
@@ -23,7 +24,6 @@ import {
 } from "@native-base/icons";
 import DatePicker from "react-datepicker";
 import Header from "../components/Header";
-import Image from "next/image";
 
 const config = {
   dependencies: {
@@ -65,14 +65,21 @@ function Search(props: any) {
   return (
     <HStack
       bg="#09223D"
-      px={48}
+      px={{ base: 4, md: 48 }}
       py={1}
-      justifyContent="space-between"
+      space={{ base: 4, md: 10 }}
       alignItems="center"
       position="sticky"
       top={0}
+      w="100%"
+      flexWrap="wrap"
     >
-      <HStack space={4} alignItems="center">
+      <HStack
+        space={4}
+        alignItems="center"
+        w={{ base: "100%", md: "auto" }}
+        flexWrap="wrap"
+      >
         {information.map((item, index) => {
           return (
             <HStack key={index}>
@@ -88,7 +95,7 @@ function Search(props: any) {
           );
         })}
       </HStack>
-      <HStack>
+      <HStack my={{ base: 4, md: 0 }}>
         <NativeBaseProvider config={config} isSSR>
           <Pressable
             // @ts-ignore
@@ -125,16 +132,23 @@ function MainPageBanner(props: any) {
   return (
     <VStack w="100%" h="380" zIndex={-1}>
       <Box>
-        <Box px={40} bg="#26262677">
+        <Box
+          px={40}
+          w="100%"
+          bg="#26262677"
+          position="absolute"
+          top="0"
+          bottom="0"
+          zIndex={-1}
+          width="100%"
+          height={500}
+        >
           <Image
             // @ts-ignore
-            position="absolute"
+
             src="/images/hotel1.jpeg"
             alt="Vercel Logo"
-            top="0"
-            bottom="0"
-            zIndex={1}
-            width="800"
+            width="100%"
             height={500}
           />
         </Box>
@@ -146,7 +160,7 @@ function MainPageBanner(props: any) {
           py={2}
           position="absolute"
           top={80}
-          left={48}
+          left={{ base: 4, md: 48 }}
           // @ts-ignore
           onPress={() => {
             console.log("hello");
@@ -160,11 +174,12 @@ function MainPageBanner(props: any) {
           </HStack>
         </Pressable>
         <HStack
+          flexWrap="wrap"
           alignItems="center"
           position="absolute"
           top={2}
           right={0}
-          left={48}
+          left={{ base: 4, md: 48 }}
         >
           <Pressable
             // @ts-ignore
@@ -204,7 +219,7 @@ function MainPageBanner(props: any) {
           </Text>
         </HStack>
         <HStack
-          px={48}
+          px={{ base: 4, md: 48 }}
           py={2}
           justifyContent="space-between"
           alignItems="center"
@@ -213,10 +228,17 @@ function MainPageBanner(props: any) {
           bottom={0}
           right={0}
           left={0}
+          top={370}
+          zIndex={40}
+          h={140}
         >
           <VStack py="2" mt={2}>
             <HStack alignItems="center" space={2}>
-              <Text color="coolGray.50" fontWeight="bold" fontSize="3xl">
+              <Text
+                color="coolGray.50"
+                fontWeight="bold"
+                fontSize={{ base: "xl", md: "3xl" }}
+              >
                 The Lalit Golf & Spa Resort
               </Text>
               <Icon as={Entypo} name="star" color="white" size="5" />
@@ -225,7 +247,7 @@ function MainPageBanner(props: any) {
               <Icon as={Entypo} name="star" color="white" size="5" />
               <Icon as={Entypo} name="star" color="white" size="5" />
             </HStack>
-            <Divider width={20} bg="#EEB971" rounded="lg" />
+            {/* <Divider width={20} bg="#EEB971" rounded="lg" /> */}
             <HStack mt={2} alignItems="center" space={2}>
               <Center
                 bg="coolGray.50"
@@ -413,7 +435,13 @@ function HotelCard(props: any) {
 }
 function Rating(props: any) {
   return (
-    <HStack alignItems="center" space={10} px={48} mt="-32" zIndex={-1}>
+    <HStack
+      alignItems="center"
+      space={10}
+      px={{ base: 4, md: 48 }}
+      mt={4}
+      zIndex={-1}
+    >
       <HStack alignItems="center" space={2}>
         <Center bg="#37D18F" p={2} rounded="md">
           <VStack alignItems="center">
@@ -446,8 +474,9 @@ function Rating(props: any) {
         <Image
           src="/images/hotel5.jpeg"
           alt="MakeYourTrip Logo"
-          width={40}
-          height={40}
+          width={{ base: 20, md: 40 }}
+          height={{ base: 20, md: 40 }}
+          rounded="md"
         />
         <VStack>
           <Text color="coolGray.800" fontWeight="bold" fontSize="lg">
@@ -489,44 +518,54 @@ function BestOfLuxury(props: any) {
     },
   ];
   return (
-    <VStack px={48} mt={10} zIndex={-1}>
+    <VStack px={{ base: 4, md: 48 }} mt={10} zIndex={-1} w="100%">
       <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
         Discover the Best of Luxury
       </Text>
       <Divider width={20} bg="#EEB971" rounded="lg" />
-      <HStack mt={7} space={6}>
+      <HStack
+        mt={7}
+        space={6}
+        w="100%"
+        flexDirection={{ base: "column", md: "row" }}
+      >
         {Luxury.map((item, index) => {
           return (
-            <Pressable key={index}>
+            <Pressable key={index} w={{ base: "100%", md: "230" }}>
               <Box
-                borderWidth={4}
-                borderColor="red.500"
                 borderRadius="lg"
-                height={210}
-                width={230}
+                height={250}
+                width={{ base: "100%", md: 230 }}
                 bg="#26242485"
                 opacity={0.6}
                 alignItems="center"
                 justifyContent="center"
               >
                 <Center
-                  borderWidth={2}
-                  borderColor="white"
+                  //  borderWidth={2}
+                  // borderColor="white"
                   p="3"
-                  rounded="full"
+                  // rounded="full"
+                  zIndex={1}
+                  width={{ base: "100%", md: 230 }}
+                  position="absolute"
                 >
                   <Image
                     src={item.imageOne}
                     alt="Vercel Logo"
-                    width={64}
-                    height={64}
+                    height={130}
+                    rounded="full"
+                    width={{ base: "130", md: 230 }}
                     // @ts-ignore
-                    borderRadius={20}
+                    // borderRadius={20}
+                    borderWidth={2}
+                    m={2}
+                    borderColor="white"
                   />
+                  <Text textAlign="center" color="white" fontWeight="semibold">
+                    {item.subText}
+                  </Text>
                 </Center>
-                <Text textAlign="center" color="white" fontWeight="semibold">
-                  {item.subText}
-                </Text>
               </Box>
             </Pressable>
           );
@@ -570,7 +609,7 @@ function HighLight(props: any) {
     },
   ];
   return (
-    <VStack px={48} my={6} zIndex={-1}>
+    <VStack px={{ base: 4, md: 48 }} w="100%" my={6} zIndex={-1}>
       <Text color="coolGray.800" fontSize="2xl" fontWeight="semibold">
         Property Highlights
       </Text>
@@ -578,7 +617,7 @@ function HighLight(props: any) {
       <Box
         borderWidth={1}
         borderColor="coolGray.800"
-        width="62%"
+        width={{ base: "100%", md: "62%" }}
         borderRadius={5}
         mt={6}
         pb={4}
@@ -586,9 +625,10 @@ function HighLight(props: any) {
         <HStack
           alignItems="center"
           alignContent="space-evenly"
-          space={16}
+          space={{ base: 4, md: 16 }}
           alignSelf="center"
           mt={2}
+          flexWrap="wrap"
         >
           <VStack alignItems="center" space={1}>
             <Text color="coolGray.800" fontWeight="semibold">
@@ -674,8 +714,14 @@ function HighLight(props: any) {
 
 function Footer(props: any) {
   return (
-    <Box bg="black" py={10} justifyContent="center" px={40}>
-      <HStack alignItems="center" justifyContent="space-between">
+    <Box
+      w="100%"
+      bg="black"
+      py={10}
+      justifyContent="center"
+      px={{ base: 4, md: 40 }}
+    >
+      <HStack w="100%" alignItems="center" justifyContent="space-between">
         <HStack alignItems="center" space={5}>
           <Icon as={AntDesign} name="twitter" color="white" size={5} />
           <Icon as={FontAwesome} name="facebook" color="white" size={5} />
@@ -694,12 +740,12 @@ function Footer(props: any) {
 }
 export default function Hotel(props: any) {
   return (
-    <ScrollView h="100vh">
+    <ScrollView w="100%" h="100vh">
       <Header />
       <Search />
       <MainPageBanner />
       <Box bg="white" mt={32} zIndex={-1}>
-        <HotelCard />
+        {/* <HotelCard /> */}
         <Rating />
         <BestOfLuxury />
         <HighLight />

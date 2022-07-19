@@ -2713,7 +2713,17 @@
   resolved "https://registry.yarnpkg.com/@react-native/polyfills/-/polyfills-2.0.0.tgz#4c40b74655c83982c8cf47530ee7dc13d957b6aa"
   integrity sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ==
 
-"@react-stately/checkbox@^3.0.1", "@react-stately/checkbox@^3.0.6":
+"@react-stately/checkbox@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@react-stately/checkbox/-/checkbox-3.0.3.tgz#18ee6bd3b544334b6f853bb5c5f7017ac3bb9c37"
+  integrity sha512-amT889DTLdbjAVjZ9j9TytN73PszynGIspKi1QSUCvXeA2OVyCwShxhV0Pn7yYX8cMinvGXrjhWdhn0nhYeMdg==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-stately/toggle" "^3.2.3"
+    "@react-stately/utils" "^3.2.2"
+    "@react-types/checkbox" "^3.2.3"
+
+"@react-stately/checkbox@^3.0.6":
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/@react-stately/checkbox/-/checkbox-3.0.6.tgz#6c3e125902f4478f6b8abf3e78a088804c66ae28"
   integrity sha512-RrXJlEtp2q3g6Yex9QI8/tRJhIDmG1oKc5+VyVvdxp0NXtK0Zz+ycIlXuzcI5gwlBemv5ETxbIG4p5gdNXVeKA==
@@ -2870,6 +2880,16 @@
     "@react-types/checkbox" "^3.2.6"
     "@react-types/shared" "^3.11.2"
 
+"@react-stately/toggle@^3.2.3":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@react-stately/toggle/-/toggle-3.3.1.tgz#ad09ff0886c8c14ac479047423b01932f4ea04b2"
+  integrity sha512-JIOPfeZ46vfQqfBygCmyIRL0KJwdHdVQ5PSii5YM0qs/kzaHm3SLGf/iiGjwcRCOsnL50zN9U5YNDtRAEbsncg==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-stately/utils" "^3.5.0"
+    "@react-types/checkbox" "^3.3.1"
+    "@react-types/shared" "^3.13.1"
+
 "@react-stately/tree@^3.2.3":
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/@react-stately/tree/-/tree-3.2.3.tgz#70cce984496c0d513f5d2b256149d1c0f1cb1e82"
@@ -2885,6 +2905,13 @@
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@react-stately/utils/-/utils-3.4.1.tgz#56f049aa1704d338968b5973c796ee606e9c0c62"
   integrity sha512-mjFbKklj/W8KRw1CQSpUJxHd7lhUge4i00NwJTwGxbzmiJgsTWlKKS/1rBf48ey9hUBopXT5x5vG/AxQfWTQug==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+
+"@react-stately/utils@^3.2.2", "@react-stately/utils@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@react-stately/utils/-/utils-3.5.0.tgz#e76231cfc93042814dcc5d96436e50c807c1d905"
+  integrity sha512-WzzwlQtJrf7egaN+lt02/f/wkFKbcscsbinmXs9pL7QyYm+BCQ9xXj01w0juzt93piZgB/kfIYJqInEdpudh1A==
   dependencies:
     "@babel/runtime" "^7.6.2"
 
@@ -2910,6 +2937,13 @@
   integrity sha512-bOQAnnDEpXL1P4oRBiwjnOskKQtawc+JcRZzQk/9k7NwKWfv5MHG/MFDJsW057GPm9Ks0onNATohtw6LFvzAQA==
   dependencies:
     "@react-types/shared" "^3.11.2"
+
+"@react-types/checkbox@^3.2.3", "@react-types/checkbox@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@react-types/checkbox/-/checkbox-3.3.1.tgz#2d088fa84e89ef47ad7c80c1f990517d3b24db7c"
+  integrity sha512-6PlyvfqisuObrltmJdBx88t143NaQ/ibkvuDdsEaiMlJbHKU4m0dbxaYNhGNQ0Jm4AK/x9Rig0tbpMeXjBXaDA==
+  dependencies:
+    "@react-types/shared" "^3.13.1"
 
 "@react-types/combobox@^3.3.0":
   version "3.3.0"
@@ -2972,6 +3006,11 @@
   version "3.11.2"
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.11.2.tgz#b269c0cf6223664ac42d980b7add1b67b51b87d4"
   integrity sha512-MIjjjkFi/DTzMVmeFJJrpc51eS/PLNzLZEv6o/QJPhQ9uOMElYqA790qAcG75u3tR0XGU2Vv9RyeOC7+ppw8/Q==
+
+"@react-types/shared@^3.13.1":
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.13.1.tgz#eda5e3744971606f753baf7879136bf8e3f707ab"
+  integrity sha512-EHQqILDJeDvnloy5VV9lnnEjpCMwH1ghptCfa/lz9Ht9nwco3qGCvUABkWyND7yU1Adt3A/1oJxhpRUu3eTlyg==
 
 "@react-types/slider@^3.0.5":
   version "3.0.5"
@@ -8363,10 +8402,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@3.4.3:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.3.tgz#0079e0442727c1633bace72d0a15eb049eda11a7"
-  integrity sha512-xfNDbMPdXrFjnVlZwXxhj89iVZjYU6sCi2nYk4TjfNWTsBoI8kxaazVhxxIxNz9Ik6Gth87bRgD4/gGnuBcJYw==
+native-base@3.4.6:
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.6.tgz#ff0a5541c125165feb22ab9d31564a92be9cccd4"
+  integrity sha512-N/ggIruzkYXisD1qi7UL/3IaTrcLxOntl3/uDFKJMSXXxIGfdmIe6C92o6gETxy/+L+bXBHn9uAaZ/dE63YgZA==
   dependencies:
     "@react-aria/focus" "^3.2.3"
     "@react-aria/utils" "^3.6.0"
@@ -8382,7 +8421,7 @@ native-base@3.4.3:
     "@react-native-aria/slider" "^0.2.5-alpha.1"
     "@react-native-aria/tabs" "^0.2.7"
     "@react-native-aria/utils" "^0.2.8"
-    "@react-stately/checkbox" "^3.0.1"
+    "@react-stately/checkbox" "3.0.3"
     "@react-stately/collections" "^3.3.0"
     "@react-stately/combobox" "^3.0.0-alpha.1"
     "@react-stately/radio" "^3.2.1"
